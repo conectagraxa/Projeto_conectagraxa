@@ -107,7 +107,7 @@ body {
     top: -4px;
 }
 
-@media (max-width: 1980px) {
+/**@media (max-width: 1980px) {
     #geral {
         width: 80%;
         margin-top: 5%;
@@ -169,7 +169,7 @@ body {
 
 @media (max-width: 768px) {
 
-    /* Estilos para telas menores, como tablets */
+    /* Estilos para telas menores, como tablets 
     #geral {
         width: 70%;
         margin-top: 10%;
