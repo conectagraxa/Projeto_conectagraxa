@@ -213,6 +213,74 @@ body {
 
 }
 
+@media (max-width: 900px) {
+    #geral {
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .fiel {
+        width: 100vh;
+        height: 98vh;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+
+    }
+
+    #lembrar_senha,
+    .lembrar_senha {
+        font-size: 14px;
+    }
+
+    .esqueceu1 {
+        margin-left: 35px;
+    }
+
+    .tema,
+    .nome {
+        display: none;
+    }
+
+    .logo1 {
+        position: relative;
+        left: 30px;
+        width: 200px;
+        margin-top: 100px;
+
+    }
+
+
+    .login,
+    .google {
+        width: 80%;
+        height: 45px;
+        font-size: 15px;
+        margin-bottom: 5px;
+
+    }
+
+    .gg {
+        width: 10%;
+    }
+
+    .g {
+        position: relative;
+        top: -7px;
+        padding: 5px;
+    }
+
+    .bola1,
+    .bola2,
+    .bola3,
+    .bola4 {
+        display: none;
+    }
+
+
+}
+
 @media (max-width: 768px) {
 
     Estilos para telas menores,
@@ -285,7 +353,8 @@ body {
     .lembrar_senha {
         font-size: 14px;
     }
-    .esqueceu1{
+
+    .esqueceu1 {
         margin-left: 35px;
     }
 
@@ -329,9 +398,7 @@ body {
         display: none;
     }
 
-    .imp{
-    }
-
+   
 
 }
 
