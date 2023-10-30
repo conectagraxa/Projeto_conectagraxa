@@ -1,5 +1,5 @@
 body {
-    background-image: url(imagem/fundo.svg);
+    background-color: #FFF5EF;
 }
 
 #geral {
@@ -13,16 +13,19 @@ body {
 
 .fiel {
     background-color: rgb(252, 252, 252);
-    border-radius: 10px;
+    border: none;
+    border-radius: 60px;
     text-align: center;
-    width: 45%;
+    width: 40%;
+    box-shadow: #f1ded4 0.5px 0.5px 3.5px 0.5px;
 
 }
 
 .logo1 {
     position: absolute;
-    left: 35%;
-    width: 11%;
+    left: 48%;
+    width: 10%;
+    
 }
 
 .lembrar_senha {
@@ -43,9 +46,8 @@ body {
 
 }
 
-.esqueceu {
-    margin-left: 60px;
-
+.esqueceu1 {
+    margin-left: 100px;
 }
 
 #olho {
@@ -70,11 +72,11 @@ body {
     font-size: 20px;
     padding: 9px;
     border-radius: 8px;
+    border: none;
     transition: .4s;
 }
 
 .login:hover {
-    background-color: #f16514;
     color: aliceblue;
 }
 
@@ -87,7 +89,7 @@ body {
     border-radius: 8px;
 }
 
-.esqueceu {
+.esqueceu1 {
     text-decoration: none;
     color: rgb(17, 17, 17);
 }
@@ -107,7 +109,51 @@ body {
     top: -4px;
 }
 
-/**@media (max-width: 1980px) {
+.bola1 {
+    background-image: linear-gradient(#EE4622, #FF9B04);
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    position: absolute;
+    left: 420px;
+    top: 150px;
+    z-index: -10;
+}
+
+.bola2 {
+    background-image: linear-gradient(#e1e1e1, #EE4622, #EE4622);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    position: absolute;
+    left: 205px;
+    top: 550px;
+    z-index: -5;
+}
+
+.bola3 {
+    background-image: linear-gradient(#EE4622, #FF9B04, #FF9B04);
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    position: absolute;
+    left: 900px;
+    top: 430px;
+    z-index: -20;
+}
+
+.bola4 {
+    background-image: linear-gradient(#e1e1e1, #EE4622, #EE4622);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    position: absolute;
+    left: 1120px;
+    top: 70px;
+    z-index: -30;
+}
+
+@media (max-width: 1980px) {
     #geral {
         width: 80%;
         margin-top: 5%;
@@ -169,8 +215,8 @@ body {
 
 @media (max-width: 768px) {
 
-    /* Estilos para telas menores, como tablets 
-    #geral {
+    Estilos para telas menores,
+    como tablets #geral {
         width: 70%;
         margin-top: 10%;
         margin-left: 15%;
@@ -238,10 +284,18 @@ body {
         padding: 5px;
     }
 
+    .bola1,
+    .bola2,
+    .bola3,
+    .bola4 {
+        display: none;
+    }
+
 
 }
 
 @media (max-width: 320px) {
+
 
     .esqueceu,
     .lembrar_senha {
@@ -271,4 +325,11 @@ body {
         flex-direction: column;
         font-size: 14px;
     }
+    .bola1,
+    .bola2,
+    .bola3,
+    .bola4 {
+        display: none;
+    }
+
 }
