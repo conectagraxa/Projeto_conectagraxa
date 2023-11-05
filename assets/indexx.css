@@ -1,0 +1,29 @@
+// Função para publicar a postagem
+function publicarPost() {
+    const comentario = document.getElementById('comentario').value;
+    const imagem = document.getElementById('imagem').files[0];
+
+    if (comentario && imagem) {
+        // Crie um novo elemento para a postagem
+        const postagem = document.createElement('div');
+        postagem.classList.add('postagem'); // Você pode estilizar isso no CSS
+
+        // Crie elementos para a imagem e o comentário
+        const imgElement = document.createElement('img');
+        imgElement.src = URL.createObjectURL(imagem);
+        const comentarioElement = document.createElement('p');
+        comentarioElement.textContent = comentario;
+
+        // Adicione a imagem e o comentário à postagem
+        postagem.appendChild(imgElement);
+        postagem.appendChild(comentarioElement);
+
+        // Adicione a postagem à lista de postagens
+        const postagensContainer = document.getElementById('postagens');
+        postagensContainer.appendChild(postagem);
+
+        // Limpe o campo de comentário e o campo de upload
+        document.getElementById('comentario').value = '';
+        document.getElementById('imagem').value = '';
+    }
+}
