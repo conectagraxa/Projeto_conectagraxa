@@ -1,0 +1,36 @@
+.geralperfil{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    overflow: auto;
+    left: 400px;
+    top: 100px;
+    width: 800px;
+    height: 459px;
+    box-shadow: #717171 0px 0px 4px 0px;
+
+}
+.postagem {
+    width: 690px; /* Defina a largura desejada */
+    margin: 10px; /* Adicione margens para espaçamento entre as postagens */
+    padding: 10px; /* Adicione preenchimento interno para afastar o conteúdo das bordas */
+    text-align: center;
+    position: relative;
+    left: 30px;
+    top: 30px;
+    box-shadow: #717171 1px 1px 2px 1px;
+  }
+
+  .ggeral{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  
+
+  
+
+  
+  
