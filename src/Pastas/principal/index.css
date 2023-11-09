@@ -32,7 +32,7 @@ body {
     list-style: none;
     margin-left: 60px;
     position: relative;
-    left: 800px;
+    left: 900px;
     top: 20px;
     height: 20px;
     cursor: pointer;
@@ -99,7 +99,7 @@ body {
     height: 500px;
 }
 
-.title {
+.titlev {
     position: relative;
     font-size: 60px;
 
@@ -117,6 +117,10 @@ body {
     line-height: 30px;
 
 
+}
+
+.patri {
+    display: none;
 }
 
 .bb1,
@@ -500,7 +504,7 @@ body {
 
 }
 
-#fot {
+#fotv {
     background-color: rgb(255, 255, 255);
     position: relative;
     top: 200px;
@@ -517,7 +521,7 @@ body {
 
 }
 
-.foot {
+.footv {
     display: flex;
     position: absolute;
     top: 10px;
@@ -526,7 +530,7 @@ body {
 
 }
 
-.foot li {
+.footv li {
     list-style: none;
 
 }
@@ -548,7 +552,7 @@ body {
 .modal {
     position: absolute;
     top: 100px;
-    width: 190px;
+    width: 200px;
     left: 1400px;
     transform: translate(-50%, -50%);
     background: white;
@@ -561,9 +565,9 @@ body {
 
 .but {
     position: relative;
-    width: 80px;
+    width: 90px;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 25px;
     margin-left: 5px;
     border: none;
     background-color: #f99760;
@@ -612,7 +616,7 @@ body {
 .modal2 {
     position: absolute;
     top: 100px;
-    width: 180px;
+    width: 200px;
     left: 1250px;
     transform: translate(-50%, -50%);
     background: white;
@@ -625,9 +629,9 @@ body {
 
 .but2 {
     position: relative;
-    width: 80px;
+    width: 90px;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 25px;
     margin-left: 5px;
     border: none;
     background-color: #f99760;

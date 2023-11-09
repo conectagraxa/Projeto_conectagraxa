@@ -1,4 +1,5 @@
 import React from 'react';
+import './responsive/index.css'
 
 import circulo1 from './imagem/circulo1.svg'
 import circulo2 from './imagem/circulo2.svg'
@@ -53,13 +54,12 @@ function Home() {
         <div>
             <link rel="stylesheet" href="indexx.css" />
             <link rel='srylesheet' href='./responsive/index.css'></link>
-
+            <div className='patri' ></div>
             <nav className="topo">
                 <div className="t">
                     <div className="logo">
                         <img src={logo} alt="" />
                     </div>
-                    <div className="to">Busco talentos</div>
                     <div className="to" onClick={abrirModal2}>Cadastre-se </div>
                     <div className="to0" onClick={abrirModal}> Entrar</div>
                 </div>
@@ -69,11 +69,11 @@ function Home() {
             <div className="inicio">
                 <div className="nomepr">
                     <div className="nomepr1">
-                        <h1 className="title">
+                        <h1 className="titlev">
                             <h1 className="c1">Um lugar onde</h1>
-                            <h1 className="c2">todos se conectam.</h1>
-                            <h1 className="c3">Venha fazer parte dessa</h1>
-                            <h1 className="c4">equipe!</h1>
+                            <h1 className="c2">todos se conectam</h1>
+                            <h1 className="c3">Venha fazer parte </h1>
+                            <h1 className="c4">dessa equipe!</h1>
                         </h1>
 
                         <span className="otoes">
@@ -198,18 +198,18 @@ function Home() {
                 </div>
             </div>
 
-            <footer id="fot">
+            <footer id="fotv">
                 <div className="logo3">
                     <img src={logo2} alt="" />
                 </div>
-                <ul className="foot">
-                    <li className="ft">
+                <ul className="footv">
+                    <li className="ftv">
                         <img src={InstagramCircle} alt="" />
                     </li>
-                    <li className="ft">
+                    <li className="ftv">
                         <img src={LinkedinCircled} alt="" />
                     </li>
-                    <li className="ft">
+                    <li className="ftv">
                         <img src={GitHub} alt="" />
                     </li>
                 </ul>
@@ -225,7 +225,7 @@ function Home() {
             <div className="janela-modal2" id="janela-modal2">
                 <div className="modal2">
                     <a className='nv' href='Login'> <button className="but2">Empresa</button></a>
-                    <a className='nv' href='Login'> <button className="but2">Profissional</button></a>
+                    <a className='nv' href='Cadastro'> <button className="but2">Profissional</button></a>
                 </div>
             </div>
 

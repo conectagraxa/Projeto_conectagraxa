@@ -4,6 +4,13 @@
         width: 1394px;
     }
 
+    .logo img {
+        width: 350px;
+        margin: 0;
+        padding: 0;
+        top: -113px;
+    }
+
     .topo {
         background-color: rgb(255, 255, 255);
         height: 60px;
@@ -14,12 +21,19 @@
 
     .to,
     .to0 {
+        font-size: 25px;
         list-style: none;
         margin-left: 60px;
-        left: 720px;
-        top: 20px;
+        left: 620px;
+        top: 10px;
         height: 17px;
         cursor: pointer;
+    }
+
+    .to0 {
+        width: 90px;
+        height: 30px;
+        top: 3px;
     }
 
     .ima {
@@ -90,12 +104,24 @@
         left: -50px;
     }
 
-.modal,
-.modal2{
-    left: 90%;
-}
+    .modal,
+    .modal2 {
+        left: 90%;
+        width: 230px;
+
+    }
+
+    .but,
+    .but2 {
+        border-radius: 20px;
+        margin-left: 10px;
+        font-size: 15px;
+        width: 100px;
+    }
 
 }
+
+
 
 @media (max-width: 1024px) {
 
@@ -113,12 +139,19 @@
 
     .to,
     .to0 {
+        font-size: 25px;
         list-style: none;
         margin-left: 60px;
-        left: 720px;
-        top: 20px;
+        left: 620px;
+        top: 10px;
         height: 17px;
         cursor: pointer;
+    }
+
+    .to0 {
+        width: 90px;
+        height: 30px;
+        top: 3px;
     }
 
     .ima {
@@ -206,12 +239,19 @@
 
     .to,
     .to0 {
+        font-size: 25px;
         list-style: none;
         margin-left: 60px;
-        left: 720px;
-        top: 20px;
+        left: 620px;
+        top: 10px;
         height: 17px;
         cursor: pointer;
+    }
+
+    .to0 {
+        width: 90px;
+        height: 30px;
+        top: 3px;
     }
 
     .ima {
@@ -301,17 +341,268 @@
         position: relative;
         left: -20px;
     }
-    .to0{
-        top: 17px;
+
+    .to,
+    .to0 {
+        font-size: 25px;
+        list-style: none;
+        margin-left: 60px;
+        left: 620px;
+        top: 10px;
+        height: 17px;
+        cursor: pointer;
+    }
+
+    .to0 {
+        width: 90px;
+        height: 30px;
+        top: 3px;
     }
 }
 
-@media (max-width: 768px) {
-
-}
+@media (max-width: 768px) {}
 
 @media (max-width: 480px) {
-    
+
+    .c1,
+    .c2,
+    .c3,
+    .c4 {
+        font-size: 63px;
+        font-family: sans-serif;
+        position: relative;
+        left: 50px;
+        top: 100px;
+        line-height: 30px;
+    }
+
+    .patri {
+        display: flex;
+        position: absolute;
+        background: #FF5C00;
+        opacity: 0.2;
+        width: 600px;
+        height: 700px;
+        z-index: -9999;
+        top: 100px;
+        left: 795px;
+        border-radius: 140% 50px 40% 200%;
+    }
+
+    .bb1,
+    .bb2 {
+        display: none;
+    }
+
+    .topo {
+        height: 100px;
+    }
+
+    .to,
+    .to0 {
+        font-size: 45px;
+        list-style: none;
+        margin-left: 60px;
+        left: 60px;
+        top: 5px;
+        height: 17px;
+        cursor: pointer;
+    }
+
+    .to0 {
+        border-radius: 30px;
+        width: 230px;
+        height: 60px;
+        margin-left: 80px;
+        left: 190px;
+    }
+
+    .logo img {
+        width: 500px;
+        top: -160px;
+        left: 20px;
+    }
+
+    .ima6 img,
+    .ima7 img,
+    .ima8 img,
+    .ima9 img {
+        display: none;
+    }
+
+    .ima1 img,
+    .ima2 img,
+    .ima3 img,
+    .ima4 img {
+
+        display: none;
+    }
+
+    .ima5 img {
+        left: 1100px;
+        top: 200px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .ima2 img {
+        left: 900px;
+        top: 450px;
+    }
+
+    .text {
+        font-size: 30px;
+    }
+
+    .quag1 {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        height: 2400px;
+        align-items: center;
+    }
+
+    .q1,
+    .q2,
+    .q3 {
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        top: -200px;
+        width: 700px;
+        height: 650px;
+        margin-left: 60px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: rgb(162, 160, 160) 1px 1px 10px 0px;
+        margin-top: 35px;
+    }
+
+    .namee img {
+        position: relative;
+        left: -70px;
+        width: 100px;
+        margin: 30px;
+    }
+
+    .namee3 img {
+        position: relative;
+        left: -160px;
+        width: 100px;
+        margin: 30px;
+    }
+
+    .namen {
+        color: #f99760;
+        position: relative;
+        top: -35px;
+        font-size: 50px;
+        left: -15px;
+        font-family: sans-serif;
+    }
+
+    .namen1 {
+
+        color: #f99760;
+        position: relative;
+        top: -35px;
+        left: -30px;
+        font-size: 50px;
+        font-family: sans-serif;
+
+    }
+
+    .namee1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        position: relative;
+        top: 100px;
+
+    }
+
+    #fotv {
+        top: 1900px;
+        height: 150px;
+    }
+
+    .modal,
+    .modal2 {
+
+        left: 1150px;
+        width: 400px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 40px;
+
+    }
+
+    .modal2 {
+        left: 750px;
+        width: 400px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 40px;
+
+    }
+
+    .but,
+    .but2 {
+        width: 95%;
+        height: 100px;
+        margin-top: 40px;
+        border-radius: 70px;
+        font-size: 50px;
+    }
+
+    @keyframes modal-conteudo-entrada2 {
+        from {
+            top: -100%;
+        }
+
+        to {
+            top: 300px;
+        }
+
+    }
+
+    @keyframes modal-conteudo-entrada {
+        from {
+            top: -100%;
+        }
+
+        to {
+            top: 310px;
+        }
+    }
+
+    .logo3 img {
+        width: 300px;
+    }
+
+    .footv {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        left: 900px;
+        cursor: pointer;
+
+    }
+
+    .ftv img {
+        width: 100px;
+        margin-left: 15px;
+    }
 }
 
-@media (max-width: 320px) {}
+@media (max-width: 320px) {
+    .to0{
+        left: 60px;
+    }
+
+        .modal{
+            left: 1050px;
+        }
+}

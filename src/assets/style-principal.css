@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter";
-}
 
 .principal {
     display: flex;
@@ -37,13 +31,13 @@
     border-radius: 10px;
 }
 
-ul {
+.bab {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-li {
+.beb {
     list-style: none;
     /* background-color: white; */
     padding: 10px 14px;

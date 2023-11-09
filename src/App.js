@@ -5,8 +5,14 @@ import './Pastas/perfil/index.css'
 import './Pastas/perfil/Publicarcomunidade/index.css'
 import './Pastas/perfil/Exemplo/index.css'
 
-import Peerfil from './Pastas/perfil/index'
+import './assets/style-principal.css'
+import './../src/assets/style.css'
+import Principal from './Pastas/cadastro/princ/Principal.js'
+import Cadastro from './Pastas/cadastro/princ/Cadastro.js'
+import EditarPerfil from './components/EditarPerfil.js'
+import FormPF from './components/FormPF.js'
 
+import Peerfil from './Pastas/perfil/index'
 import Home from './Pastas/principal/index';
 import Login from './Pastas/Login/index';
 import Publicarcomunidade from './Pastas/perfil/Publicarcomunidade/index'
@@ -21,9 +27,18 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Login' element={<Login />} />
+
+        <Route path='/Cadastro' element={<Cadastro />} />
+        <Route path='/Principal' element={<Principal />} />
+        <Route path='/EditarPerfil' element={<EditarPerfil />} />
+        <Route path='/FormPF' element={<FormPF />} />
+
+
         <Route path='/Peerfil' element={<Peerfil />} />
         <Route path='/Publicarcomunidade' element={<Publicarcomunidade />} />
         <Route path='/Exemplo' element={<Exemplo />} />
+
+
 
 
       </Routes>

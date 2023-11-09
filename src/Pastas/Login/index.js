@@ -9,7 +9,7 @@ function LoginForm() {
         let SenhaValida = ('usuario')
 
         if (UsuarioValido === 'usuario' || SenhaValida === 'usuario') {
-            window.location.href = "/Peerfil";
+            window.location.href = "/Principal";
         } else {
             alert('Usuário ou senha inválida')
         }
@@ -68,9 +68,7 @@ function LoginForm() {
                     <br></br>
 
                     <input type="checkbox" name="lembrar_senha" id="lembrar_senha" />
-                    <label className="lembrar_senha" htmlFor="lembrar_senha">
-                        Lembrar senha
-                    </label>
+                    <label className="lembrar_senhaa" htmlFor="lembrar_senha">Lembrar senha</label>
 
                     <strong>
                         <a className="esqueceu1" href="#" id="login" name="login">
