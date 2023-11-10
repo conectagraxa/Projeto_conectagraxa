@@ -1,16 +1,20 @@
+import'./Pastas/Busca/index.css'
+import './Pastas/navbar/style.css'
 import './Pastas/Login/index.css'/* css da página de login*/
 import './Pastas/principal/index.css' /* css da página principal*/
 import './Pastas/principal/responsive/index.css' /*responsividade da página principal */
 import './Pastas/perfil/index.css'
 import './Pastas/perfil/Publicarcomunidade/index.css'
 import './Pastas/perfil/Exemplo/index.css'
-
 import './assets/style-principal.css'
 import './../src/assets/style.css'
+
+import Buscar from './Pastas/Busca/index.js'
 import Principal from './Pastas/cadastro/princ/Principal.js'
 import Cadastro from './Pastas/cadastro/princ/Cadastro.js'
 import EditarPerfil from './components/EditarPerfil.js'
 import FormPF from './components/FormPF.js'
+import Navbar from './Pastas/navbar/index.js'
 
 import Peerfil from './Pastas/perfil/index'
 import Home from './Pastas/principal/index';
@@ -33,13 +37,11 @@ function App() {
         <Route path='/EditarPerfil' element={<EditarPerfil />} />
         <Route path='/FormPF' element={<FormPF />} />
 
-
         <Route path='/Peerfil' element={<Peerfil />} />
         <Route path='/Publicarcomunidade' element={<Publicarcomunidade />} />
         <Route path='/Exemplo' element={<Exemplo />} />
-
-
-
+        <Route path='/Navbar' element={<Navbar />} />
+        <Route path='/Buscar' element={<Buscar/>} />
 
       </Routes>
     </Router>
