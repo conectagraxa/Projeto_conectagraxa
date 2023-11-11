@@ -1,6 +1,5 @@
 import React from "react";
 import './index.css'
-import Navbar from "../navbar/index.js";
 
 function Buscar() {
     return (
@@ -13,7 +12,6 @@ function Buscar() {
             </div>
             <span className="nav" >
 
-                <Navbar ></Navbar>
             </span>
 
 

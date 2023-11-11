@@ -3,9 +3,11 @@ import './Pastas/navbar/style.css'
 import './Pastas/Login/index.css'/* css da página de login*/
 import './Pastas/principal/index.css' /* css da página principal*/
 import './Pastas/principal/responsive/index.css' /*responsividade da página principal */
-import './Pastas/perfil/index.css'
-import './Pastas/perfil/Publicarcomunidade/index.css'
-import './Pastas/perfil/Exemplo/index.css'
+import './Pastas/Home_comunidade/index.css'
+
+import './Pastas/Home_comunidade/Publicarcomunidade/index.css'
+import './Pastas/Home_comunidade/Exemplo/index.css'
+
 import './assets/style-principal.css'
 import './../src/assets/style.css'
 
@@ -16,11 +18,11 @@ import EditarPerfil from './components/EditarPerfil.js'
 import FormPF from './components/FormPF.js'
 import Navbar from './Pastas/navbar/index.js'
 
-import Peerfil from './Pastas/perfil/index'
+import Home_comunidade from './Pastas/Home_comunidade/index'
 import Home from './Pastas/principal/index';
 import Login from './Pastas/Login/index';
-import Publicarcomunidade from './Pastas/perfil/Publicarcomunidade/index'
-import Exemplo from './Pastas/perfil/Exemplo/index'
+import Publicarcomunidade from './Pastas/Home_comunidade/Publicarcomunidade/index'
+import Exemplo from './Pastas/Home_comunidade/Exemplo/index'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -37,7 +39,7 @@ function App() {
         <Route path='/EditarPerfil' element={<EditarPerfil />} />
         <Route path='/FormPF' element={<FormPF />} />
 
-        <Route path='/Peerfil' element={<Peerfil />} />
+        <Route path='/Home_comunidade' element={<Home_comunidade />} />
         <Route path='/Publicarcomunidade' element={<Publicarcomunidade />} />
         <Route path='/Exemplo' element={<Exemplo />} />
         <Route path='/Navbar' element={<Navbar />} />

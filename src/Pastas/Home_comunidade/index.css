@@ -1,9 +1,11 @@
+
+
 .geralperfil{
     background-color: rgb(255, 255, 255);
     position: relative;
     overflow: auto;
     left: 400px;
-    top: 100px;
+    top: 60px;
     width: 800px;
     height: 459px;
     box-shadow: #717171 0px 0px 4px 0px;
@@ -28,7 +30,23 @@
     padding: 0;
   }
 
+  .navbarhomecomunit{
+    position: absolute;
+    top: 2px;
+    margin: 0;
+    padding: 0;
+  }
   
+    .navbarcomunit{
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+
+  .publicarcomuni{
+    position: relative;
+    top: -40px;
+  }
 
   
 
