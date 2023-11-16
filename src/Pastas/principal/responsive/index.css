@@ -1,4 +1,4 @@
-@media (max-width: 1220px) {
+@media (max-width: 1450px) {
 
     #fot {
         width: 1394px;
@@ -360,7 +360,61 @@
     }
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 700px) {
+
+    .ima6 img,
+    .ima7 img,
+    .ima8 img,
+    .ima9 img {
+        display: none;
+    }
+
+    .ima1 img,
+    .ima2 img,
+    .ima3 img,
+    .ima4 img,
+    .ima5 img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .ima1 img:hover,
+    .ima2 img:hover,
+    .ima3 img:hover,
+    .ima4 img:hover,
+    .ima5 img:hover {
+        transition: .4s;
+        width: 120px;
+        height: 120px;
+    }
+
+    .bb1,
+    .bb2 {
+        top: 30%;
+        font-size: 25px;
+        width: 200px;
+        height: 60px;
+        padding: 7px;
+        border-radius: 25px;
+    }
+
+    .c1,
+    .c2,
+    .c3,
+    .c4 {
+        font-size: 50px;
+        font-family: sans-serif;
+        position: relative;
+        left: 50px;
+        top: 30px;
+        line-height: 30px;
+
+
+    }
+
+
+
+}
 
 @media (max-width: 480px) {
 
@@ -598,11 +652,11 @@
 }
 
 @media (max-width: 320px) {
-    .to0{
+    .to0 {
         left: 60px;
     }
 
-        .modal{
-            left: 1050px;
-        }
+    .modal {
+        left: 1050px;
+    }
 }

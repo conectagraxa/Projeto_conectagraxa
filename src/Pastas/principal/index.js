@@ -225,7 +225,7 @@ function Home() {
             <div className="janela-modal2" id="janela-modal2">
                 <div className="modal2">
                     <a className='nv' href='Login'> <button className="but2">Empresa</button></a>
-                    <a className='nv' href='Cadastro'> <button className="but2">Profissional</button></a>
+                    <a className='nv' href='CadastroPF'> <button className="but2">Profissional</button></a>
                 </div>
             </div>
 

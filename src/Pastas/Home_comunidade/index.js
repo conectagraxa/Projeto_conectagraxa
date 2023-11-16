@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Publicarcomunidade from "./Publicarcomunidade";
 import Exemplo from "./Exemplo";
-import Buscar from '../Busca/index.js'
-import Navbar from "../navbar/index.js";
+import Buscar from '../../components/Busca/index.js'
+import Navbar from "../../components/navbar/index.js";
+import Conexoes from "../../components/Conexoes/index.js"
 
 function Home_comunidade() {
     const [postagens, setPostagens] = useState([]);
@@ -18,6 +19,9 @@ function Home_comunidade() {
 
                 <span className="navbarcomunit">
                     <Buscar></Buscar>
+                </span>
+                <span className="conecxoes" >
+                   <Conexoes></Conexoes>
                 </span>
                 <span className="publicarcomuni">
                     <Publicarcomunidade adicionarPostagem={adicionarPostagem} />
@@ -44,6 +48,7 @@ function Home_comunidade() {
                     <Navbar></Navbar>
 
                 </span>
+                
             </div>
         </body>
     );
