@@ -1,3 +1,64 @@
+@media (max-width: 1920px) {
+    .slides {
+        left: 200px;
+    }
+
+    .topo {
+        height: 80px;
+    }
+
+    .to,
+    .to0 {
+        left: 1100px;
+        top: 25px;
+    }
+
+    .to {
+        left: 1100px;
+        top: 33px;
+    }
+
+    .ima {
+        left: 150px;
+    }
+
+    .modal {
+        left: 1650px;
+        margin-top: 40px;
+    }
+
+    .modal2 {
+        left: 1500px;
+        margin-top:40px;
+
+    }
+
+    .veja {
+        left: 750px;
+    }
+
+    .text {
+        left: 750px;
+    }
+
+    .q1,
+    .q2,
+    .q3 {
+        margin-left: 150px;
+    }
+
+    .footv {
+        left: 1600px;
+    }
+
+    .logo img {
+        position: relative;
+        top: -80px;
+        width: 300px;
+    }
+
+}
+
 @media (max-width: 1450px) {
 
     #fot {

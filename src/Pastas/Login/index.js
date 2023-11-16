@@ -6,12 +6,12 @@ import Nossa from "./img-login/Nossa Logo.svg"
 
 function LoginForm() {
 
-    function manipulaLogin() {
+    function ManipulaLogin() {
         let UsuarioValido = ('usuario')
         let SenhaValida = ('usuario')
 
         if (UsuarioValido === 'usuario' || SenhaValida === 'usuario') {
-            window.location.href = "/Home_comunidade";
+            window.location.href = "Home_comunidade";
         } else {
             alert('Usuário ou senha inválida')
         }
@@ -58,7 +58,7 @@ function LoginForm() {
                 </strong>
                 <br />
                 <br />
-                <button id="login" onclick={manipulaLogin} className="login">
+                <button id="login" onclick={ManipulaLogin} className="login">
                     Login
                 </button>
 

@@ -195,6 +195,32 @@ select {
     background-color: #f9782d;
 }
 
+@media (max-width:1920px) {
+    .regal-cadastropf {
+        position: relative;
+        top: 90px;
+
+    }
+
+    .a-voltar {
+        position: absolute;
+        top: -170px;
+        transition: .4s;
+        left: 350px;
+
+    }
+    .button-politica:hover {
+     background-color: #F99760;
+     transition: .4s;
+        
+    }
+
+    .imagem-logo-politica {
+        position: relative;
+        margin-left: 400px;
+    }
+}
+
 @media (max-width:900px) {
 
     main {
@@ -262,10 +288,11 @@ select {
     height: 100px;
     top: 400px;
     left: 1300px;
-    border-radius:100%;
+    border-radius: 100%;
     z-index: -100;
     background-image: linear-gradient(45deg, #fff5ef, #F99760);
 }
+
 .esfera2-politica {
     position: absolute;
     width: 100px;
@@ -273,47 +300,53 @@ select {
     top: 400px;
     left: 10px;
 
-    border-radius:100%;
+    border-radius: 100%;
     z-index: -10;
     background-image: linear-gradient(45deg, #fff5ef, #F99760);
-}.esfera3-politica {
+}
+
+.esfera3-politica {
     position: absolute;
     width: 50px;
     height: 50px;
     left: 20px;
-    border-radius:100%;
+    border-radius: 100%;
     z-index: -10;
     background-image: linear-gradient(45deg, #fff5ef, #F99760);
-}.esfera4-politica {
+}
+
+.esfera4-politica {
     position: absolute;
     width: 200px;
     height: 200px;
     left: 1300px;
-    border-radius:100%;
+    border-radius: 100%;
     z-index: -10;
     background-image: linear-gradient(45deg, #fff5ef, #F99760);
-}.esfera5-politica {
+}
+
+.esfera5-politica {
     position: absolute;
     width: 300px;
     height: 300px;
     top: 600px;
     left: 1px;
-    border-radius:100%;
+    border-radius: 100%;
     z-index: -10;
     background-image: linear-gradient(45deg, #fff5ef, #F99760);
 }
 
-.imagem-logo-politica{
+.imagem-logo-politica {
 
     position: absolute;
     z-index: 1000;
     width: 150px;
     left: 900px;
 
-    
+
 }
 
-.button-politica{
+.button-politica {
     position: absolute;
     z-index: 1000;
     width: 200px;
@@ -324,4 +357,3 @@ select {
 
 
 }
-
