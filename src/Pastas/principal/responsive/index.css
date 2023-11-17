@@ -10,13 +10,10 @@
     .to,
     .to0 {
         left: 1100px;
-        top: 25px;
-    }
-
-    .to {
-        left: 1100px;
         top: 33px;
     }
+
+
 
     .ima {
         left: 150px;
@@ -56,6 +53,77 @@
         top: -80px;
         width: 300px;
     }
+
+}
+
+@media (max-width: 1540px){
+    .to{
+        left: 800px;
+        
+    }
+
+    .to0{
+        left: 800px;
+        top: 25px;
+        height: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .slides {
+        left: 200px;
+    }
+
+    .topo {
+        height: 80px;
+    }
+
+.ima{
+    position: absolute;
+    left: -15px;
+    top: 100px;
+
+
+}
+
+.slides{
+    left: 5px;
+}
+    .modal {
+        left: 1350px;
+        margin-top: 20px;
+    }
+
+    .modal2 {
+        left: 1200px;
+        margin-top:40px;
+
+    }
+
+    .veja {
+        left: 550px;
+    }
+
+    .text {
+        left: 550px;
+    }
+
+    .q1,
+    .q2,
+    .q3 {
+        margin-left: 60px;
+    }
+
+    .footv {
+        left: 1250px;
+    }
+
+    .logo img {
+        position: relative;
+        top: -80px;
+        width: 300px;
+    }
+
 
 }
 

@@ -7,10 +7,13 @@ import './Pastas/Home_comunidade/index.css'// css do Home comunidade//
 import './Pastas/Home_comunidade/Publicarcomunidade/index.css'// css do componente para publicar comunidade//
 import './components/Cadastro_pessoa_fisica/style.css' //*css da página de cadastro de pessoa físicac*//
 import './components/Conexoes/index.css'
+import './components/navbarempresa/styleempresa.css'
+
 
 import './Pastas/Home_comunidade/Exemplo/index.css'//isso é apenas um arquivo para exemplos ou testes //
 import Exemplo from './Pastas/Home_comunidade/Exemplo/index'//////////////////////////////////////////
 
+import Navbarempresa from './components/navbarempresa/index.js'
 import Conexoes from './components/Conexoes/index.js'
 import Buscar from './components/Busca/index.js'
 import CadastroPF from './components/Cadastro_pessoa_fisica/CadastroPF.js'
@@ -36,6 +39,7 @@ function App() {
         <Route path='/Navbar' element={<Navbar />} />
         <Route path='/Buscar' element={<Buscar />} />
         <Route path='/Conexoes' element={<Conexoes />} />
+        <Route path='/Navbarempresa' element={<Navbarempresa />} />
 
       </Routes>
     </Router>

@@ -4,19 +4,11 @@ import Nossa from "./img-login/Nossa Logo.svg"
 
 
 
+
 function LoginForm() {
 
-    function ManipulaLogin() {
-        let UsuarioValido = ('usuario')
-        let SenhaValida = ('usuario')
 
-        if (UsuarioValido === 'usuario' || SenhaValida === 'usuario') {
-            window.location.href = "Home_comunidade";
-        } else {
-            alert('Usuário ou senha inválida')
-        }
 
-    };
 
 
     return (
@@ -35,7 +27,7 @@ function LoginForm() {
                 <label for="email" className="nome">Email</label>
                 <br />
                 <input type="email" className="imp" name="email" id="email" placeholder="Entre com seu Email" required
-                    autocomplete="email" autofocus  />
+                    autocomplete="email" autofocus />
                 <br />
                 <br />
                 <br />
@@ -44,7 +36,7 @@ function LoginForm() {
                     Senha
                 </label>
                 <br />
-                <input type="password" className="imp" name="pass" id="pass" placeholder="***********" required  />
+                <input type="password" className="imp" name="pass" id="pass" placeholder="***********" required />
                 <i id="olho" className="bi bi-eye-fill"></i>
                 <br />
                 <br />
@@ -52,46 +44,46 @@ function LoginForm() {
                 <label className="lembrar_senhaa" for="lembrar_senha">Lembrar senha</label>
 
                 <strong>
-                    <a className="esqueceu1" href="#" id="login" name="login">
+                    <a className="esqueceu1" href="#" id="Login" name="login">
                         Esqueceu a senha?
                     </a>
                 </strong>
                 <br />
                 <br />
-                <button id="login" onclick={ManipulaLogin} className="login">
+                <a href='./Home_comunidade'>   <button id="login" className="login">
                     Login
+                </button></a>
+
+            <br />
+
+            <br />
+
+
+            <a href="#">
+                <button id="func" className="google-login">
+                    <img className='img-loginn' src={Icone} rel='imagem de icone' />
+                    <span className="g"> Entrar com o google</span>
                 </button>
+            </a>
+            <br />
+            <div>
 
-                <br />
+                <p className="cadastro-login">
+                    Ainda não tem conta?
+                    <strong>
+                        <a href="#" className="cadastro-login a">
+                            Criar uma
+                        </a>
+                    </strong>
+                </p>
+            </div>
 
-                <br />
-
-
-                <a href="#">
-                    <button id="func" className="google-login">
-                        <img className='img-loginn'  src={Icone} rel='imagem de icone'  /> 
-                        <span className="g"> Entrar com o google</span>
-                    </button>
-                </a>
-                <br />
-                <div>
-
-                    <p className="cadastro-login">
-                        Ainda não tem conta?
-                        <strong>
-                            <a href="#" className="cadastro-login a">
-                                Criar uma
-                            </a>
-                        </strong>
-                    </p>
-                </div>
-
-                <div className="bola3"></div>
-                <div className="bola4"></div>
-                <div>
-                </div>
+            <div className="bola3"></div>
+            <div className="bola4"></div>
+            <div>
             </div>
         </div>
+        </div >
     )
 }
 
