@@ -1,12 +1,15 @@
 package com.conecta.conectagraxa.model.dto;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Convert;
 import javax.validation.constraints.Email;
 
 import com.conecta.conectagraxa.model.Profissional;
+import com.conecta.conectagraxa.model.annotations.DateConverter;
 import com.conecta.conectagraxa.model.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -48,8 +51,7 @@ public class ProfissionalDTO implements Serializable {
 	
 	private String senha;
 
-	@JsonFormat(pattern = "yyyy/MM/dd")
-	private Date dataNascimento;
+	private String dataNascimento;
 
 	private String sexo;
 	
@@ -66,6 +68,7 @@ public class ProfissionalDTO implements Serializable {
 	public ProfissionalDTO(Profissional obj) {
 		super();
 		this.id = obj.getId();
+
 		this.cep = obj.getCep();
 		this.dataNascimento = obj.getDataNascimento();
 		this.etnia = obj.getEtnia();
@@ -90,7 +93,7 @@ public class ProfissionalDTO implements Serializable {
 	}
 	
 
-
+	
 
 		
 }

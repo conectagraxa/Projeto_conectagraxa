@@ -48,6 +48,8 @@ private Integer id;
 	private String estado;
 	
 	public VagasDTO (Vagas obj) {
+		this.id = obj.getId();
+
 		this.categoria = obj.getCategoria();
 		this.dataPostagem = obj.getDataPostagem();
 		this.cidade = obj.getCidade();
@@ -57,7 +59,6 @@ private Integer id;
 		this.estado = obj.getEstado();
 		this.feedEmpresaId = obj.getFeedEmpresaId().getId();
 		this.titulo = obj.getTitulo();
-		this.id = obj.getId();
 		
 	}
 

@@ -21,7 +21,6 @@ import com.conecta.conectagraxa.model.Cursos;
 import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.dto.CursosDTO;
 import com.conecta.conectagraxa.model.dto.Feed_ProfissionalDTO;
-import com.conecta.conectagraxa.repositories.Feed_ProfissionalRepository;
 import com.conecta.conectagraxa.service.CursosService;
 import com.conecta.conectagraxa.service.Feed_ProfissionalService;
 
@@ -66,7 +65,7 @@ public class Feed_ProfissionalController {
 		Cursos obj = cursosService.update(id, objDTO);
 		return ResponseEntity.ok().body(new CursosDTO(obj));
 	}
-	
+
 	//EDITAR FEED SOBRE
 	
 	//LISTAR HABILIDADES PRÉ DEFINIDAS NA LISTA

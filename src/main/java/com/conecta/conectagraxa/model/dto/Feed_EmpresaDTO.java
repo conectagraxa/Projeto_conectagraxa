@@ -15,7 +15,6 @@ public class Feed_EmpresaDTO implements Serializable {
 
 private Integer id;
 	
-	@NotNull(message ="o campo feed empresa é requerido")
 	private Integer idEmpresa;
 	
 	private String sobre;
@@ -23,6 +22,7 @@ private Integer id;
 	
 	public Feed_EmpresaDTO (Feed_Empresa obj) {
 		this.id = obj.getId();
+
 		this.sobre = obj.getSobre();
 		this.idEmpresa = obj.getIdEmpresa().getId();
 	}

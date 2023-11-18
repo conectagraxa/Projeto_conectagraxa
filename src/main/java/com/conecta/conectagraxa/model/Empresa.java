@@ -1,10 +1,7 @@
 package com.conecta.conectagraxa.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -42,38 +39,44 @@ public class Empresa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY  )
 	private Integer id;
 
-	
+	@Column(name ="nome")	
 	private String nomeFantasia;
+
+	@Column(name ="telefone")	
 
 	private String telefone;
 
-	@Column(unique = true)
+	@Column(name ="email",unique = true)
 	@Email
 	private String email;
 	
 	@CpfCnpj
-	@Column(unique = true)
+	@Column(name ="cpfCnpj",unique = true)
 	private String cpfCnpj;
 
 
+	@Column(name ="cidade")	
 	private String cidade;
 
-
-	@Column (columnDefinition = "VARCHAR(2)")
+	@Column (name="estado",columnDefinition = "VARCHAR(2)")
 	private String estado;
-
+	
+	@Column(name ="endereco")
 	private String endereco;
-
+	@Column(name ="complemento")
 	private String complemento;
 
-	@Column (columnDefinition = "VARCHAR(8)")
+
+	@Column (name ="cep",columnDefinition = "VARCHAR(8)")
 	private Integer cep;
 	
-	
+	@Column(name ="senha")	
 	private String senha;
-		
-	private String fotoPerfilPath;
 	
+	
+	@Column(name ="fotoperfil")	
+	private String fotoPerfilPath;
+	@Column(name ="perfil")	
 	Perfil perfil = Perfil.EMPRESA;
 	
 	@OneToMany(mappedBy = "empresaId")

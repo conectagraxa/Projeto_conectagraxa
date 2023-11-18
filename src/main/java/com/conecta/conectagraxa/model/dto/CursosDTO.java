@@ -32,6 +32,7 @@ public class CursosDTO implements Serializable {
 
 	public CursosDTO (Cursos obj) {
 		this.id = obj.getId();
+
 		this.feedProfissionalId = obj.getFeedProfissionalId().getId();
 		this.titulo = obj.getTitulo();
 		this.instituicao = obj.getInstituicao();
@@ -40,4 +41,3 @@ public class CursosDTO implements Serializable {
 		
 	}
 }
-

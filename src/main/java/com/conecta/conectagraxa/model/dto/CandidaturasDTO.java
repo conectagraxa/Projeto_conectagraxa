@@ -2,10 +2,7 @@ package com.conecta.conectagraxa.model.dto;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotNull;
-
 import com.conecta.conectagraxa.model.Candidaturas;
-import com.conecta.conectagraxa.model.Vagas;
 
 import lombok.Data;
 
@@ -13,19 +10,17 @@ import lombok.Data;
 public class CandidaturasDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	
 
 	
+
+
 	private Integer id;
 	
 	
-	@NotNull
 	private Integer profissionalId;
 
-	@NotNull
 	private Integer vagasId;
 
-	@NotNull
 	private Integer empresaId;
 	
 	
@@ -35,6 +30,5 @@ public class CandidaturasDTO implements Serializable {
 		this.vagasId = obj.getVagasId().getId();
 		this.empresaId = obj.getEmpresaId().getId();
 	}
-
 
 }

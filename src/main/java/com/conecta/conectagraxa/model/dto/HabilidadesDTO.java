@@ -22,6 +22,7 @@ private Integer id;
 	
 	public HabilidadesDTO(Habilidades obj) {
 		this.id = obj.getId();
+
 		this.nomeHabilidade = obj.getNomeHabilidade();
 		this.feedProfissional = obj.getFeedProfissional().getId();
 	}

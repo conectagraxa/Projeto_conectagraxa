@@ -21,15 +21,19 @@ public class ProfissionalService {
 
 	@Autowired
 	private ProfissionalRepository repository;
-
+	
 	
 	
 	
 	//criar profissional + feed
 	public Profissional createProfissional(ProfissionalDTO objDTO) throws Exception {
 		objDTO.setSenha(objDTO.getSenha());
+
+	
 		validaPorEmail(objDTO);
 		Profissional newObj = new Profissional(objDTO);
+		
+		
 		Feed_ProfissionalDTO feedDTO = new Feed_ProfissionalDTO(objDTO);
 		Feed_Profissional feed = new Feed_Profissional/*feedService.createFeed*/(feedDTO);
 		feed.setIdProfissional(newObj);

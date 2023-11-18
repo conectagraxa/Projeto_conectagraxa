@@ -37,7 +37,7 @@ public class ProfissionalController {
 	private SeguidoresService seguidoresService;
 	
 	
-	
+
 	//BUSCAR PROFISSIONAL POR NOME
 	@GetMapping(value = "/")
 	public ResponseEntity<ProfissionalDTO> findByNome(@RequestParam(value="nome") String nome) throws Exception {

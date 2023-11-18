@@ -1,6 +1,7 @@
 package com.conecta.conectagraxa.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -16,12 +17,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.model.enums.Perfil;
@@ -70,9 +70,9 @@ public class Profissional implements Serializable {
 	
 	private String senha;
 
+	@DateTimeFormat
 	@JsonFormat(pattern = "yyyy/MM/dd")
-	@Temporal(TemporalType.DATE)
-	private Date dataNascimento;
+	private String dataNascimento;
 
 	private String sexo;
 	private String fotoPerfil;
@@ -151,9 +151,36 @@ public class Profissional implements Serializable {
 		
     }
 
+	public Profissional(Object o, String nome, String etnia, String estado, String cidade,String endereco ,Integer cep ,
+			 String telefone,String complemento, String email, String senha, String data, String sexo,String fotoperfil ,Perfil perfil) {
+		super();
+		this.id =  (Integer) o;
+		this.nome = nome;
+		this.etnia = etnia;
+		this.estado = estado;
+		this.cidade = cidade;
+		this.endereco = endereco;
+		this.complemento = complemento;
+		this.cep = cep;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+		this.dataNascimento = data;
+		this.sexo = sexo;
+		this.fotoPerfil = fotoperfil;
+		this.perfil = perfil;
+		
+	}
+
+
+
+	
+	}
+    
+    
+
 	
     
     
 
 		
-}

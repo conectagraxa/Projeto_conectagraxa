@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Candidaturas implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -32,11 +32,11 @@ public class Candidaturas implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn( name = "profissional_id")
 	private Profissional profissionalId;
-
+	
 	@ManyToOne
     @JoinColumn(name = "vagas_id")
 	private Vagas vagasId;
-
+	
 	
 	@ManyToOne
     @JoinColumn(name = "empresa_id")

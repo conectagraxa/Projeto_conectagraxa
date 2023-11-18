@@ -13,15 +13,15 @@ import com.conecta.conectagraxa.service.DBService;
 
 public class TestConfig {
 
-		
-		@Autowired
-		private DBService dbService;
-		
-		@Bean
-		public void instaciaDB() {
-			this.dbService.instanciaDB();
-		}
+	@Autowired
+	DBService service;
+	
+	@Bean
+	public void instaciaDB() throws Exception {
+	this.service.instanciaDB();
 
+		
+	}		
 	}
 
 

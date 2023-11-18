@@ -57,6 +57,7 @@ public class EmpresaDTO {
 	public EmpresaDTO(Empresa obj) {
 		super();
 		this.id = obj.getId();
+
 		this.cep = obj.getCep();
 		this.nomeFantasia = obj.getNomeFantasia();
 		this.telefone = obj.getTelefone();

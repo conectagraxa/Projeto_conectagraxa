@@ -37,8 +37,9 @@ private Integer id;
 	private Integer curtidas;
 	
 	public PostagensDTO (Postagens obj) {
-		this.curtidas = obj.getCurtidas();
 		this.id = obj.getId();
+
+		this.curtidas = obj.getCurtidas();
 		this.descricao = obj.getDescricao();
 		this.dataPostagem = obj.getDataPostagem();
 		this.fotoPostagem = obj.getFotoPostagem();

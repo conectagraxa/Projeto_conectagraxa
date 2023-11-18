@@ -46,7 +46,6 @@ public List<Cursos> getAllCursos() {
 	}
 
 
-
 //cursos update
 public Cursos update( Integer id, @Valid CursosDTO objDTO) throws Exception {
 	objDTO.setId(id);
@@ -112,6 +111,3 @@ private void validaPorData(CursosDTO objDTO) throws Exception {
 
 
 }
-
-
-

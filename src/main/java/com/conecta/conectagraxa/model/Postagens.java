@@ -47,11 +47,7 @@ public class Postagens implements Serializable {
 	
 	@OneToMany(mappedBy = "postagemId")
     private List<Comentarios> comentarios;
-	
-/*	@ManyToOne(cascade=CascadeType.MERGE)
-    @JoinColumn(name = "profissional_id")
-	private Profissional idProfissionalId;*/
-	
+
 	@JsonBackReference
 	@ManyToOne
     @JoinColumn(name = "feed_profissional_id")

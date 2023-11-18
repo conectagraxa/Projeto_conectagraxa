@@ -19,7 +19,6 @@ public class Feed_ProfissionalDTO implements Serializable {
 
 private Integer id;
 	
-	@NotNull(message ="o campo feed profissional é requerido")
 	private Integer idProfissional;
 	
 	private String sobre;

@@ -18,23 +18,20 @@ public class ComentariosDTO implements Serializable {
 
 	private Integer id;
 
-	@NotNull(message ="comentado_por é requerido ")
 	private Integer comentado_por;
 
 	
-	@NotNull(message ="postagem_id é requerido ")
 	@JsonFormat(pattern = "yyyy/MM/dd")
 	private LocalDate comentado_em = LocalDate.now();
 
-	@NotNull
 	private Integer postagem_id;
 
 	
-	@NotNull
 	private String descricao;
 	
 	public ComentariosDTO (Comentarios obj) {
 		this.id = obj.getId();
+
 		this.comentado_por = obj.getComentadoPor().getId();
 		this.comentado_em = obj.getComentadoEm();
 		this.postagem_id = obj.getPostagemId().getId();

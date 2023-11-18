@@ -26,8 +26,8 @@ public class SeguidoresDTO implements Serializable {
 	private Integer seguindoId;
 
 	public SeguidoresDTO (Seguidores obj) {
-		
 		this.id = obj.getId();
+
 		this.seguidoresId = obj.getSeguidoresId().getId();
 		this.seguindoId = obj.getSeguindoId().getId();
 	}

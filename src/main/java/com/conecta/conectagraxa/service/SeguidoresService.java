@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.Seguidores;
 import com.conecta.conectagraxa.model.dto.SeguidoresDTO;
@@ -13,6 +14,8 @@ import com.conecta.conectagraxa.repositories.SeguidoresRepository;
 
 @Service
 public class SeguidoresService {
+
+	
 
 	
 	@Autowired
@@ -25,7 +28,6 @@ public class SeguidoresService {
 	public String seguir(Integer idSeguir, Integer idSeguidor) throws Exception {
 		Optional<Profissional> seguir= profissionalRepository.findById(idSeguir);
 		Optional<Profissional> seguidor= profissionalRepository.findById(idSeguidor);
-
 
 		Seguidores seguidores = new Seguidores();
 		Seguidores seguido = new Seguidores();

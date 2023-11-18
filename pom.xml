@@ -76,6 +76,9 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
+		
+		
 <!-- gera todos os detalhes do swagger dentro da aplicação-->
 
     <dependency>
