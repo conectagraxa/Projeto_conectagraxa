@@ -15,22 +15,20 @@ import lombok.NoArgsConstructor;
 public class Feed_ProfissionalDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	
+	private Integer id;
 
-private Integer id;
-	
 	private Integer idProfissional;
-	
+
 	private String sobre;
 
-	public Feed_ProfissionalDTO (Feed_Profissional obj) {
+	public Feed_ProfissionalDTO(Feed_Profissional obj) {
 		this.id = obj.getId();
 		this.sobre = obj.getSobre();
 		this.idProfissional = obj.getIdProfissional().getId();
 	}
-	
-	 	public Feed_ProfissionalDTO (ProfissionalDTO obj) {
- 
-	 		 this.idProfissional = obj.getId();
+
+	public Feed_ProfissionalDTO(ProfissionalDTO obj) {
+
+		this.idProfissional = obj.getId();
+	}
 }
-	 	}
