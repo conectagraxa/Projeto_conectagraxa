@@ -73,7 +73,7 @@ public class DBService {
 		Postagens postagens = new Postagens();
 		Seguidores seguidores = new Seguidores();
 
-		proRepository.saveAll(Arrays.asList(p1, p2,p3,p4));
+		//proRepository.saveAll(Arrays.asList(p1, p2,p3,p4));
 
 	}
 
