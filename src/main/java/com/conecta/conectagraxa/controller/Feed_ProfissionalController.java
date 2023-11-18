@@ -73,7 +73,7 @@ public class Feed_ProfissionalController {
 			Feed_Profissional newObj = service.createSobre(id,objDTO);
 			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
 			return ResponseEntity.created(uri).build();
-		}
+	}
 
 	//LISTAR HABILIDADES PRÉ DEFINIDAS NA LISTA
 	

@@ -35,7 +35,7 @@ public class Feed_ProfissionalService {
 	return repository.findAll();
 	}
 	
-	//CRIAR SOBRE
+	//EDITAR SOBRE
 	public Feed_Profissional createSobre(Integer id,Feed_ProfissionalDTO objDTO){
 	Optional<Feed_Profissional> obj = repository.findById(id);
 	if (obj.isPresent())
@@ -50,7 +50,6 @@ public class Feed_ProfissionalService {
 		
 	}
 	
-	//EDITAR SOBRE 
 	
 
 
