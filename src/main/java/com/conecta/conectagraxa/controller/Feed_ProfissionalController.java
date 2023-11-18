@@ -56,7 +56,7 @@ public class Feed_ProfissionalController {
 		Cursos newObj = cursosService.createCurso(objDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
-	}
+	} 
 
 	// update cursos
 	@PutMapping("/update-curso/{id}")
@@ -66,8 +66,15 @@ public class Feed_ProfissionalController {
 		return ResponseEntity.ok().body(new CursosDTO(obj));
 	}
 
-	//EDITAR FEED SOBRE
 	
+	//EDITAR FEED SOBRE
+		@PutMapping(value = "/update-sobre/{id}")
+		public ResponseEntity<Feed_ProfissionalDTO> updateSobre(@PathVariable Integer id,@Valid @RequestBody Feed_ProfissionalDTO objDTO) throws Exception {
+			Feed_Profissional newObj = service.createSobre(id,objDTO);
+			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
+			return ResponseEntity.created(uri).build();
+		}
+
 	//LISTAR HABILIDADES PRÉ DEFINIDAS NA LISTA
 	
 	//SELECIONAR HABILIDADE
