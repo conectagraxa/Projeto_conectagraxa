@@ -73,7 +73,7 @@ public class PostagensController {
 	}
 	
 	//DELETAR POST
-	@DeleteMapping(value = "/{id}")
+	@DeleteMapping(value = "deletePost/{id}")
 	public ResponseEntity<PostagensDTO> delete(@PathVariable Integer id) throws Exception {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
@@ -99,5 +99,10 @@ public class PostagensController {
 	
 	
 	//EXCLUIR COMENTÁRIO
+		@DeleteMapping(value = "deleteComentario/{id}")
+		public ResponseEntity<ComentariosDTO> deleteComentario(@PathVariable Integer id) throws Exception {
+			cService.deleteComentario(id);
+			return ResponseEntity.noContent().build();
+		}
 }
 
