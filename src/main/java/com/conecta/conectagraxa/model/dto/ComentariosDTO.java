@@ -39,4 +39,12 @@ public class ComentariosDTO implements Serializable {
 		
 	}
 
+	public ComentariosDTO(int id, int por, LocalDate data, int post, String descricao) {
+	this.comentado_em = data;
+	this.postagem_id = post;
+	this.id = id;
+	this.comentado_por = por;
+	this.descricao = descricao;
+	}
+
 }

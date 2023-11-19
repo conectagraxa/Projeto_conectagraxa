@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.model.Feed_Empresa;
+import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.dto.Feed_EmpresaDTO;
 import com.conecta.conectagraxa.repositories.Feed_EmpresaRepository;
 
+import javassist.tools.rmi.ObjectNotFoundException;
 
 @Service
 public class Feed_EmpresaService {
@@ -19,27 +21,29 @@ public class Feed_EmpresaService {
 
 	@Autowired
 	EmpresaService empresaService;
-	
 
-	//lista todos os feeds dos profissionais
+	// lista todos os feeds dos profissionais
 	public List<Feed_Empresa> getAllProfissional() {
-	return repository.findAll();
+		return repository.findAll();
 	}
 
-	//busca por id
-
-	
-	//EDITAR SOBRE
-	public Feed_Empresa createSobre(Integer id,Feed_EmpresaDTO objDTO){
+	// busca por id
+	public Feed_Empresa findById(Integer id) throws ObjectNotFoundException {
 	Optional<Feed_Empresa> obj = repository.findById(id);
-	if (obj.isPresent())
+	return obj.orElseThrow(() -> new ObjectNotFoundException("objeto não encontrado Id: " + id));
+	}
 
-		obj.get().setId(obj.get().getId());
+	// EDITAR SOBRE
+	public Feed_Empresa createSobre(Integer id, Feed_EmpresaDTO objDTO) {
+		Optional<Feed_Empresa> obj = repository.findById(id);
+		if (obj.isPresent())
+
+			obj.get().setId(obj.get().getId());
 		obj.get().setIdEmpresa(obj.get().getIdEmpresa());
 		obj.get().setVagas(obj.get().getVagas());
 		obj.get().setSobre(objDTO.getSobre());
 		Feed_Empresa newObj = obj.get();
 		return repository.save(newObj);
-		
+
 	}
 }

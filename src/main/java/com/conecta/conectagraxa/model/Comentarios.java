@@ -39,19 +39,16 @@ public class Comentarios implements Serializable {
 	@JsonFormat(pattern = "yyyy/MM/dd")
 	private LocalDate comentadoEm = LocalDate.now();
 
-	@NotNull
-	@ManyToOne(fetch = FetchType.EAGER)
-	@NotNull(message ="postagem_id é requerido ")
+	
+	@ManyToOne
     @JoinColumn(name = "postagens_id")
 	private Postagens postagemId;
 
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@NotNull(message ="comentado_por é requerido ")
+	@ManyToOne
     @JoinColumn(name = "comentado_por_id")
 	private Profissional comentadoPor;
 	
-	@NotNull
 	private String descricao;
 
 	

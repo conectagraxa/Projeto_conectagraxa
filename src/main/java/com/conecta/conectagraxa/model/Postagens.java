@@ -67,5 +67,16 @@ public class Postagens implements Serializable {
 	
 	}
 
+
+	public Postagens(Postagens obj) {
+		this.id = obj.getId();
+		this.descricao = obj.getDescricao();
+		this.dataPostagem = obj.getDataPostagem();
+		this.fotoPostagem = obj.getFotoPostagem();
+		this.comentarios = obj.comentarios;
+		this.feedProfissionalId = obj.feedProfissionalId;
+
+	}
+
 	
 }

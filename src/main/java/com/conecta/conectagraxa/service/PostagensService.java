@@ -58,7 +58,8 @@ public class PostagensService {
 			post.setDescricao(postDTO.getDescricao());
 			post.setFotoPostagem(postDTO.getFotoPostagem());
 			post.setDataPostagem(postDTO.getDataPostagem());
-
+			
+			feed.getPostagens().add(post);
 			Postagens novoPost = repository.save(post);
 
 			return novoPost;

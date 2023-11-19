@@ -14,7 +14,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class PostagensDTO implements Serializable {
@@ -43,6 +42,13 @@ private Integer id;
 		this.descricao = obj.getDescricao();
 		this.dataPostagem = obj.getDataPostagem();
 		this.fotoPostagem = obj.getFotoPostagem();
+	}
+	public PostagensDTO (Integer id, Integer feed, String descricao, LocalDate data, String foto, Integer like) {
+		this.dataPostagem = data;
+		this.curtidas = like;
+		this.descricao = descricao;
+		this.fotoPostagem = foto;
+		this.feedProfissionalId = feed;
 	}
 	
 }

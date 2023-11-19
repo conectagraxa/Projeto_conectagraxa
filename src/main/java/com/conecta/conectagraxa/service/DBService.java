@@ -1,6 +1,6 @@
 package com.conecta.conectagraxa.service;
 
-import java.util.Arrays;
+import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,39 +10,61 @@ import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.Seguidores;
+import com.conecta.conectagraxa.model.dto.ComentariosDTO;
+import com.conecta.conectagraxa.model.dto.PostagensDTO;
 import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.model.enums.Perfil;
-import com.conecta.conectagraxa.repositories.CursosRepository;
-import com.conecta.conectagraxa.repositories.EmpresaRepository;
-import com.conecta.conectagraxa.repositories.PostagensRepository;
-import com.conecta.conectagraxa.repositories.ProfissionalRepository;
-import com.conecta.conectagraxa.repositories.SeguidoresRepository;
 
 @Service
 public class DBService {
 
-	@Autowired
-	PostagensRepository postRepository;
+	//tratamento exceções
+	
+	//login google
+	
+	//login profissional autenticado - jwt
+	
+	//login empresa autenticada - jwt
+	
+	//autorização de rotas profissional - security
 
-	@Autowired
-	ProfissionalRepository proRepository;
+	//autorização de rotas empresa - security
 
-	@Autowired
-	EmpresaRepository empRepository;
+	//encriptografar senha profissional
+	
+	//encriptografar senha empresa
 
-	@Autowired
-	CursosRepository curRepository;
-
-	@Autowired
-	SeguidoresRepository segRepository;
-
+	//faltam 15 endpoints
+	
 	@Autowired
 	ProfissionalService pService;
 	Perfil perfil;
 
+	@Autowired
+	EmpresaService eService;
+
+	@Autowired
+	CursosService cService;
+
+	@Autowired
+	PostagensService ptService;
+
+	@Autowired
+	SeguidoresService sService;
+
+	
+	@Autowired
+	ComentariosService comService;
+	
+	@Autowired
+	VagasService vService;
+	
+	@Autowired
+	CandidaturasService cdService;
+
 	public void instanciaDB() throws Exception {
 		Cursos cursos = new Cursos();
-
+		
 		Profissional p1 = new Profissional(0, "Marcos Oliveira Jr.", "pardo", "PE", "cabrobó", "rua malafaia",
 				29906460, "(81) 2876-4327", "ap 10", "marcosoliveirajr@mail.com", "123", "27/02/1980", "Masculino",
 				"www.com.br", perfil.PROFISSIONAL);
@@ -70,9 +92,23 @@ public class DBService {
 		pService.createProfissional(pd4);
 
 		Empresa e1 = new Empresa();
-		Postagens postagens = new Postagens();
-		Seguidores seguidores = new Seguidores();
+		
+		Empresa e2 = new Empresa();
+		Empresa e3 = new Empresa();
+		Empresa e4 = new Empresa();
+		
+		
+		
+		PostagensDTO ptd1 = new PostagensDTO(0, 1,"um dia muito lindo", LocalDate.now(), "www.fotomassa.com",0);		
+		
+		ptService.createPost(ptd1);
+		Postagens pt3 = new Postagens();
 
+		
+		Seguidores seguidores = new Seguidores();
+		ComentariosDTO com = new ComentariosDTO(0, 2, LocalDate.now(), 1, "foto linda amiga");
+		
+		comService.createComentario(com, 1, 2);
 		//proRepository.saveAll(Arrays.asList(p1, p2,p3,p4));
 
 	}

@@ -16,12 +16,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.conecta.conectagraxa.model.Comentarios;
 import com.conecta.conectagraxa.model.Postagens;
+import com.conecta.conectagraxa.model.dto.ComentariosDTO;
 import com.conecta.conectagraxa.model.dto.PostagensDTO;
 import com.conecta.conectagraxa.repositories.PostagensRepository;
+import com.conecta.conectagraxa.service.ComentariosService;
 import com.conecta.conectagraxa.service.PostagensService;
 
 @CrossOrigin("*")
@@ -31,8 +35,11 @@ public class PostagensController {
 
 	@Autowired
 	private PostagensService service;
+	
 	@Autowired
-	private PostagensRepository repository;
+	private ComentariosService cService;
+	
+	
 
 	// CRIAR POSTAGEM
 	@PostMapping(value = "/create")
@@ -82,6 +89,13 @@ public class PostagensController {
 
 	
 	//COMENTAR
+		@PostMapping(value = "/comentario/{pid}")
+		public ResponseEntity<ComentariosDTO> create(@PathVariable Integer pid, Integer prId ,@Valid @RequestBody ComentariosDTO objDTO) throws Exception {
+
+			Comentarios newObj = cService.createComentario(objDTO, pid, prId);
+			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
+			return ResponseEntity.created(uri).build();
+		}
 	
 	
 	//EXCLUIR COMENTÁRIO
