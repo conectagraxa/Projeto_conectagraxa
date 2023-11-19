@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity (name="habilidades")
-@Table(name = "habilidades")
 
 public class Habilidades implements Serializable {
 	private static final long serialVersionUID = 1L;

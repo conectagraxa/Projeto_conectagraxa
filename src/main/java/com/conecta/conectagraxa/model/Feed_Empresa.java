@@ -24,7 +24,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity (name="feed_empresas")
-@Table(name="feed_empresas")
 
 public class Feed_Empresa implements Serializable {
 	private static final long serialVersionUID = 1L;

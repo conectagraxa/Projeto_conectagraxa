@@ -37,7 +37,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity (name="profissional")
-@Table(name="profissional")
 public class Profissional implements Serializable {
 	private static final long serialVersionUID = 1L;
 	

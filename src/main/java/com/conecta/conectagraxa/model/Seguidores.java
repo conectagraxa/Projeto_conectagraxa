@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity (name="seguidores")
-@Table(name="seguidores")
 
 public class Seguidores implements Serializable {
 	private static final long serialVersionUID = 1L;

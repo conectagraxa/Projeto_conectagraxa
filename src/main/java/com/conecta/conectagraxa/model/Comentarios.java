@@ -25,8 +25,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity (name="comentarios")
-@Table(name="comentarios")
-
 @NoArgsConstructor
 @AllArgsConstructor
 public class Comentarios implements Serializable {

@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity (name="candidaturas")
-@Table(name="candidaturas")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Candidaturas implements Serializable {

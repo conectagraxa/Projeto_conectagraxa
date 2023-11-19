@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity(name = "cursos")
-@Table(name = "cursos")
 
 @NoArgsConstructor
 @AllArgsConstructor

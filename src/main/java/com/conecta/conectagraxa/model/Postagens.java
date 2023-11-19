@@ -26,7 +26,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity (name="postagens")
-@Table(name="postagens")
 public class Postagens implements Serializable {
 	private static final long serialVersionUID = 1L;
 

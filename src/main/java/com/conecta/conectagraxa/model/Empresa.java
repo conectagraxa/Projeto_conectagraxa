@@ -26,7 +26,6 @@ import lombok.NoArgsConstructor;
 
 
 @Entity (name="empresa")
-@Table(name="empresa")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -31,11 +31,11 @@ public class ComentariosService {
 	@Autowired
 	ComentariosRepository repository;
 	
-	//comentar na postagem
 
 //alternativa de substituição do @ManyToMany(fetch = FetchType.EAGER)
 //que serve para recuperar as informações das entidades filhas.
 @Transactional
+//comentar na postagem
 public Comentarios createComentario(ComentariosDTO objDTO, Integer postId, Integer userId) throws Exception {
 		
 	//buscando se o profissional existe

@@ -26,7 +26,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "feed_profissional")
-@Table(name = "feed_profissional")
 public class Feed_Profissional implements Serializable {
 
 	
