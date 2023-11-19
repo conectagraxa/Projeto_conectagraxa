@@ -84,4 +84,14 @@ public Comentarios createComentario(ComentariosDTO objDTO, Integer postId, Integ
 
 	
 	//excluir comentario
+public void deleteComentario(Integer id) throws Exception {
+	Optional<Comentarios> obj = repository.findById(id);
+	if (obj.get().getId().equals(id)) {
+		repository.deleteById(id);
+	} else {
+		throw new Exception("Comentário não encontrada");
+	}
+
+}
+
 }
