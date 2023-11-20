@@ -11,22 +11,19 @@ import com.conecta.conectagraxa.model.Vagas;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 @Data
+@NoArgsConstructor
 public class VagasDTO implements Serializable {
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
 private Integer id;
 	
-	@NotNull(message = "o campo título é requerido")
 	private String titulo;
 	
-	@NotNull(message = "o campo descrição é requerido")
 	private String descricao;
 	
-	@NotNull(message = "o campo função é requerido")
 	private String categoria;
 	
-
-	@NotNull
 	private Integer empresaId;
 	
 	private String fotoPath;
@@ -34,17 +31,11 @@ private Integer id;
 	@JsonFormat(pattern = "yyyy/MM/dd")
 	private LocalDate dataPostagem = LocalDate.now();
 	
-	
-	
-
-
 	private Integer feedEmpresaId;
 	
 	
-	@NotNull(message ="o campo cidade é requerido")
 	private String cidade;
 	
-	@NotNull(message ="o campo estado é requerido")
 	private String estado;
 	
 	public VagasDTO (Vagas obj) {
