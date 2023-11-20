@@ -67,7 +67,7 @@ public class Empresa implements Serializable {
 
 
 	@Column (name ="cep",columnDefinition = "VARCHAR(8)")
-	private Integer cep;
+	private String cep;
 	
 	@Column(name ="senha")	
 	private String senha;
@@ -104,6 +104,7 @@ public class Empresa implements Serializable {
 
 		
 	}
+
 	
 	
 

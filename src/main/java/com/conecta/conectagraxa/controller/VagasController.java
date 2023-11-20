@@ -27,7 +27,7 @@ public class VagasController {
 	// CRIAR VAGA
 	@PostMapping(value = "/create")
 	public ResponseEntity<VagasDTO> create(@Valid @RequestBody VagasDTO objDTO) throws Exception {
-		Vagas newObj = service.createVaga(objDTO);
+		Vagas newObj = service.createVaga(objDTO, objDTO.getEmpresaId());
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}

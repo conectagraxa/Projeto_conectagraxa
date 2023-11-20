@@ -27,10 +27,10 @@ public class VagasService {
 	Feed_EmpresaService feedService;
 	
 	//CRIAR VAGA
-	public Vagas createVaga(VagasDTO obj) throws Exception {
-//procurando se o id da vaga e empresa existe	
-		Feed_Empresa feedEmpresa = feedService.findById(obj.getFeedEmpresaId());
-		Empresa empresa = empService.findById(obj.getId());			
+	public Vagas createVaga(VagasDTO obj, Integer id) throws Exception {
+		//procurando se o id da vaga e empresa existe	
+		Feed_Empresa feedEmpresa = feedService.findById(id);
+		Empresa empresa = empService.findById(id);			
 		Vagas vagas = new Vagas(obj);
 
 //setando os dados passados no vagasDTO (Oque vai vai no corpo da requisição)

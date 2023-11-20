@@ -3,7 +3,6 @@ package com.conecta.conectagraxa.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -12,17 +11,17 @@ import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.Postagens;
+import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.dto.PostagensDTO;
+import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.repositories.PostagensRepository;
 import com.conecta.conectagraxa.repositories.ProfissionalRepository;
 
 import javassist.tools.rmi.ObjectNotFoundException;
 
-
 @Transactional
 @Service
 public class PostagensService {
-
 
 	@Autowired
 	ProfissionalService profissionalService;
@@ -36,37 +35,29 @@ public class PostagensService {
 	@Autowired
 	PostagensRepository repository;
 
-	public Postagens createPost(PostagensDTO postDTO) throws Exception {
+	public Postagens createPost(Integer id, PostagensDTO postDTO) throws Exception {
 		Postagens post = new Postagens();
 
-		Feed_Profissional feed = feedService.findById(postDTO.getFeedProfissionalId());
-		/*
-		 * Profissional profissional =
-		 * profissionalService.findById(postDTO.getIdProfissionalId());
-		 * 
-		 * 
-		 * profissional.setId(postDTO.getIdProfissionalId()); ProfissionalDTO
-		 * profissionalDTO=new ProfissionalDTO(profissional); Profissional
-		 * novoProfissional = new Profissional (profissionalDTO);
-		 * 
-		 * post.setIdProfissionalId(novoProfissional);
-		 */
-		if (feed.getIdProfissional().getPerfil().equals(feed.getIdProfissional().getPerfil().PROFISSIONAL)) {
-			post.setFeedProfissionalId(feed);
+		Feed_Profissional feed = feedService.findById(id);
 
-			post.setDataPostagem(postDTO.getDataPostagem());
-			post.setDescricao(postDTO.getDescricao());
-			post.setFotoPostagem(postDTO.getFotoPostagem());
-			post.setDataPostagem(postDTO.getDataPostagem());
-			
-			feed.getPostagens().add(post);
-			Postagens novoPost = repository.save(post);
+		Profissional profissional = profissionalService.findById(id);
 
-			return novoPost;
-		} else {
-			throw new Exception("Perfil não autorizado");
+		profissional.setId(id);
 
-		}
+		post.setDataPostagem(postDTO.getDataPostagem());
+		post.setDescricao(postDTO.getDescricao());
+		post.setFotoPostagem(postDTO.getFotoPostagem());
+		post.setDataPostagem(postDTO.getDataPostagem());
+		
+		profissional.getPostagens().add(post);
+		feed.getPostagens().add(post);
+
+		post.setProfissionalId(profissional);
+		post.setFeedProfissionalId(feed);
+
+		Postagens novoPost = repository.save(post);
+
+		return novoPost;
 	}
 
 	// postagens update
@@ -134,33 +125,31 @@ public class PostagensService {
 		return repository.findAll();
 	}
 
-	
 	public Postagens curtir(Integer id) throws ObjectNotFoundException {
 		Optional<Postagens> obj = repository.findById(id);
 		Postagens newObj = new Postagens();
 
 		if (obj.isPresent()) {
 			obj.get().setId(obj.get().getId());
-			
+
 			obj.get().setFotoPostagem(obj.get().getFotoPostagem());
 			obj.get().setDescricao(obj.get().getDescricao());
 			obj.get().setDataPostagem(obj.get().getDataPostagem());
 			obj.get().setComentarios(obj.get().getComentarios());
 			obj.get().setFeedProfissionalId(obj.get().getFeedProfissionalId());
-			
-			if(obj.get().getCurtidas() == null) {
+
+			if (obj.get().getCurtidas() == null) {
 				obj.get().setCurtidas(+0);
-			};
-			
-		
+			}
+			;
+
 			obj.get().setCurtidas(obj.get().getCurtidas() + 1);
 
-			
 			newObj = obj.get();
-			
+
 			Postagens atualizado = repository.save(newObj);
 
-			// retorna um post atualizado	
+			// retorna um post atualizado
 			return atualizado;
 
 		} else {
@@ -169,49 +158,42 @@ public class PostagensService {
 		}
 	}
 
-	
-	
 	public Postagens deslike(Integer id) throws ObjectNotFoundException {
 		Optional<Postagens> obj = repository.findById(id);
 		Postagens newObj = new Postagens();
 
 		if (obj.isPresent()) {
 			obj.get().setId(obj.get().getId());
-			
+
 			obj.get().setFotoPostagem(obj.get().getFotoPostagem());
 			obj.get().setDescricao(obj.get().getDescricao());
 			obj.get().setDataPostagem(obj.get().getDataPostagem());
 			obj.get().setComentarios(obj.get().getComentarios());
 			obj.get().setFeedProfissionalId(obj.get().getFeedProfissionalId());
-			
-			if(obj.get().getCurtidas() == null ) {
+
+			if (obj.get().getCurtidas() == null) {
 				obj.get().setCurtidas(+0);
 			}
-			if( obj.get().getCurtidas() <= 0) {
+			if (obj.get().getCurtidas() <= 0) {
 				obj.get().setCurtidas(0);
 
-			}if(obj.get().getCurtidas() > 0) {
-			
+			}
+			if (obj.get().getCurtidas() > 0) {
+
 				obj.get().setCurtidas(obj.get().getCurtidas() - 1);
-			}				
-				newObj = obj.get();
-				
-				Postagens atualizado = repository.save(newObj);
+			}
+			newObj = obj.get();
 
-				// retorna um post atualizado	
-				return atualizado;
+			Postagens atualizado = repository.save(newObj);
 
-			
-			
-
-			
+			// retorna um post atualizado
+			return atualizado;
 
 		} else {
 			return obj.orElseThrow(() -> new ObjectNotFoundException("postagem não encontrado Id: " + id));
 
 		}
-	
 
 	}
-	
+
 }

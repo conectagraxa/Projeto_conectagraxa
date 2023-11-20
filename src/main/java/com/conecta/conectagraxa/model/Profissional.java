@@ -100,9 +100,9 @@ public class Profissional implements Serializable {
     private Set<Seguidores> seguindo = new HashSet<Seguidores>();;
     
     
-  /*  //se relacionando com postagens na parte 1 do relacionamento um para muitos
-    @OneToMany(cascade = CascadeType.ALL, 	fetch = FetchType.EAGER,mappedBy = "idProfissionalId")
-    private List<Postagens> postagens;*/
+  //se relacionando com postagens na parte 1 do relacionamento um para muitos
+    @OneToMany(cascade = CascadeType.ALL, 	fetch = FetchType.EAGER,mappedBy = "ProfissionalId")
+    private List<Postagens> postagens;
     
     
     //se relacionando com comentários na parte 1 do relacionamento um para muitos

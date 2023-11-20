@@ -53,6 +53,11 @@ public class Postagens implements Serializable {
 	private Feed_Profissional feedProfissionalId;
 	
 
+	@JsonBackReference
+	@ManyToOne
+    @JoinColumn(name = "profissional_id")
+	private Profissional ProfissionalId;
+
 	public Postagens (PostagensDTO objDTO) {
 		this.id = objDTO.getId();
 		this.descricao = objDTO.getDescricao();

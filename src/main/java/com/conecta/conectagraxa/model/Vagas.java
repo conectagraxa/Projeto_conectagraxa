@@ -64,8 +64,15 @@ public class Vagas implements Serializable {
 	@ManyToOne
     @JoinColumn(name = "empresa_id")
 	private Empresa empresaId;
-	public Vagas(VagasDTO vagasDTO) {
-		// TODO Auto-generated constructor stub
+	public Vagas(VagasDTO obj) {
+	this.titulo = obj.getTitulo();
+	this.descricao = obj.getDescricao();
+	this.categoria = obj.getCategoria();
+	this.cidade = obj.getCidade();
+	this.estado= obj.getEstado();
+	this.fotoPath = obj.getFotoPath();
+	
+	
 	}
 
 }

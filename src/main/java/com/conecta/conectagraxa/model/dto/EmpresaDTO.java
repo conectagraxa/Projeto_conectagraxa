@@ -40,7 +40,7 @@ public class EmpresaDTO {
 
 	private String complemento;
 
-	private Integer cep;
+	private String cep;
 
 	private String senha;
 
@@ -72,6 +72,28 @@ public class EmpresaDTO {
 		this.perfil = obj.getPerfil();
 
 	}
+
+	public EmpresaDTO(int id, String nome, String tel, String email, String cnpj, String cidade, String estado,
+			String endereco, String complemento, String cep, String senha, String foto) {
+
+
+		this.id = id;
+		this.nomeFantasia =nome;
+		this.telefone = tel;
+		this.email = email;
+		this.cpfCnpj = cnpj;
+		this.cidade = cidade;
+		this.estado =estado;
+		this.endereco = endereco;
+		this.complemento = complemento;
+		this.cep = cep;
+		this.senha = senha;
+		this.fotoPerfilPath = foto;
+
+		
+
+	}
+
 				
 }
 

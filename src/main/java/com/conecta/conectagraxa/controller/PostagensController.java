@@ -45,7 +45,7 @@ public class PostagensController {
 	@PostMapping(value = "/create")
 	public ResponseEntity<PostagensDTO> create(@Valid @RequestBody PostagensDTO objDTO) throws Exception {
 
-		Postagens newObj = service.createPost(objDTO);
+		Postagens newObj = service.createPost(objDTO.getFeedProfissionalId(),objDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}

@@ -11,6 +11,7 @@ import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.Seguidores;
 import com.conecta.conectagraxa.model.dto.ComentariosDTO;
+import com.conecta.conectagraxa.model.dto.EmpresaDTO;
 import com.conecta.conectagraxa.model.dto.PostagensDTO;
 import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.model.enums.Perfil;
@@ -95,23 +96,27 @@ public class DBService {
 		pService.createProfissional(pd3);
 		pService.createProfissional(pd4);
 
-		Empresa e1 = new Empresa();
-		
-		Empresa e2 = new Empresa();
-		Empresa e3 = new Empresa();
-		Empresa e4 = new Empresa();
 		
 		
 		
-		PostagensDTO ptd1 = new PostagensDTO(0, 1,"um dia muito lindo", LocalDate.now(), "www.fotomassa.com",0);		
+		EmpresaDTO e4 = new EmpresaDTO(0, "Bento e Felipe Shows Ltda","11981914484","financeiro@bentoefelipeshowsltda.com.br","13422762000128","São Paulo","SP","Travessa Ibiquera","462","03755095","123","www.fotoperfil.com");
+		eService.createEmpresa(e4);
+
+		EmpresaDTO e3 = new EmpresaDTO(0, "Sebastiana e Cecília Padaria ME","83992576628","agencia@backstage2.com.br","86920873000138","Cabedelo","PB","Rua Antônio Benício de Oliveira","Nº 21","58103064","123","www.fotoperfil.com");
+		eService.createEmpresa(e3);
+
+		EmpresaDTO e2 = new EmpresaDTO(0, "Priscila e Bianca Eletrônica ME","83986393365","tesouraria@priscilaebiancaeletronicame.com.br","34347667000187","João Pessoa","PB","Rua Carlos Drumond Andrade","AP 235","58062008","123","www.fotoperfil.com");
+		eService.createEmpresa(e2);
+
+		PostagensDTO ptd1 = new PostagensDTO(0, 1,"um dia muito lindo", LocalDate.now(), "www.fotomassa.com",0);				
+		ptService.createPost(ptd1.getFeedProfissionalId(),ptd1);
 		
-		ptService.createPost(ptd1);
-		Postagens pt3 = new Postagens();
+		
+		PostagensDTO ptd2 = new PostagensDTO();
 
 		
 		Seguidores seguidores = new Seguidores();
-		ComentariosDTO com = new ComentariosDTO(0, 2, LocalDate.now(), 1, "foto linda amiga");
-		
+		ComentariosDTO com = new ComentariosDTO(0, 2, LocalDate.now(), 1, "foto linda amiga");		
 		comService.createComentario(com, 1, 2);
 		//proRepository.saveAll(Arrays.asList(p1, p2,p3,p4));
 
