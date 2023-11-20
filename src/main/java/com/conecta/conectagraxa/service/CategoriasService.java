@@ -14,15 +14,6 @@ import com.conecta.conectagraxa.repositories.CategoriasRepository;
 @Service
 public class CategoriasService {
 
-	/*Categorias cab1 = new Categorias(); cab1.setCategorias("Tecnico de Som");
-	Categorias cab2 = new Categorias(); cab2.setCategorias("Roadie");
-	Categorias cab3 = new Categorias(); cab3.setCategorias("Iluminador(a) cênica");
-	Categorias cab4 = new Categorias(); cab4.setCategorias("Tecnico de palco");
-	Categorias cab5 = new Categorias(); cab5.setCategorias("Segurança Particular");
-	Categorias cab6 = new Categorias(); cab6.setCategorias("Fotografia");
-	Categorias cab7 = new Categorias(); cab7.setCategorias("Carregadores");*/
-	
-
 	
 	@Autowired
 	CategoriasRepository repository;

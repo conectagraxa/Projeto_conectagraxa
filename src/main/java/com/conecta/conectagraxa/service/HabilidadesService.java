@@ -35,4 +35,7 @@ public class HabilidadesService {
 		return "CadastroPF.html";
 	}
 	
+	//UPGRADE FUTURO - EDITAR CATEGORIA, EXCLUIR CATEGORIA
+	
+	
 }

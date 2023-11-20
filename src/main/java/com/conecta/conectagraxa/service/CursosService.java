@@ -20,7 +20,7 @@ public class CursosService {
 	@Autowired
 	CursosRepository repository;
 	
-public Cursos createCurso(CursosDTO objDTO) throws Exception {
+	public Cursos createCurso(CursosDTO objDTO) throws Exception {
 	  Cursos cursos = new Cursos();
 	  Feed_Profissional feed = feedService.findById(objDTO.getFeedProfissionalId());		
 

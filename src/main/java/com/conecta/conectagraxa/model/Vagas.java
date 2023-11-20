@@ -35,13 +35,10 @@ public class Vagas implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@NotNull(message = "o campo título é requerido")
 	private String titulo;
 	
-	@NotNull(message = "o campo descrição é requerido")
 	private String descricao;
 	
-	@NotNull(message = "o campo função é requerido")
 	private String categoria;
 	
 	
@@ -51,10 +48,8 @@ public class Vagas implements Serializable {
 	private LocalDate dataPostagem = LocalDate.now();
 	
 	
-	@NotNull(message ="o campo cidade é requerido")
 	private String cidade;
 	
-	@NotNull(message ="o campo estado é requerido")
 	@Column(columnDefinition = "VARCHAR(2)")
 	private String estado;
 

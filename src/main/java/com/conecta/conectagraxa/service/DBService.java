@@ -34,7 +34,7 @@ public class DBService {
 	
 	//encriptografar senha empresa
 
-	//faltam 13 endpoints - vagas service:  6 - candidaturas service: 5 - habilidades service: 2
+	//faltam 11 endpoints - vagas service:  6 - candidaturas service: 5
 	
 	@Autowired
 	ProfissionalService pService;
@@ -70,6 +70,7 @@ public class DBService {
 	public void instanciaDB() throws Exception {
 		Cursos cursos = new Cursos();
 	
+		//Mocagem de categorias
 		catService.insertCat();
 		
 		Profissional p1 = new Profissional(0, "Marcos Oliveira Jr.", "pardo", "PE", "cabrobó", "rua malafaia",
