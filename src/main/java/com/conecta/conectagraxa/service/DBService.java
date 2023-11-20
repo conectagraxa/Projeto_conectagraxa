@@ -34,7 +34,7 @@ public class DBService {
 	
 	//encriptografar senha empresa
 
-	//faltam 11 endpoints - vagas service:  6 - candidaturas service: 5
+	//faltam 9 endpoints - vagas service:  4 - candidaturas service: 5
 	
 	@Autowired
 	ProfissionalService pService;
@@ -63,15 +63,11 @@ public class DBService {
 	CandidaturasService cdService;
 
 
-	@Autowired
-	CategoriasService catService;
 	
 	
 	public void instanciaDB() throws Exception {
 		Cursos cursos = new Cursos();
 	
-		//Mocagem de categorias
-		catService.insertCat();
 		
 		Profissional p1 = new Profissional(0, "Marcos Oliveira Jr.", "pardo", "PE", "cabrobó", "rua malafaia",
 				29906460, "(81) 2876-4327", "ap 10", "marcosoliveirajr@mail.com", "123", "27/02/1980", "Masculino",

@@ -12,11 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 
+import com.conecta.conectagraxa.model.dto.VagasDTO;
+import com.conecta.conectagraxa.model.enums.Categoria;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
@@ -28,6 +26,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity (name="vagas")
 public class Vagas implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	
@@ -39,7 +38,7 @@ public class Vagas implements Serializable {
 	
 	private String descricao;
 	
-	private String categoria;
+	private Categoria categoria;
 	
 	
 	private String fotoPath;
@@ -65,5 +64,9 @@ public class Vagas implements Serializable {
 	@ManyToOne
     @JoinColumn(name = "empresa_id")
 	private Empresa empresaId;
+	public Vagas(VagasDTO vagasDTO) {
+		// TODO Auto-generated constructor stub
+	}
+
 }
 

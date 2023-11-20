@@ -5,16 +5,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class CandidaturasService {
 
-	
-	//empresa visualizar candidaturas
-	
-	//profissional candidatar na vaga
-	
-	//profissional visualizar candidaturas
+	// EMPRESA VISUALIZAR CANDIDATURAS DA VAGA
 
+	// PROFISSIONAL CANDIDATAR NA VAGA
 
-	//empresa visualizar feed profissional candidatado
+	// PROFISSIONAL VISUALIZAR VAGAS CANDIDATADAS
 
-	//profissional visualizar feed empresa candidatada
+	// EMPRESA VISUALIZAR FEED PROFISSIONAL CANDIDATADO NA VAGA
+
+	// PROFISSIONAL VISUALIZAR FEED EMPRESA CANDIDATADA
 
 }
