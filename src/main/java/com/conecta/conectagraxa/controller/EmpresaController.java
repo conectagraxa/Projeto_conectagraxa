@@ -66,7 +66,7 @@ public class EmpresaController {
 	}
 
 	//UPDATE Da empresa 
-		@PutMapping("/update/{id}")
+	@PutMapping("/update/{id}")
 		public ResponseEntity<EmpresaDTO> update( @PathVariable int id, @RequestBody @Valid EmpresaDTO objDTO)throws Exception {
 			Empresa obj = service.update(id, objDTO);
 		return ResponseEntity.ok().body(new EmpresaDTO(obj));

@@ -4,11 +4,14 @@ package com.conecta.conectagraxa.service;
 
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.Feed_Empresa;
+import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.Vagas;
 import com.conecta.conectagraxa.model.dto.VagasDTO;
 import com.conecta.conectagraxa.repositories.VagasRepository;
@@ -48,9 +51,10 @@ public class VagasService {
 		//adiciona a vaga setada no feed da empresa
 		feedEmpresa.getVagas().add(vagas);
 		//salva no banco
-		vagas = repository.save(vagas);
+		Vagas newObj = repository.save(vagas);
+
 		//retorna um model vagas com valor atualizado
-		return vagas;
+		return newObj;
 	
 	}
 
@@ -122,9 +126,27 @@ public class VagasService {
 	}
 
 	// FILTRAR VAGA CATEGORIA
-
-	// LISTAR TODAS AS VAGAS POR NOME
+	
+	
+	
+	// LISTAR VAGAS POR NOME
+	@Transactional
+	public Vagas findByTitulo(String titulo) throws Exception {
+	Optional<Vagas> obj = repository.findByTituloIgnoreCaseContaining(titulo); 
+	return obj.orElseThrow(() -> new Exception("objeto nome encontrado Nome: " + titulo ));
+	}
 
 	// DELETAR VAGA
+	public void delete(Integer id) throws Exception {
+		Optional<Vagas> obj = repository.findById(id);
+
+		if (obj.get().getId().equals(id)) {
+			repository.deleteById(id);
+		} else {
+			throw new Exception("Vaga não encontrada");
+		}
+
+	}
+
 
 }

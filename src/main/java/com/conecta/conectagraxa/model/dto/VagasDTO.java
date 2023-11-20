@@ -23,7 +23,7 @@ private Integer id;
 	
 	private String descricao;
 	
-	private Categoria categoria;
+	private Categoria categoria ;
 	
 	
 	private String fotoPath;

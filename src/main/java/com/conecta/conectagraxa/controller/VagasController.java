@@ -6,16 +6,21 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.Vagas;
+import com.conecta.conectagraxa.model.dto.EmpresaDTO;
 import com.conecta.conectagraxa.model.dto.PostagensDTO;
 import com.conecta.conectagraxa.model.dto.VagasDTO;
 import com.conecta.conectagraxa.service.VagasService;
@@ -36,7 +41,7 @@ public class VagasController {
 	}
 
 	// EDITAR VAGA
-	@PutMapping("/update-postagem/{id}")
+	@PutMapping("/update-vaga/{id}")
 	public ResponseEntity<VagasDTO> update(@PathVariable Integer id, @RequestBody @Valid VagasDTO objDTO)throws Exception {
 	Vagas obj = service.editarVaga( objDTO,id);
 	return ResponseEntity.ok().body(new VagasDTO(obj));
@@ -45,8 +50,19 @@ public class VagasController {
 	// FILTRAR VAGA CATEGORIA
 
 	// LISTAR TODAS AS VAGAS POR NOME
-
+		@GetMapping(value = "/")
+		public ResponseEntity<VagasDTO> findByNome(@RequestParam(value="nome") String nome) throws Exception {
+		Vagas obj = service.findByTitulo(nome);
+		return ResponseEntity.ok().body(new VagasDTO(obj));
+		}
+		
+	
 	// DELETAR VAGA
+		@DeleteMapping(value = "/delete-vaga/{id}")
+		public ResponseEntity<VagasDTO> delete(@PathVariable Integer id) throws Exception {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+		}
 
 	// EMPRESA VISUALIZAR CANDIDATURAS DA VAGA
 
