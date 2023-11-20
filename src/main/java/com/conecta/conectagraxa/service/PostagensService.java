@@ -136,6 +136,7 @@ public class PostagensService {
 			obj.get().setDescricao(obj.get().getDescricao());
 			obj.get().setDataPostagem(obj.get().getDataPostagem());
 			obj.get().setComentarios(obj.get().getComentarios());
+			obj.get().setProfissionalId(obj.get().getProfissionalId());
 			obj.get().setFeedProfissionalId(obj.get().getFeedProfissionalId());
 
 			if (obj.get().getCurtidas() == null) {
@@ -170,6 +171,7 @@ public class PostagensService {
 			obj.get().setDataPostagem(obj.get().getDataPostagem());
 			obj.get().setComentarios(obj.get().getComentarios());
 			obj.get().setFeedProfissionalId(obj.get().getFeedProfissionalId());
+			obj.get().setProfissionalId(obj.get().getProfissionalId());
 
 			if (obj.get().getCurtidas() == null) {
 				obj.get().setCurtidas(+0);

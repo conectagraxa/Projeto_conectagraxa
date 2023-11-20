@@ -104,7 +104,7 @@ return atualizado;
 //validação se a data de inicio é menor que o término
 private void validaPorData(CursosDTO objDTO) throws Exception {
 	if (objDTO.getInicio().after( objDTO.getFim()) ) {
-		throw new Exception("A data de inicio do curso deve ser maior que o fim! ");
+		throw new Exception("A data de inicio do curso deve ser menor que o fim! ");
 	}
 }
 
