@@ -62,8 +62,15 @@ public class DBService {
 	@Autowired
 	CandidaturasService cdService;
 
+
+	@Autowired
+	CategoriasService catService;
+	
+	
 	public void instanciaDB() throws Exception {
 		Cursos cursos = new Cursos();
+	
+		catService.insertCat();
 		
 		Profissional p1 = new Profissional(0, "Marcos Oliveira Jr.", "pardo", "PE", "cabrobó", "rua malafaia",
 				29906460, "(81) 2876-4327", "ap 10", "marcosoliveirajr@mail.com", "123", "27/02/1980", "Masculino",

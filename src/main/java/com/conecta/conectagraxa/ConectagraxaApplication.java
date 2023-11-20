@@ -16,5 +16,4 @@ public class ConectagraxaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ConectagraxaApplication.class, args);
 	}
-
 }

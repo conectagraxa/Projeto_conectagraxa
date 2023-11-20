@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -23,6 +24,7 @@ import com.conecta.conectagraxa.model.dto.CursosDTO;
 import com.conecta.conectagraxa.model.dto.Feed_ProfissionalDTO;
 import com.conecta.conectagraxa.service.CursosService;
 import com.conecta.conectagraxa.service.Feed_ProfissionalService;
+import com.conecta.conectagraxa.service.HabilidadesService;
 
 @RestController
 @RequestMapping(value = "/feedprofissional")
@@ -32,7 +34,10 @@ public class Feed_ProfissionalController {
 	private Feed_ProfissionalService service;
 	@Autowired
 	private CursosService cursosService;
+	@Autowired
+	private HabilidadesService habilidadesService;
 	
+
 	// Listar feeds
 	@GetMapping(value = "/feeds")
 	ResponseEntity<List<Feed_ProfissionalDTO>> findAll() {
@@ -56,7 +61,7 @@ public class Feed_ProfissionalController {
 		Cursos newObj = cursosService.createCurso(objDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
-	} 
+	}
 
 	// update cursos
 	@PutMapping("/update-curso/{id}")
@@ -66,19 +71,22 @@ public class Feed_ProfissionalController {
 		return ResponseEntity.ok().body(new CursosDTO(obj));
 	}
 
-	
-	//EDITAR FEED SOBRE
-		@PutMapping(value = "/update-sobre/{id}")
-		public ResponseEntity<Feed_ProfissionalDTO> updateSobre(@PathVariable Integer id,@Valid @RequestBody Feed_ProfissionalDTO objDTO) throws Exception {
-			Feed_Profissional newObj = service.createSobre(id,objDTO);
-			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
-			return ResponseEntity.created(uri).build();
+	// EDITAR FEED SOBRE
+	@PutMapping(value = "/update-sobre/{id}")
+	public ResponseEntity<Feed_ProfissionalDTO> updateSobre(@PathVariable Integer id,
+		@Valid @RequestBody Feed_ProfissionalDTO objDTO) throws Exception {
+		Feed_Profissional newObj = service.createSobre(id, objDTO);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
+		return ResponseEntity.created(uri).build();
 	}
 
-	//LISTAR HABILIDADES PRÉ DEFINIDAS NA LISTA
+	// CRIAR HABILIDADE
+	@PostMapping("/submit")
+	public String submitForm(@RequestParam String habilidade) {
+	habilidadesService.criarCategoria(1,habilidade); //1 é o id do feed, será substituida pelo userDetails.getIdFeed
+	return "/create-habilidade-success";
+	}
 	
-	//SELECIONAR HABILIDADE
 	
-
 
 }

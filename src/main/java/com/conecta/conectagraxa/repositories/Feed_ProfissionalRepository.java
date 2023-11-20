@@ -14,4 +14,6 @@ public interface Feed_ProfissionalRepository extends JpaRepository<Feed_Profissi
 	
 	Optional<Feed_Profissional> findById(Integer id);
 
+	Feed_Profissional save(Optional<Feed_Profissional> obj);
+
 }

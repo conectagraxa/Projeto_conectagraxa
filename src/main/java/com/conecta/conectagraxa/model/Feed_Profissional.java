@@ -53,4 +53,8 @@ public class Feed_Profissional implements Serializable {
 	public Feed_Profissional(Feed_ProfissionalDTO feedDTO) {
 		this.id = feedDTO.getId();
 	}
+
+
+	public Feed_Profissional(Integer idFeedProfissional) {
+	}
 }
