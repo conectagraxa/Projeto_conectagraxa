@@ -32,8 +32,10 @@ public interface VagasRepository extends JpaRepository<Vagas, Integer> {
 
    // List<Vagas> findByCategoriaContaining(Categoria categoria);
 
-	//@Modifying(clearAutomatically = true)
-	//  @Query(value = "delete from vagas c where c.id=:id")
+	@Modifying(clearAutomatically = true)
+	@Query(value = "delete from vagas c where c.id=:id")
 	  public void deleteById(@Param("id") int id);
+
+	List<Vagas> findByTitulo(String titulo);
 
 }
