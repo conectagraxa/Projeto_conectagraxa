@@ -58,9 +58,9 @@ public class VagasController {
 	}
 	// LISTAR TODAS AS VAGAS POR NOME
 		@GetMapping(value = "/findNome")
-		public ResponseEntity<VagasDTO> findByNome(@RequestParam(value="nome") String nome) throws Exception {
-		Vagas obj = service.findByTitulo(nome);
-		return ResponseEntity.ok().body(new VagasDTO(obj));
+		public ResponseEntity<List<Vagas>> findByNome(@RequestParam(value="nome") String nome) throws Exception {
+			List<Vagas> vagas = service.findByTitulo(nome);
+		return ResponseEntity.ok(vagas);
 		}
 		
 	
