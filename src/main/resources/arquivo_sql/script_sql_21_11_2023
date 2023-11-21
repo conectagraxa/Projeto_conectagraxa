@@ -1,0 +1,287 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema conecta
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema conecta
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `conecta` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `conecta` ;
+
+-- -----------------------------------------------------
+-- Table `conecta`.`empresa`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`empresa` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `cep` VARCHAR(8) NULL DEFAULT NULL,
+  `cidade` VARCHAR(255) NULL DEFAULT NULL,
+  `complemento` VARCHAR(255) NULL DEFAULT NULL,
+  `cpf_cnpj` VARCHAR(255) NULL DEFAULT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
+  `endereco` VARCHAR(255) NULL DEFAULT NULL,
+  `estado` VARCHAR(2) NULL DEFAULT NULL,
+  `fotoperfil` VARCHAR(255) NULL DEFAULT NULL,
+  `nome` VARCHAR(255) NULL DEFAULT NULL,
+  `perfil` INT NULL DEFAULT NULL,
+  `senha` VARCHAR(255) NULL DEFAULT NULL,
+  `telefone` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `UK_d57lfml5ko3h7tr0jl876l8b7` (`cpf_cnpj` ASC) VISIBLE,
+  UNIQUE INDEX `UK_nfu2qgep9eyw4f7jpxoxix8ci` (`email` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`categorias`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`categorias` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `categorias` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 6
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`feed_empresas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`feed_empresas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sobre` VARCHAR(255) NULL DEFAULT NULL,
+  `empresa_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKjwfbndxvjsme8i1bx6a4dfrk7` (`empresa_id` ASC) VISIBLE,
+  CONSTRAINT `FKjwfbndxvjsme8i1bx6a4dfrk7`
+    FOREIGN KEY (`empresa_id`)
+    REFERENCES `conecta`.`empresa` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`vagas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`vagas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `categorias_up` INT NULL DEFAULT NULL,
+  `cidade` VARCHAR(255) NULL DEFAULT NULL,
+  `data_postagem` DATE NULL DEFAULT NULL,
+  `descricao` VARCHAR(255) NULL DEFAULT NULL,
+  `estado` VARCHAR(2) NULL DEFAULT NULL,
+  `foto_path` VARCHAR(255) NULL DEFAULT NULL,
+  `titulo` VARCHAR(255) NULL DEFAULT NULL,
+  `categoria_id` INT NULL DEFAULT NULL,
+  `empresa_id` INT NULL DEFAULT NULL,
+  `feed_empresas_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKacxk0lnb15556vqwm94k0o6kp` (`categoria_id` ASC) VISIBLE,
+  INDEX `FKphluw7y77rdgf4qlvk9781ufs` (`empresa_id` ASC) VISIBLE,
+  INDEX `FKe6cyoq61rgcsmmjkdcbr0vjqr` (`feed_empresas_id` ASC) VISIBLE,
+  CONSTRAINT `FKacxk0lnb15556vqwm94k0o6kp`
+    FOREIGN KEY (`categoria_id`)
+    REFERENCES `conecta`.`categorias` (`id`),
+  CONSTRAINT `FKe6cyoq61rgcsmmjkdcbr0vjqr`
+    FOREIGN KEY (`feed_empresas_id`)
+    REFERENCES `conecta`.`feed_empresas` (`id`),
+  CONSTRAINT `FKphluw7y77rdgf4qlvk9781ufs`
+    FOREIGN KEY (`empresa_id`)
+    REFERENCES `conecta`.`empresa` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`profissional`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`profissional` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `cep` VARCHAR(8) NULL DEFAULT NULL,
+  `cidade` VARCHAR(255) NULL DEFAULT NULL,
+  `complemento` VARCHAR(255) NULL DEFAULT NULL,
+  `data_nascimento` VARCHAR(255) NULL DEFAULT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
+  `endereco` VARCHAR(255) NULL DEFAULT NULL,
+  `estado` VARCHAR(2) NULL DEFAULT NULL,
+  `etnia` VARCHAR(255) NULL DEFAULT NULL,
+  `foto_perfil` VARCHAR(255) NULL DEFAULT NULL,
+  `nome` VARCHAR(255) NULL DEFAULT NULL,
+  `perfil` INT NULL DEFAULT NULL,
+  `senha` VARCHAR(255) NULL DEFAULT NULL,
+  `sexo` VARCHAR(255) NULL DEFAULT NULL,
+  `telefone` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`candidaturas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`candidaturas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `empresa_id` INT NULL DEFAULT NULL,
+  `profissional_id` INT NULL DEFAULT NULL,
+  `vagas_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FK2bpwualbfie0m842m9hkl5hfa` (`empresa_id` ASC) VISIBLE,
+  INDEX `FKpcec5cgt0vi5b51nxci2o16ru` (`profissional_id` ASC) VISIBLE,
+  INDEX `FKmrq4iqymwcc6n0pbp34oa71jk` (`vagas_id` ASC) VISIBLE,
+  CONSTRAINT `FK2bpwualbfie0m842m9hkl5hfa`
+    FOREIGN KEY (`empresa_id`)
+    REFERENCES `conecta`.`empresa` (`id`),
+  CONSTRAINT `FKmrq4iqymwcc6n0pbp34oa71jk`
+    FOREIGN KEY (`vagas_id`)
+    REFERENCES `conecta`.`vagas` (`id`),
+  CONSTRAINT `FKpcec5cgt0vi5b51nxci2o16ru`
+    FOREIGN KEY (`profissional_id`)
+    REFERENCES `conecta`.`profissional` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`feed_profissional`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`feed_profissional` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sobre` VARCHAR(255) NULL DEFAULT NULL,
+  `profissional_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKsq68thsthgh8krbqutatvq4ss` (`profissional_id` ASC) VISIBLE,
+  CONSTRAINT `FKsq68thsthgh8krbqutatvq4ss`
+    FOREIGN KEY (`profissional_id`)
+    REFERENCES `conecta`.`profissional` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`postagens`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`postagens` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `curtidas` INT NULL DEFAULT NULL,
+  `data_postagem` DATE NULL DEFAULT NULL,
+  `descricao` VARCHAR(255) NULL DEFAULT NULL,
+  `foto_postagem` VARCHAR(255) NULL DEFAULT NULL,
+  `profissional_id` INT NULL DEFAULT NULL,
+  `feed_profissional_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKgcea9s1j7akay9y4gmx12ur0i` (`profissional_id` ASC) VISIBLE,
+  INDEX `FKaxg5xn0l6hxukc4431rreqpd` (`feed_profissional_id` ASC) VISIBLE,
+  CONSTRAINT `FKaxg5xn0l6hxukc4431rreqpd`
+    FOREIGN KEY (`feed_profissional_id`)
+    REFERENCES `conecta`.`feed_profissional` (`id`),
+  CONSTRAINT `FKgcea9s1j7akay9y4gmx12ur0i`
+    FOREIGN KEY (`profissional_id`)
+    REFERENCES `conecta`.`profissional` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`comentarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`comentarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `comentado_em` DATE NULL DEFAULT NULL,
+  `descricao` VARCHAR(255) NULL DEFAULT NULL,
+  `comentado_por_id` INT NULL DEFAULT NULL,
+  `postagens_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKhhvbeek8alv7p9ufe4v9i965u` (`comentado_por_id` ASC) VISIBLE,
+  INDEX `FK55ec6patt1un35m00d5ux2xui` (`postagens_id` ASC) VISIBLE,
+  CONSTRAINT `FK55ec6patt1un35m00d5ux2xui`
+    FOREIGN KEY (`postagens_id`)
+    REFERENCES `conecta`.`postagens` (`id`),
+  CONSTRAINT `FKhhvbeek8alv7p9ufe4v9i965u`
+    FOREIGN KEY (`comentado_por_id`)
+    REFERENCES `conecta`.`profissional` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`cursos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`cursos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `fim` DATETIME NULL DEFAULT NULL,
+  `inicio` DATETIME NULL DEFAULT NULL,
+  `instituicao` VARCHAR(255) NULL DEFAULT NULL,
+  `titulo` VARCHAR(255) NULL DEFAULT NULL,
+  `feed_profissional_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKqu2pwqe79t9yednyeijd0inj3` (`feed_profissional_id` ASC) VISIBLE,
+  CONSTRAINT `FKqu2pwqe79t9yednyeijd0inj3`
+    FOREIGN KEY (`feed_profissional_id`)
+    REFERENCES `conecta`.`feed_profissional` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`habilidades`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`habilidades` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome_habilidade` VARCHAR(255) NULL DEFAULT NULL,
+  `feed_profissional_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FKdgnhux1eob065d8ftb6smcocn` (`feed_profissional_id` ASC) VISIBLE,
+  CONSTRAINT `FKdgnhux1eob065d8ftb6smcocn`
+    FOREIGN KEY (`feed_profissional_id`)
+    REFERENCES `conecta`.`feed_profissional` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `conecta`.`seguidores`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `conecta`.`seguidores` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `seguidores_id` INT NULL DEFAULT NULL,
+  `seguindo_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `FK2otc044ruvs5vdrstgdo8lc0s` (`seguidores_id` ASC) VISIBLE,
+  INDEX `FKd4nmlev46rayva38xgejwxru2` (`seguindo_id` ASC) VISIBLE,
+  CONSTRAINT `FK2otc044ruvs5vdrstgdo8lc0s`
+    FOREIGN KEY (`seguidores_id`)
+    REFERENCES `conecta`.`profissional` (`id`),
+  CONSTRAINT `FKd4nmlev46rayva38xgejwxru2`
+    FOREIGN KEY (`seguindo_id`)
+    REFERENCES `conecta`.`profissional` (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

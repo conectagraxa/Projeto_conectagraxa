@@ -60,7 +60,6 @@ public class ProfissionalController {
 		return ResponseEntity.ok().body(listDTO);	}
 		
 	//CRIAR PROFISSIONAL
-
 	@PostMapping(value =  "/create")
 	public ResponseEntity<ProfissionalDTO> create(@Valid @RequestBody ProfissionalDTO objDTO) throws Exception {
 		Profissional newObj = service.createProfissional(objDTO);
