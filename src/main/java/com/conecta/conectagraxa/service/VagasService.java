@@ -2,18 +2,22 @@ package com.conecta.conectagraxa.service;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
+import com.conecta.conectagraxa.model.Categoria;
 import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.Feed_Empresa;
-import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.Vagas;
 import com.conecta.conectagraxa.model.dto.VagasDTO;
+import com.conecta.conectagraxa.repositories.CategoriaRepository;
 import com.conecta.conectagraxa.repositories.VagasRepository;
 
 @Service
@@ -24,7 +28,14 @@ public class VagasService {
 	VagasRepository repository;
 	
 	@Autowired
+	CategoriaRepository cRepository;
+	
+	@Autowired
 	EmpresaService empService;
+	
+	@Autowired
+	CategoriaService cService;
+	
 	
 	
 	@Autowired
@@ -32,13 +43,16 @@ public class VagasService {
 	
 	//CRIAR VAGA
 	public Vagas createVaga(VagasDTO obj, Integer id) throws Exception {
-		//procurando se o id da vaga e empresa existe	
+		//procurando se o id da empresa existe	
 		Feed_Empresa feedEmpresa = feedService.findById(id);
-		Empresa empresa = empService.findById(id);			
+		Empresa empresa = empService.findById(id);	
+		
+		Categoria categoria = cService.CategoriaById(obj.getCategoriaId());
+		categoria.setId(obj.getCategoriaId());
+		obj.setCategoriaId(obj.getCategoriaId());
 		Vagas vagas = new Vagas(obj);
-
+		
 		//setando os dados passados no vagasDTO (Oque vai vai no corpo da requisição)
-		vagas.setCategoria(obj.getCategoria());;
 		vagas.setTitulo(obj.getTitulo());
 		vagas.setFotoPath(obj.getFotoPath());
 		vagas.setDescricao(obj.getDescricao());
@@ -48,14 +62,16 @@ public class VagasService {
 		//seta feed e empresa
 		vagas.setFeedEmpresaId(feedEmpresa);
 		vagas.setEmpresaId(empresa);
+		vagas.setCategoriaId(categoria);
 		//adiciona a vaga setada no feed da empresa
+		categoria.getVagas().add(vagas);
 		feedEmpresa.getVagas().add(vagas);
 		//salva no banco
 		Vagas newObj = repository.save(vagas);
 
 		//retorna um model vagas com valor atualizado
 		return newObj;
-	
+		
 	}
 
 
@@ -64,6 +80,7 @@ public class VagasService {
 		//procurando se o id da vaga e empresa existe	
 		Feed_Empresa feedEmpresa = feedService.findById(id);
 		Empresa empresa = empService.findById(id);
+		Categoria categoria = cService.CategoriaById(obj.getCategoriaId());
 		Vagas newObj = new Vagas();
 		Optional <Vagas> vagas = repository.findById(id);
 		if(vagas.isPresent()) {
@@ -72,8 +89,8 @@ public class VagasService {
 		//leitura informações já existentes
 		//recuperando e verificando se os dados encontrados no
 		//banco estão vazios, se não estiver, pega a informação e mantém no newObj
-		if (vagas.get().getCategoria() != null) {
-			newObj.setCategoria(vagas.get().getCategoria());
+		if (vagas.get().getCategoriaId() != null) {
+			newObj.setCategoriaId(vagas.get().getCategoriaId());
 		}
 		if (vagas.get().getTitulo() != null) {
 			newObj.setTitulo(vagas.get().getTitulo());
@@ -89,6 +106,9 @@ public class VagasService {
 		}
 		if (vagas.get().getEstado() != null) {
 			newObj.setEstado(vagas.get().getEstado());
+		
+		}if(vagas.get().getCategoriasUp() !=null) {
+			newObj.setCategoriasUp(vagas.get().getCategoriasUp());
 		}
 		newObj.setDataPostagem(vagas.get().getDataPostagem());
 		newObj.setFeedEmpresaId(vagas.get().getFeedEmpresaId());
@@ -98,8 +118,9 @@ public class VagasService {
 		//input novas informações
 		//recuperando e verificando se os campos do update na requisição
 		//estão vazios, se não estiver, pega a informação e seta no newObj
-		if (obj.getCategoria() != null) {
-			newObj.setCategoria(obj.getCategoria());
+		
+		if (obj.getCategoriaId() != null) {
+			newObj.setCategoriaId(categoria);
 		}
 		if (obj.getTitulo() != null) {
 			newObj.setTitulo(obj.getTitulo());
@@ -115,7 +136,11 @@ public class VagasService {
 		}
 		if (obj.getEstado() != null) {
 			newObj.setEstado(obj.getEstado());
+		}if(obj.getCategoriaId() !=null) {
+			
+			newObj.setCategoriasUp(obj.getCategoriaId());
 		}
+		
 		
 		//salva update no banco
 		newObj = repository.save(newObj);
@@ -124,9 +149,23 @@ public class VagasService {
 		return newObj;
 		
 	}
+	//FILTRAR VAGA CATEGORIA 
+//	@Query("SELECT categoria FROM vagas WHERE categoria LIKE '%1%'")
+	//@Query("select vagas.titulo from vagas where vagas.categoriaId = :categoriaId")
+	@Transactional
+	public List<Vagas> findCategoria(Integer categoriaId) throws Exception {
+		Optional <Categoria> v1 = cRepository.findById(categoriaId);
+	   // List<Vagas> obj = repository.findAll();
+	    
+	    
+	    if (v1.isPresent()) {
+	    	return	    //	repository.findByCategoriaIdContaining(v1.get());
+	    	repository.findByCategoriasUp(categoriaId);
 
-	// FILTRAR VAGA CATEGORIA
-	
+	    }
+	    return new ArrayList<>();
+	}
+
 	
 	
 	// LISTAR VAGAS POR NOME
@@ -137,6 +176,7 @@ public class VagasService {
 	}
 
 	// DELETAR VAGA
+	@Transactional
 	public void delete(Integer id) throws Exception {
 		Optional<Vagas> obj = repository.findById(id);
 

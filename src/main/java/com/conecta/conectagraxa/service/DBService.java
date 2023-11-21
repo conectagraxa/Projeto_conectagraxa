@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.model.Cursos;
-import com.conecta.conectagraxa.model.Empresa;
-import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.Seguidores;
 import com.conecta.conectagraxa.model.dto.ComentariosDTO;
@@ -35,7 +33,7 @@ public class DBService {
 	
 	//encriptografar senha empresa
 
-	//faltam 7 endpoints - vagas service:  2 - candidaturas service: 5
+	//faltam 6 endpoints - vagas service:  1 - candidaturas service: 5
 	
 	@Autowired
 	ProfissionalService pService;
@@ -53,7 +51,6 @@ public class DBService {
 	@Autowired
 	SeguidoresService sService;
 
-	
 	@Autowired
 	ComentariosService comService;
 	
@@ -64,12 +61,14 @@ public class DBService {
 	CandidaturasService cdService;
 
 
-	
+	@Autowired
+	CategoriaService catService;
 	
 	public void instanciaDB() throws Exception {
 		Cursos cursos = new Cursos();
 	
-		
+		catService.insertCat();
+
 		Profissional p1 = new Profissional(0, "Marcos Oliveira Jr.", "pardo", "PE", "cabrobó", "rua malafaia",
 				29906460, "(81) 2876-4327", "ap 10", "marcosoliveirajr@mail.com", "123", "27/02/1980", "Masculino",
 				"www.com.br", perfil.PROFISSIONAL);

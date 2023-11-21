@@ -101,7 +101,7 @@ public class Empresa implements Serializable {
 		this.estado = objDTO.getEstado();
 		this.fotoPerfilPath = objDTO.getFotoPerfilPath();
 		this.perfil = objDTO.getPerfil();
-
+		
 		
 	}
 

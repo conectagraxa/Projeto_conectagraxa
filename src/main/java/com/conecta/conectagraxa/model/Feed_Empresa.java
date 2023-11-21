@@ -24,7 +24,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity (name="feed_empresas")
-
 public class Feed_Empresa implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -47,5 +46,8 @@ public class Feed_Empresa implements Serializable {
 	
 	public Feed_Empresa(Feed_EmpresaDTO feedDTO) {
 		this.id = feedDTO.getId();
+	}
+	
+	public Feed_Empresa(Integer idFeedEmpresa) {
 	}
 }

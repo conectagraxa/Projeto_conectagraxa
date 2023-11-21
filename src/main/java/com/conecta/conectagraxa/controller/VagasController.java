@@ -1,6 +1,7 @@
 package com.conecta.conectagraxa.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -17,12 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.conecta.conectagraxa.model.Empresa;
-import com.conecta.conectagraxa.model.Postagens;
+import com.conecta.conectagraxa.model.Categoria;
 import com.conecta.conectagraxa.model.Vagas;
-import com.conecta.conectagraxa.model.dto.EmpresaDTO;
-import com.conecta.conectagraxa.model.dto.PostagensDTO;
 import com.conecta.conectagraxa.model.dto.VagasDTO;
+import com.conecta.conectagraxa.service.CategoriaService;
 import com.conecta.conectagraxa.service.VagasService;
 
 @RestController
@@ -32,6 +31,9 @@ public class VagasController {
 	@Autowired
 	private VagasService service;
 
+	@Autowired
+	CategoriaService cService;
+	
 	// CRIAR VAGA
 	@PostMapping(value = "/create")
 	public ResponseEntity<VagasDTO> create(@Valid @RequestBody VagasDTO objDTO) throws Exception {
@@ -48,9 +50,14 @@ public class VagasController {
 	}
 
 	// FILTRAR VAGA CATEGORIA
-
+	@GetMapping("/categoria/{v}")
+    public ResponseEntity<List<Vagas>> findByCategoria(@RequestParam Integer categoriaId) throws Exception {
+		List<Vagas> vagas = service.findCategoria(categoriaId);
+        return ResponseEntity.ok(vagas);
+    
+	}
 	// LISTAR TODAS AS VAGAS POR NOME
-		@GetMapping(value = "/")
+		@GetMapping(value = "/findNome")
 		public ResponseEntity<VagasDTO> findByNome(@RequestParam(value="nome") String nome) throws Exception {
 		Vagas obj = service.findByTitulo(nome);
 		return ResponseEntity.ok().body(new VagasDTO(obj));

@@ -20,7 +20,7 @@ public class DevConfig {
 
 	@Bean
 	public boolean instaciaDB() throws Exception {
-		if (value.equals("create") || value.equals("update")) {
+		if (value.equals("create")/* || value.equals("update")*/) {
 		this.service.instanciaDB();
 
 		}

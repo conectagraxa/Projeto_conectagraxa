@@ -3,6 +3,8 @@ package com.conecta.conectagraxa.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,15 +15,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.springframework.beans.BeanUtils;
+
 import com.conecta.conectagraxa.model.dto.VagasDTO;
-import com.conecta.conectagraxa.model.enums.Categoria;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity (name="vagas")
@@ -37,9 +43,6 @@ public class Vagas implements Serializable {
 	private String titulo;
 	
 	private String descricao;
-	
-	private Categoria categoria;
-	
 	
 	private String fotoPath;
 	
@@ -58,22 +61,33 @@ public class Vagas implements Serializable {
 
 
 	@ManyToOne
-    @JoinColumn(name = "feed_empresas_id")
+	@JsonIgnore
+	@JoinColumn(name = "feed_empresas_id")
 	private Feed_Empresa feedEmpresaId;
 	
 	@ManyToOne
+	@JsonIgnore
     @JoinColumn(name = "empresa_id")
 	private Empresa empresaId;
+	
+	@ManyToOne
+	@JsonIgnore
+    @JoinColumn(name = "categoria_id")
+	private Categoria categoriaId;
+    
+	private Integer categoriasUp;
+	
 	public Vagas(VagasDTO obj) {
 	this.titulo = obj.getTitulo();
 	this.descricao = obj.getDescricao();
-	this.categoria = obj.getCategoria();
 	this.cidade = obj.getCidade();
 	this.estado= obj.getEstado();
 	this.fotoPath = obj.getFotoPath();
-	
+	this.categoriasUp = obj.getCategoriaId();
+	}	public Vagas(Vagas obj) {
+	//copiando os objetos dessa classe para o obj (os nomes tem que ser iguais)
+	BeanUtils.copyProperties(obj, this);
 	
 	}
-
-}
+	}
 
