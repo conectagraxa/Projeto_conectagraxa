@@ -1,21 +1,12 @@
 package com.conecta.conectagraxa.model.dto;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Convert;
 import javax.validation.constraints.Email;
 
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-
 import com.conecta.conectagraxa.model.Profissional;
-import com.conecta.conectagraxa.model.annotations.DateConverter;
 import com.conecta.conectagraxa.model.enums.Perfil;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

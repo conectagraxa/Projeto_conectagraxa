@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 @Entity (name="candidaturas")
 @NoArgsConstructor
 @AllArgsConstructor
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) protege da serialização, mas não funcionou aqui
 public class Candidaturas implements Serializable {
 	private static final long serialVersionUID = 1L;
 	

@@ -33,7 +33,7 @@ public class DBService {
 	
 	//encriptografar senha empresa
 
-	//faltam 6 endpoints - vagas service:  1 - candidaturas service: 5
+	//faltam 5 endpoints - candidaturas service: 5
 	
 	@Autowired
 	ProfissionalService pService;
