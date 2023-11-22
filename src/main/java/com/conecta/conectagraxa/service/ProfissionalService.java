@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.model.Feed_Profissional;
@@ -22,12 +23,15 @@ public class ProfissionalService {
 	@Autowired
 	private ProfissionalRepository repository;
 	
-	
+
+	@Autowired
+	private PasswordEncoder enconder;
 	
 	
 	//criar profissional + feed
 	public Profissional createProfissional(ProfissionalDTO objDTO) throws Exception {
-		objDTO.setSenha(objDTO.getSenha());
+		//(encoder.encode(objDTO.getSenha()));
+		objDTO.setSenha(enconder.encode(objDTO.getSenha()));
 
 	
 		validaPorEmail(objDTO);
@@ -40,8 +44,6 @@ public class ProfissionalService {
 		newObj.setId(objDTO.getId());
 		newObj.setFeedProfissional(feed);
 		repository.save(newObj);
-		
-		
 		return newObj;
 
 	}
@@ -78,16 +80,19 @@ public class ProfissionalService {
 		objDTO.setId(id);
 		Profissional newObj = new Profissional();
 		Optional<Profissional> obj = repository.findById(objDTO.getId());
-
-		if (obj.isPresent())
-
-			newObj.setId(obj.get().getId());
 		
-		if ((obj.get().getSenha().equals(objDTO.getAtual()))) {
+		if (obj.isPresent())
+			newObj = obj.get();
+			//newObj.setId(obj.get().getId());
+		
+		if (enconder.matches(objDTO.getAtual(),obj.get().getSenha())) {
+
 			System.out.print("senha válida");
 			if (objDTO.getNovaSenha().equals(objDTO.getConfirma())) {
-				objDTO.setSenha(objDTO.getNovaSenha());				
-				obj.get().setSenha(objDTO.getSenha());
+				objDTO.setSenha(objDTO.getNovaSenha());		
+				//objDTO.setSenha(enconder.encode(objDTO.getSenha()));
+
+				newObj.setSenha (enconder.encode(objDTO.getSenha()));
 
 				System.out.print("senha ATUALIZADA");
 
@@ -96,7 +101,7 @@ public class ProfissionalService {
 			}
 		}else {
 			System.out.print("senha NÃO VÁLIDA");
-			
+		
 		}
 		
 		if (obj.get().getNome() != null) {
@@ -129,9 +134,6 @@ public class ProfissionalService {
 		if (obj.get().getFotoPerfil() != null) {
 			newObj.setFotoPerfil(obj.get().getFotoPerfil());
 		}
-		if (obj.get().getSenha() != null) {
-			newObj.setSenha(obj.get().getSenha());
-		}
 		if (obj.get().getDataNascimento() != null) {
 			newObj.setDataNascimento(obj.get().getDataNascimento());
 		}
@@ -140,44 +142,6 @@ public class ProfissionalService {
 		}
 
 
-
-		if (objDTO.getNome() != null) {
-			newObj.setNome(objDTO.getNome());
-		}
-		if (objDTO.getEmail() != null) {
-			newObj.setEmail(objDTO.getEmail());
-		}
-		if (objDTO.getEtnia() != null) {
-			newObj.setEtnia(objDTO.getEtnia());
-		}
-		if (objDTO.getTelefone() != null) {
-			newObj.setTelefone(objDTO.getTelefone());
-		}
-		if (objDTO.getEndereco() != null) {
-			newObj.setEndereco(objDTO.getEndereco());
-		}
-		if (objDTO.getCep() != null) {
-			newObj.setCep(objDTO.getCep());
-		}
-		if (objDTO.getComplemento() != null) {
-			newObj.setComplemento(objDTO.getComplemento());
-		}
-		if (objDTO.getCidade() != null) {
-			newObj.setCidade(objDTO.getCidade());
-		}
-		if (objDTO.getEstado() != null) {
-			newObj.setEstado(objDTO.getEstado());
-		}
-		if (objDTO.getFotoPerfil() != null) {
-			newObj.setFotoPerfil(objDTO.getFotoPerfil());
-		}
-		
-		if (objDTO.getDataNascimento() != null) {
-			newObj.setDataNascimento(obj.get().getDataNascimento());
-		}
-		if (objDTO.getSexo() != null) {
-			newObj.setSexo(obj.get().getSexo());
-		}
 
 		Profissional old = (newObj);
 		Profissional atualizado = repository.save(old);
@@ -228,7 +192,7 @@ public class ProfissionalService {
 				newObj.setFotoPerfil(obj.get().getFotoPerfil());
 			}
 			if (obj.get().getSenha() != null) {
-				newObj.setSenha(obj.get().getSenha());
+				newObj.setSenha((obj.get().getSenha()));
 			}
 			if (obj.get().getDataNascimento() != null) {
 				newObj.setDataNascimento(obj.get().getDataNascimento());
