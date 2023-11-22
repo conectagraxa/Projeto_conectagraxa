@@ -1,6 +1,5 @@
 package com.conecta.conectagraxa.controller;
 
-import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,12 +13,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.conecta.conectagraxa.model.Feed_Empresa;
-import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.dto.Feed_EmpresaDTO;
-import com.conecta.conectagraxa.model.dto.Feed_ProfissionalDTO;
 import com.conecta.conectagraxa.repositories.Feed_EmpresaRepository;
 import com.conecta.conectagraxa.service.Feed_EmpresaService;
 
@@ -46,8 +42,7 @@ public class Feed_EmpresaController {
 			@PutMapping(value = "/update-sobre-empresa/{id}")
 			public ResponseEntity<Feed_EmpresaDTO> updateSobre(@PathVariable Integer id,@Valid @RequestBody Feed_EmpresaDTO objDTO) throws Exception {
 				Feed_Empresa newObj = service.createSobre(id,objDTO);
-				URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
-				return ResponseEntity.created(uri).build();
+				return ResponseEntity.ok(new Feed_EmpresaDTO(newObj));
 		}
 
 	}

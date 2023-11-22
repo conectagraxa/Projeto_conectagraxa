@@ -13,7 +13,6 @@ import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.dto.PostagensDTO;
-import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.repositories.PostagensRepository;
 import com.conecta.conectagraxa.repositories.ProfissionalRepository;
 

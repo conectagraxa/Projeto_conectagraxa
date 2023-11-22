@@ -1,6 +1,5 @@
 package com.conecta.conectagraxa.service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -32,8 +31,10 @@ public class ComentariosService {
 	ComentariosRepository repository;
 	
 
-//alternativa de substituição do @ManyToMany(fetch = FetchType.EAGER)
-//que serve para recuperar as informações das entidades filhas.
+/*
+ * alternativa de substituição do @ManyToMany(fetch = FetchType.EAGER) que serve para recuperar as informações das entidades filhas.
+ * 
+ */
 @Transactional
 //comentar na postagem
 public Comentarios createComentario(ComentariosDTO objDTO, Integer postId, Integer userId) throws Exception {
@@ -83,7 +84,7 @@ public Comentarios createComentario(ComentariosDTO objDTO, Integer postId, Integ
 	}
 
 	
-	//excluir comentario
+//excluir comentario
 public void deleteComentario(Integer id) throws Exception {
 	Optional<Comentarios> obj = repository.findById(id);
 	if (obj.get().getId().equals(id)) {

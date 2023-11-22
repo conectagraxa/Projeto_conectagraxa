@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.conecta.conectagraxa.model.Categoria;
 import com.conecta.conectagraxa.model.Vagas;
 import com.conecta.conectagraxa.model.dto.VagasDTO;
 import com.conecta.conectagraxa.service.CategoriaService;

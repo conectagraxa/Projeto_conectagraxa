@@ -31,8 +31,6 @@ public class EmpresaService {
     //criar empresa
     public Empresa createEmpresa(EmpresaDTO objDTO) throws Exception {
     	objDTO.setSenha(objDTO.getSenha());
-    
-    	
     	validaPorCpfCnpjEEmail(objDTO);
 		Empresa newObj = new Empresa(objDTO);
 		Feed_EmpresaDTO feedDTO = new Feed_EmpresaDTO(objDTO);
@@ -40,7 +38,6 @@ public class EmpresaService {
 		feed.setIdEmpresa(newObj);
 		newObj.setId(objDTO.getId());
 		newObj.setFeedEmpresa(feed);
-
 		return empresaRepository.save(newObj);
     	
     }

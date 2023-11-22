@@ -22,8 +22,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.response.ResponseMessage;
+import com.conecta.conectagraxa.security.SessaoLoginProfissional;
 import com.conecta.conectagraxa.service.ProfissionalService;
 import com.conecta.conectagraxa.service.SeguidoresService;
+import com.conecta.conectagraxa.service.SessaoLogin;
 
 @RestController
 @RequestMapping(value = "/profissional")
@@ -33,6 +35,10 @@ public class ProfissionalController {
 	//INJEÇÃO DO SERVIÇO PROFISSIONAL SERVICE
 	@Autowired
 	private ProfissionalService service;
+
+	@Autowired
+	private SessaoLogin loginService;
+
 	@Autowired
 	private SeguidoresService seguidoresService;
 	
@@ -82,6 +88,21 @@ public class ProfissionalController {
         Profissional obj = service.atualizaSenha(id ,objDTO);
         return ResponseEntity.ok().body(new ProfissionalDTO(obj));
     }
+	//LOGIN DO PROFISSIONAL 
+		@PutMapping("/login")
+	    public ResponseEntity<ResponseMessage> login(@RequestBody SessaoLoginProfissional obj) {
+			String message = loginService.LoginProfissional(obj);
+			ResponseMessage res=new ResponseMessage(message);
+	        return new ResponseEntity<ResponseMessage>(res,HttpStatus.OK);
+	    }
+		
+		//LOGIN DO PROFISSIONAL 
+				@PutMapping("/deslogar")
+			    public ResponseEntity<ResponseMessage> deslogar(@RequestBody SessaoLoginProfissional obj) {
+					String message = loginService.DeslogarProfissional(obj);
+					ResponseMessage res=new ResponseMessage(message);
+			        return new ResponseEntity<ResponseMessage>(res,HttpStatus.OK);
+			    }
 	
 	//SEGUIR
 	@PutMapping("/seguir/{seguirId}")

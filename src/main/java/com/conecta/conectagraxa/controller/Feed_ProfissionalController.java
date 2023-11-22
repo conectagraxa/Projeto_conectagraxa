@@ -1,6 +1,5 @@
 package com.conecta.conectagraxa.controller;
 
-import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.conecta.conectagraxa.model.Cursos;
 import com.conecta.conectagraxa.model.Feed_Profissional;
@@ -36,14 +34,12 @@ public class Feed_ProfissionalController {
 	private CursosService cursosService;
 	@Autowired
 	private HabilidadesService habilidadesService;
-	
 
 	// Listar feeds
 	@GetMapping(value = "/feeds")
 	ResponseEntity<List<Feed_ProfissionalDTO>> findAll() {
 		List<Feed_Profissional> list = service.getAllProfissional();
-		List<Feed_ProfissionalDTO> listDTO = list.stream().map(obj -> new Feed_ProfissionalDTO(obj))
-				.collect(Collectors.toList());
+		List<Feed_ProfissionalDTO> listDTO = list.stream().map(obj -> new Feed_ProfissionalDTO(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);
 	}
 
@@ -59,8 +55,8 @@ public class Feed_ProfissionalController {
 	@PostMapping(value = "/criar-curso")
 	public ResponseEntity<CursosDTO> create(@Valid @RequestBody CursosDTO objDTO) throws Exception {
 		Cursos newObj = cursosService.createCurso(objDTO);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
-		return ResponseEntity.created(uri).build();
+		return ResponseEntity.ok().body(new CursosDTO(newObj));
+
 	}
 
 	// update cursos
@@ -73,20 +69,18 @@ public class Feed_ProfissionalController {
 
 	// EDITAR FEED SOBRE
 	@PutMapping(value = "/update-sobre/{id}")
-	public ResponseEntity<Feed_ProfissionalDTO> updateSobre(@PathVariable Integer id,
-		@Valid @RequestBody Feed_ProfissionalDTO objDTO) throws Exception {
+	public ResponseEntity<Feed_ProfissionalDTO> updateSobre(@PathVariable Integer id,@Valid @RequestBody Feed_ProfissionalDTO objDTO) throws Exception {
 		Feed_Profissional newObj = service.createSobre(id, objDTO);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
-		return ResponseEntity.created(uri).build();
+		return ResponseEntity.ok().body(new Feed_ProfissionalDTO(newObj));
+
 	}
 
 	// CRIAR HABILIDADE
 	@PostMapping("/submit")
 	public String submitForm(@RequestParam String habilidade) {
-	habilidadesService.criarCategoria(1,habilidade); //1 é o id do feed, será substituida pelo userDetails.getIdFeed
-	return "/create-habilidade-success";
+		habilidadesService.escolherHabilidade(1, habilidade); // 1 é o id do feed, será substituida pelo
+															// sessaoLoginProfissional.id
+		return "/create-habilidade-success";
 	}
-	
-	
 
 }

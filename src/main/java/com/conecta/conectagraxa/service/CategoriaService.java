@@ -12,7 +12,18 @@ import com.conecta.conectagraxa.model.Categoria;
 import com.conecta.conectagraxa.repositories.CategoriaRepository;
 @Service
 public class CategoriaService {
-
+/*
+ * @Param essa classe moca as 5 categorias das vagas existentes, e servem para fazer a filtragem das vagas.
+ * no banco , esses são os ids das categorias:
+ *  1	Todos
+ *  2	Áudio e Som
+ *  3	Iluminação
+ *  4	Palco
+ *  5	Equipamentos
+ *  
+ *  No front, colocar o nome dos selects no cadastro das vagas iguais a esses.
+ * 
+ */
 	@Autowired
 	CategoriaRepository repository;
 	
@@ -23,6 +34,9 @@ public class CategoriaService {
 
     }
 
+    /*
+     * @Param moca as informações
+     */
 		@Transactional
 		public void insertCat() {
 			Categoria cab1 = new Categoria(); cab1.setCategorias("Todos ");

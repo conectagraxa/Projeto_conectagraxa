@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.model.Feed_Empresa;
-import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.dto.Feed_EmpresaDTO;
 import com.conecta.conectagraxa.repositories.Feed_EmpresaRepository;
 

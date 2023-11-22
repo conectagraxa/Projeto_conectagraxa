@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -24,7 +23,6 @@ import com.conecta.conectagraxa.model.Comentarios;
 import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.dto.ComentariosDTO;
 import com.conecta.conectagraxa.model.dto.PostagensDTO;
-import com.conecta.conectagraxa.repositories.PostagensRepository;
 import com.conecta.conectagraxa.service.ComentariosService;
 import com.conecta.conectagraxa.service.PostagensService;
 

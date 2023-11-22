@@ -20,9 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.conecta.conectagraxa.model.Empresa;
-import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.dto.EmpresaDTO;
-import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.service.EmpresaService;
 
 @RestController
@@ -59,8 +57,8 @@ public class EmpresaController {
 	//criar empresa
 	@PostMapping
 	public ResponseEntity<EmpresaDTO> create(@Valid @RequestBody EmpresaDTO objDTO) throws Exception {
-		Empresa newObj = service.createEmpresa(objDTO);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getCpfCnpj())
+		Empresa empresa = service.createEmpresa(objDTO);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(empresa.getId())
 		.toUri();
 		return ResponseEntity.created(uri).build();
 	}

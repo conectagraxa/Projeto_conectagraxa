@@ -17,23 +17,24 @@ import com.conecta.conectagraxa.model.enums.Perfil;
 @Service
 public class DBService {
 
-	//tratamento exceções
+	//tratamento exceções - upgrade futuro
 	
 	//login google
 	
-	//login profissional autenticado - jwt
+	//login profissional autenticado - jwt - ok
 	
 	//login empresa autenticada - jwt
 	
-	//autorização de rotas profissional - security
+	//autorização de rotas profissional - security (usado uma variavél token com um valor fixado)
 
 	//autorização de rotas empresa - security
 
-	//encriptografar senha profissional
+	//encriptografar senha profissional - ok - usado o Serviço Bcrypt 
 	
-	//encriptografar senha empresa
+	//encriptografar senha empresa 
 
 	//faltam 5 endpoints - candidaturas service: 5
+	
 	
 	@Autowired
 	ProfissionalService pService;
