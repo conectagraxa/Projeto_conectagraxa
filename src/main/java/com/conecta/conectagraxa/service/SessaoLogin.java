@@ -20,11 +20,12 @@ public class SessaoLogin {
 	ProfissionalRepository pRepository; 
 	
 	@Autowired
-	SessaoLoginProfissionalRepository repository;
+	private SessaoLoginProfissionalRepository repository;
 	
 	@Autowired
 	private PasswordEncoder enconder;
-
+	
+	
 	public String LoginProfissional(SessaoLoginProfissional loginp) {
 		//loginp.setId(0);
 		Optional <Profissional> profissional = pRepository.findByEmail(loginp.getEmail());
@@ -38,7 +39,7 @@ public class SessaoLogin {
 
 			//SessaoLoginProfissional login = new SessaoLoginProfissional();
 			login.setId(profissional.get().getId());
-			login.setToken("TokenProfissional");
+			login.setToken(login.getToken());
 			login.setEmail(loginp.getEmail());
 			login.setSenha(enconder.encode(loginp.getSenha()));
 			login.setLogado(true);

@@ -32,7 +32,8 @@ public class Feed_EmpresaController {
 	// Listar feeds
 	@GetMapping(value = "/feeds")
 	ResponseEntity<List<Feed_EmpresaDTO>> findAll() {
-		List<Feed_Empresa> list = service.getAllProfissional();
+		List<Feed_Empresa>
+		list = service.getAllProfissional();
 		List<Feed_EmpresaDTO> listDTO = list.stream().map(obj -> new Feed_EmpresaDTO(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);
 	}

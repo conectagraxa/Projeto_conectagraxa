@@ -49,7 +49,7 @@ public class VagasController {
 	}
 
 	// FILTRAR VAGA CATEGORIA
-	@GetMapping("/categoria/{v}")
+	@GetMapping("/categoria/{categoria}")
     public ResponseEntity<List<Vagas>> findByCategoria(@RequestParam Integer categoriaId) throws Exception {
 		List<Vagas> vagas = service.findCategoria(categoriaId);
         return ResponseEntity.ok(vagas);

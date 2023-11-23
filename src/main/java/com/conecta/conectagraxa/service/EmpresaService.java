@@ -69,6 +69,7 @@ public class EmpresaService {
 
     //atualiza senha
 	public Empresa atualizaSenha(Integer id, EmpresaDTO objDTO) {
+
 		objDTO.setId(id);
 		Empresa newObj = new Empresa();
 		Optional<Empresa> obj = empresaRepository.findById(objDTO.getId());

@@ -24,6 +24,7 @@ public class CategoriaService {
  *  No front, colocar o nome dos selects no cadastro das vagas iguais a esses.
  * 
  */
+	
 	@Autowired
 	CategoriaRepository repository;
 	

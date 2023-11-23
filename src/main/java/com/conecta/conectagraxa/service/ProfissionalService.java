@@ -90,8 +90,8 @@ public class ProfissionalService {
 			System.out.print("senha válida");
 			if (objDTO.getNovaSenha().equals(objDTO.getConfirma())) {
 				objDTO.setSenha(objDTO.getNovaSenha());		
-				//objDTO.setSenha(enconder.encode(objDTO.getSenha()));
 
+				
 				newObj.setSenha (enconder.encode(objDTO.getSenha()));
 
 				System.out.print("senha ATUALIZADA");

@@ -17,13 +17,29 @@ import com.conecta.conectagraxa.model.enums.Perfil;
 @Service
 public class DBService {
 
+	//assinatura com gateway de pagamento - upgrade futuro
+	
+	//notificações de candidaturas e quem curtiu posts - upgrade futuro
+	
+	//chat para comunicação entre empresa e profissional - upgrade futuro
+	
+	//lançamento de editais com webscrapping - upgrade futuro
+	
+	//implementação da classe userDetails - upgrade futuro
+	
+	//compartilhar posts e vagas - upgrade futuro
+	
+	//favoritar posts e vagas - upgrade futuro
+	
 	//tratamento exceções - upgrade futuro
 	
-	//login google
+	//login google - upgrade futuro
 	
-	//login profissional autenticado - jwt - ok
+	//usuários mandar mensagens entre si - upgrade futuro
 	
-	//login empresa autenticada - jwt
+	//login profissional autenticado - jwt (com jwt é upgrade futuro) - ok
+	
+	//login empresa autenticada - jwt - (com jwt é upgrade futuro) 
 	
 	//autorização de rotas profissional - security (usado uma variavél token com um valor fixado)
 

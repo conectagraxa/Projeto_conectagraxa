@@ -80,7 +80,7 @@ public class Feed_ProfissionalController {
 	public String submitForm(@RequestParam String habilidade) {
 		habilidadesService.escolherHabilidade(1, habilidade); // 1 é o id do feed, será substituida pelo
 															// sessaoLoginProfissional.id
-		return "/create-habilidade-success";
+		return "/habilidade-adicionada";
 	}
 
 }

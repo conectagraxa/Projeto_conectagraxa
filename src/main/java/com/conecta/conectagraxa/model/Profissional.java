@@ -73,6 +73,7 @@ public class Profissional implements Serializable {
 	private String sexo;
 	private String fotoPerfil;
 	
+	
 	Perfil perfil = Perfil.PROFISSIONAL;
 
 	
