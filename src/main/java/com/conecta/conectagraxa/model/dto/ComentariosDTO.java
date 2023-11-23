@@ -3,11 +3,7 @@ package com.conecta.conectagraxa.model.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.validation.constraints.NotNull;
-
 import com.conecta.conectagraxa.model.Comentarios;
-import com.conecta.conectagraxa.model.Postagens;
-import com.conecta.conectagraxa.model.Profissional;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;

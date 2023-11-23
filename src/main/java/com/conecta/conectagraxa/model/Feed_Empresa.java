@@ -65,7 +65,7 @@ public class Feed_Empresa implements Serializable {
 				/*
 				 * Atualizando e sincronizando a lista com as alterações de vagas
 				 */
-				List<Vagas> syncList = Collections.synchronizedList(vagas);
+				/*List<Vagas> syncList =*/ Collections.synchronizedList(vagas);
 
 
 			}

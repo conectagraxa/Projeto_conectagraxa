@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.Seguidores;
 
 import lombok.Data;

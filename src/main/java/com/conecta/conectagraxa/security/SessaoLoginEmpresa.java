@@ -23,7 +23,8 @@ public class SessaoLoginEmpresa {
 	private String email;
 	private String senha;
 	private boolean logado;
-	
+	private String token;
+
 	public SessaoLoginEmpresa(SessaoLoginEmpresa obj) {
 		BeanUtils.copyProperties(obj, this);
 	}

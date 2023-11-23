@@ -2,10 +2,7 @@ package com.conecta.conectagraxa.model.dto;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotNull;
-
 import com.conecta.conectagraxa.model.Feed_Profissional;
-import com.conecta.conectagraxa.model.Profissional;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

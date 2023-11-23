@@ -98,8 +98,8 @@ public class VagasService {
 		/*
 		 * procurando se o id da vaga e empresa existe	
 		 */
-		Feed_Empresa feedEmpresa = feedService.findById(id);
-		Empresa empresa = empService.findById(id);
+		/*Feed_Empresa feedEmpresa =/* feedService.findById(id);
+		/*Empresa empresa = */empService.findById(id);
 		Categoria categoria = cService.CategoriaById(vagaDTO.getCategoriaId());
 		Vagas novaVaga = new Vagas();
 		Optional <Vagas> vagas = repository.findById(id);

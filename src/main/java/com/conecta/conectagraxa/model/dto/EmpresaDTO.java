@@ -2,7 +2,6 @@ package com.conecta.conectagraxa.model.dto;
 
 import javax.persistence.Column;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 
 import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.annotations.CpfCnpj;

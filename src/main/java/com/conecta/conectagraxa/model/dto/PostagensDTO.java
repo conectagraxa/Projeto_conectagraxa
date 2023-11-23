@@ -5,12 +5,9 @@ import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
 
-import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.Postagens;
-import com.conecta.conectagraxa.model.Profissional;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

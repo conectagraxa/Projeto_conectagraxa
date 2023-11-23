@@ -3,12 +3,6 @@ package com.conecta.conectagraxa.model.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-
 import com.conecta.conectagraxa.model.Vagas;
 import com.fasterxml.jackson.annotation.JsonFormat;
 

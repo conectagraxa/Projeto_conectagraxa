@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.conecta.conectagraxa.model.Feed_Empresa;
 import com.conecta.conectagraxa.model.dto.Feed_EmpresaDTO;
-import com.conecta.conectagraxa.repositories.Feed_EmpresaRepository;
 import com.conecta.conectagraxa.service.Feed_EmpresaService;
 
 @RestController
@@ -26,8 +25,7 @@ public class Feed_EmpresaController {
 	@Autowired
 	private Feed_EmpresaService service;
 
-	@Autowired
-	private Feed_EmpresaRepository feedRepository;
+	
 
 	// Listar feeds
 	@GetMapping(value = "/feeds")

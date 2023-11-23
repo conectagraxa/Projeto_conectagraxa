@@ -25,7 +25,7 @@ import com.conecta.conectagraxa.response.ResponseMessage;
 import com.conecta.conectagraxa.security.SessaoLoginProfissional;
 import com.conecta.conectagraxa.service.ProfissionalService;
 import com.conecta.conectagraxa.service.SeguidoresService;
-import com.conecta.conectagraxa.service.SessaoLogin;
+import com.conecta.conectagraxa.service.SessaoLoginService;
 
 @RestController
 @RequestMapping(value = "/profissional")
@@ -36,7 +36,7 @@ public class ProfissionalController {
 	private ProfissionalService service;
 
 	@Autowired
-	private SessaoLogin loginService;
+	private SessaoLoginService loginService;
 
 	@Autowired
 	private SeguidoresService seguidoresService;
@@ -109,8 +109,8 @@ public class ProfissionalController {
 	@PutMapping("/seguir/{seguirId}")
 	public ResponseEntity<ResponseMessage> seguir(@RequestParam Integer seguidorId, @PathVariable Integer seguirId)
 			throws Exception {
-		Profissional seguidor = service.findById(seguidorId);
-		Profissional seguindo = service.findById(seguirId);
+		service.findById(seguidorId);
+		service.findById(seguirId);
 		String message = seguidoresService.seguir(seguidorId, seguirId);
 		ResponseMessage res = new ResponseMessage(message);
 		return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
@@ -120,8 +120,8 @@ public class ProfissionalController {
 	@PutMapping("/unfollow/{seguirId}")
 	public ResponseEntity<ResponseMessage> unfollow(@RequestParam Integer seguidorId, @PathVariable Integer seguirId)
 			throws Exception {
-		Profissional seguidor = service.findById(seguidorId);
-		Profissional seguindo = service.findById(seguirId);
+		service.findById(seguidorId);
+		service.findById(seguirId);
 
 		String message = seguidoresService.unfollow(seguidorId, seguirId);
 		ResponseMessage res = new ResponseMessage(message);

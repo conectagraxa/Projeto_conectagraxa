@@ -11,9 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.conecta.conectagraxa.model.dto.Feed_ProfissionalDTO;
 import com.fasterxml.jackson.annotation.JsonManagedReference;

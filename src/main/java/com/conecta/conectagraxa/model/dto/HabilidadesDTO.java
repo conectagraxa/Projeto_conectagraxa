@@ -2,7 +2,6 @@ package com.conecta.conectagraxa.model.dto;
 
 import java.io.Serializable;
 
-import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.Habilidades;
 
 import lombok.Data;

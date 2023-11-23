@@ -63,7 +63,7 @@ public class Categoria implements Serializable {
 				// removendo a associação com a categoria antes de deletar a vaga
 				vagas.remove(vaga);
 				//sincronizando alterações da lista set 
-				Set<Vagas> syncList = Collections.synchronizedSet(vagas);
+				/*Set<Vagas> syncList = */Collections.synchronizedSet(vagas);
 				//transformando um set em uma lista de new Categoria , coleta e passa para uma lista 
 				//List<Categoria> categorias = syncList.stream().distinct().map(x -> new Categoria(x)).collect(Collectors.toList());
 				

@@ -2,8 +2,6 @@ package com.conecta.conectagraxa.model.dto;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotNull;
-
 import com.conecta.conectagraxa.model.Feed_Empresa;
 
 import lombok.Data;
