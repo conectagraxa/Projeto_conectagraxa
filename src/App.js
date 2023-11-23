@@ -8,11 +8,13 @@ import './Pastas/Home_comunidade/Publicarcomunidade/index.css'// css do componen
 import './components/Cadastro_pessoa_fisica/style.css' //*css da página de cadastro de pessoa físicac*//
 import './components/Conexoes/index.css'
 import './components/navbarempresa/styleempresa.css'
+import './components/CadastroPJe/index.css'
 
 
 import './Pastas/Home_comunidade/Exemplo/index.css'//isso é apenas um arquivo para exemplos ou testes //
 import Exemplo from './Pastas/Home_comunidade/Exemplo/index'//////////////////////////////////////////
 
+import FormPj from './components/CadastroPJe/index.js'
 import Navbarempresa from './components/navbarempresa/index.js'
 import Conexoes from './components/Conexoes/index.js'
 import Buscar from './components/Busca/index.js'
@@ -33,6 +35,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/CadastroPF' element={<CadastroPF />} />
+        <Route path='/FormPj' element={<FormPj />} />
         <Route path='/Home_comunidade' element={<Home_comunidade />} />
         <Route path='/Publicarcomunidade' element={<Publicarcomunidade />} />
         <Route path='/Exemplo' element={<Exemplo />} />
