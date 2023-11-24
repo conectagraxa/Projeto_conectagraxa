@@ -9,11 +9,13 @@ import './components/Cadastro_pessoa_fisica/style.css' //*css da página de cada
 import './components/Conexoes/index.css'
 import './components/navbarempresa/styleempresa.css'
 import './components/CadastroPJe/index.css'
+import './components/Perfilempresa/index.css'
 
 
 import './Pastas/Home_comunidade/Exemplo/index.css'//isso é apenas um arquivo para exemplos ou testes //
 import Exemplo from './Pastas/Home_comunidade/Exemplo/index'//////////////////////////////////////////
 
+import PerfilEmpresas from './components/Perfilempresa/index.js'
 import FormPj from './components/CadastroPJe/index.js'
 import Navbarempresa from './components/navbarempresa/index.js'
 import Conexoes from './components/Conexoes/index.js'
@@ -43,6 +45,7 @@ function App() {
         <Route path='/Buscar' element={<Buscar />} />
         <Route path='/Conexoes' element={<Conexoes />} />
         <Route path='/Navbarempresa' element={<Navbarempresa />} />
+        <Route path='/PerfilEmpresas' element={<PerfilEmpresas />} />
 
       </Routes>
     </Router>
