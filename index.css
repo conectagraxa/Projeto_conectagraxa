@@ -48,7 +48,6 @@
 
 .fieldset_pj{
     position: relative;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,6 +61,7 @@
     border-radius: 20px;
     z-index: 10;
     margin:0;
+    margin-bottom: 60px;
 }
 
 #logo_pj{
@@ -167,6 +167,38 @@
 
 .pp{
     color: black;
+}
+
+@media (max-width: 1920px){
+    
+    .bolax1_pj{
+        left: 220px;
+    }
+    .bolax2_pj{
+        right: 220px;
+        top: 510px;
+    }
+}
+
+@media (max-width: 1540px){
+    .mainof_pj{
+        height: 115vh;
+        margin-bottom: 0;
+    }
+
+    .fieldset_pj{
+        top: -10px;
+        height: 600px;
+    }
+
+    .bolax1_pj{
+        left: 80px;
+    }
+
+    .bolax2_pj{
+        top: 500px;
+        right: 80px;
+    }
 }
 
 @media (max-width: 1496px) {
