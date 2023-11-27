@@ -3,8 +3,6 @@ package com.conecta.conectagraxa.model.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.validation.constraints.NotNull;
-
 import com.conecta.conectagraxa.model.Postagens;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -22,10 +20,9 @@ private Integer id;
 
     private Integer feedProfissionalId;
 	
-	@NotNull(message = "o campo descrição é requerido")
 	private String descricao;
-	
-	@JsonFormat(pattern = "yyyy/MM/dd")
+
+	  @JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataPostagem = LocalDate.now();
 	
 	private String fotoPostagem;

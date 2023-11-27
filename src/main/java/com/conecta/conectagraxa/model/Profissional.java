@@ -1,9 +1,11 @@
 package com.conecta.conectagraxa.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -67,13 +69,13 @@ public class Profissional implements Serializable {
 	private String senha;
 
 	@DateTimeFormat
-	@JsonFormat(pattern = "yyyy/MM/dd")
-	private String dataNascimento;
+	  @JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataNascimento;
 
 	private String sexo;
 	private String fotoPerfil;
 	
-	
+	private String token = UUID.randomUUID().toString(); 
 	Perfil perfil = Perfil.PROFISSIONAL;
 
 	
@@ -149,7 +151,7 @@ public class Profissional implements Serializable {
     }
 
 	public Profissional(Object o, String nome, String etnia, String estado, String cidade,String endereco ,Integer cep ,
-			 String telefone,String complemento, String email, String senha, String data, String sexo,String fotoperfil ,Perfil perfil) {
+			 String telefone,String complemento, String email, String senha, LocalDate data, String sexo,String fotoperfil ,Perfil perfil) {
 		super();
 		this.id =  (Integer) o;
 		this.nome = nome;

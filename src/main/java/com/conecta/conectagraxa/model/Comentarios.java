@@ -27,7 +27,7 @@ public class Comentarios implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@JsonFormat(pattern = "yyyy/MM/dd")
+	  @JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate comentadoEm = LocalDate.now();
 
 	

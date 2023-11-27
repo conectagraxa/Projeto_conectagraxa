@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +20,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.dto.EmpresaDTO;
+import com.conecta.conectagraxa.response.ResponseMessage;
+import com.conecta.conectagraxa.security.SessaoLoginEmpresa;
 import com.conecta.conectagraxa.service.EmpresaService;
+import com.conecta.conectagraxa.service.SessaoLoginService;
 
 @RestController
 @RequestMapping(value = "/empresa")
@@ -28,6 +32,9 @@ public class EmpresaController {
 	@Autowired
 	private EmpresaService service;
 	
+
+	@Autowired
+	private SessaoLoginService loginService;
 
 	//trazer empresa por nome
 	@GetMapping(value = "/")
@@ -79,6 +86,21 @@ public class EmpresaController {
 	
 
 	
-	
+	// LOGIN DO PROFISSIONAL
+		@PutMapping("/login")
+		public ResponseEntity<ResponseMessage> login(@RequestBody SessaoLoginEmpresa obj) {
+			String message = loginService.LoginEmpresa(obj);
+			ResponseMessage res = new ResponseMessage(message);
+			return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
+		}
+
+		// LOGIN DO PROFISSIONAL
+		@PutMapping("/deslogar/{obj}")
+		public ResponseEntity<ResponseMessage> deslogar(@RequestBody SessaoLoginEmpresa obj) {
+			String message = loginService.DeslogarEmpresa(obj);
+			ResponseMessage res = new ResponseMessage(message);
+			return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
+		}
+
 
 }

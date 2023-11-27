@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
  * @param classe model (entity) login do profissional.
  */
 public class SessaoLoginProfissional {
+	
 	@Id
 	private Integer id;
 	@Email

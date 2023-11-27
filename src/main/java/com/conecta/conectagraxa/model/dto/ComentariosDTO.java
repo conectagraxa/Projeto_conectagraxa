@@ -16,8 +16,7 @@ public class ComentariosDTO implements Serializable {
 
 	private Integer comentado_por;
 
-	
-	@JsonFormat(pattern = "yyyy/MM/dd")
+	  @JsonFormat(pattern = "dd/MM/yyyy")	
 	private LocalDate comentado_em = LocalDate.now();
 
 	private Integer postagem_id;

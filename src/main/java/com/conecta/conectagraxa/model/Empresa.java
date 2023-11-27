@@ -2,6 +2,7 @@ package com.conecta.conectagraxa.model;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -75,6 +76,8 @@ public class Empresa implements Serializable {
 	@Column(name ="fotoperfil")	
 	private String fotoPerfilPath;
 	
+	private String token = UUID.randomUUID().toString(); 
+
 	@Column(name ="perfil")	
 	/*
 	 * perfil de empresa é adicionado logo quando se cadastra.

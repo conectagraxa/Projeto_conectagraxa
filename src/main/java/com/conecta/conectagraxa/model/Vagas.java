@@ -47,7 +47,8 @@ public class Vagas implements Serializable {
 	/*
 	 * formatando inserção formato ano/mês/dia
 	 */
-	@JsonFormat(pattern = "yyyy/MM/dd")
+
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataPostagem = LocalDate.now();
 
 	private String cidade;
@@ -58,10 +59,13 @@ public class Vagas implements Serializable {
 	private String estado;
 
 	/*
-	 * Elemento pai de candidaturas, o cascadeType.ALL garante que operações crud seja refletidas no filho
-	 * @param orphanRemoval = true : exclui a candidatura da vaga no banco por que ela é filha de vagas. 
+	 * Elemento pai de candidaturas, o cascadeType.ALL garante que operações crud
+	 * seja refletidas no filho
+	 * 
+	 * @param orphanRemoval = true : exclui a candidatura da vaga no banco por que
+	 * ela é filha de vagas.
 	 */
-	@OneToMany(mappedBy = "vagasId",cascade = CascadeType.ALL/*, orphanRemoval = true*/)
+	@OneToMany(mappedBy = "vagasId", cascade = CascadeType.ALL/* , orphanRemoval = true */)
 	@JsonIgnore
 	private List<Candidaturas> candidaturas;
 
@@ -75,13 +79,14 @@ public class Vagas implements Serializable {
 
 	@ManyToOne
 	@JsonIgnore
-    //@JsonBackReference  essa anotação foi perigosa aqui, fez uma serialização.
+	// @JsonBackReference essa anotação foi perigosa aqui, fez uma serialização.
 	@JoinColumn(name = "empresa_id")
 	private Empresa empresaId;
 
 	/*
-	 * parte muitos do relacionamento, a vaga é many, categoria é one. 
-	 * fazendo join com Categoria, e inserindo foreing uma foreing key na tabela que liga ao id de categoria
+	 * parte muitos do relacionamento, a vaga é many, categoria é one. fazendo join
+	 * com Categoria, e inserindo foreing uma foreing key na tabela que liga ao id
+	 * de categoria
 	 */
 	@ManyToOne
 	@JsonIgnore
@@ -97,6 +102,7 @@ public class Vagas implements Serializable {
 		this.estado = obj.getEstado();
 		this.fotoPath = obj.getFotoPath();
 		this.categoriasUp = obj.getCategoriaId();
+
 	}
 
 	public Vagas(Vagas obj) {
@@ -116,12 +122,11 @@ public class Vagas implements Serializable {
 
 	public void deleteFeedEmpresa() {
 		if (feedEmpresaId != null) {
-				// removendo a associação com a vaga antes de deletar o feed da empresa
-				feedEmpresaId.setVagas(null);
-			}
+			// removendo a associação com a vaga antes de deletar o feed da empresa
+			feedEmpresaId.setVagas(null);
 		}
-	
-	
+	}
+
 	public void deleteEmpresa() {
 		if (empresaId != null) {
 			// removendo a associação com a vaga antes de deletar a empresa
@@ -129,13 +134,12 @@ public class Vagas implements Serializable {
 		}
 
 	}
-	
 
 	public void deleteCategoria() {
-		if (categoriaId != null ) {
+		if (categoriaId != null) {
 			// removendo a associação com a vaga antes de deletar a empresa
 			categoriaId.setVagas(null);
-			//categoriasUp =null;
+			// categoriasUp =null;
 		}
 
 	}

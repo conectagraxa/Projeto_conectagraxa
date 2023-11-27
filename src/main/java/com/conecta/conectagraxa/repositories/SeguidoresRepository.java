@@ -10,8 +10,10 @@ import com.conecta.conectagraxa.model.Seguidores;
 public interface SeguidoresRepository extends JpaRepository<Seguidores, Integer>{
 
 
-	Optional<Seguidores> findBySeguindoId(Integer id);
+	Optional<Seguidores> findBySeguindoId(Profissional seguirr);
 	
     boolean existsBySeguidoresIdAndSeguindoId(Profissional seguidor, Profissional seguindo);
+
+	Optional<Seguidores> findBySeguidoresId(Profissional idSeguidor);
 
 }

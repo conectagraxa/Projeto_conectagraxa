@@ -31,9 +31,10 @@ public class ProfissionalService {
 	//criar profissional + feed
 	public Profissional createProfissional(ProfissionalDTO objDTO) throws Exception {
 		//(encoder.encode(objDTO.getSenha()));
+		objDTO.setId(0);
 		objDTO.setSenha(enconder.encode(objDTO.getSenha()));
-
-	
+		
+		validaPorNome(objDTO);
 		validaPorEmail(objDTO);
 		Profissional newObj = new Profissional(objDTO);
 		
@@ -68,15 +69,10 @@ public class ProfissionalService {
 	public List<Profissional> getAllProfissional() {
 		return repository.findAll();
 	}
-
-	public Profissional getProfissionalById(Integer id) throws Exception {
-		Optional<Profissional> obj = repository.findById(id);
-		return obj.orElseThrow(() -> new Exception("objeto não encontrado Id: " + id));
-
-	}
-
 	//método atualizar senha
 	public Profissional atualizaSenha(Integer id, ProfissionalDTO objDTO) {
+		
+		
 		objDTO.setId(id);
 		Profissional newObj = new Profissional();
 		Optional<Profissional> obj = repository.findById(objDTO.getId());
@@ -140,6 +136,9 @@ public class ProfissionalService {
 		if (obj.get().getSexo() != null) {
 			newObj.setSexo(obj.get().getSexo());
 		}
+		if (obj.get().getToken() != null) {
+			newObj.setToken(obj.get().getToken());
+		}
 
 
 
@@ -152,12 +151,12 @@ public class ProfissionalService {
 	
 	//update profissional
 	public Profissional update(Integer id, @Valid ProfissionalDTO objDTO) throws Exception {
-
+		
 		objDTO.setId(id);
 		Optional<Profissional> obj = repository.findById(id);
 		Profissional newObj = new Profissional();
 
-		if (obj.isPresent()) {
+		if (obj.isPresent() || obj.get().getId()!=null) {
 			validaPorEmail(objDTO);
 
 			newObj.setId(obj.get().getId());
@@ -194,13 +193,17 @@ public class ProfissionalService {
 			if (obj.get().getSenha() != null) {
 				newObj.setSenha((obj.get().getSenha()));
 			}
-			if (obj.get().getDataNascimento() != null) {
+			//if (obj.get().getDataNascimento() != null) {
 				newObj.setDataNascimento(obj.get().getDataNascimento());
-			}
+			//}
 			if (obj.get().getSexo() != null) {
 				newObj.setSexo(obj.get().getSexo());
 			}
+			if (obj.get().getToken() != null) {
+				newObj.setToken(obj.get().getToken());
+			}
 
+			
 			// atualiza os campos do objeto com os valores preenchidos no body do objeto DTO
 			if (objDTO.getNome() != null) {
 				newObj.setNome(objDTO.getNome());
@@ -249,4 +252,16 @@ public class ProfissionalService {
 		}
 
 	}
+
+	//validação de email
+	private void validaPorNome(ProfissionalDTO objDTO) throws Exception {
+		Optional<Profissional> obj = repository.findById(objDTO.getId());
+		obj = repository.findByNomeIgnoreCaseContaining(objDTO.getNome());
+		if (obj.isPresent() && obj.get().getId() != objDTO.getId()) {
+			throw new Exception("Nome já cadastrado no Sistema! ");
+		}
+
+	}
+
+
 }

@@ -23,8 +23,8 @@ private Integer id;
 	
 	
 	private String fotoPath;
-	
-	@JsonFormat(pattern = "yyyy/MM/dd")
+
+	  @JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataPostagem = LocalDate.now();
 	
 	private String cidade;
@@ -44,7 +44,20 @@ private Integer id;
 		this.estado = obj.getEstado();
 		this.empresaId = obj.getEmpresaId().getId();
 		this.feedEmpresaId = obj.getFeedEmpresaId().getId();
+		this.categoriaId = obj.getCategoriasUp();
 			
+	}
+
+	public VagasDTO (Integer id, String titulo, String cidade, String foto, String descricao, String estado, Integer empresaId, Integer feed ,Integer categoria) {
+		this.id = id;
+		this.titulo = titulo;
+		this.cidade = cidade;
+		this.fotoPath = foto;
+		this.descricao = descricao;
+		this.estado = estado;
+		this.empresaId = empresaId;
+		this.feedEmpresaId = feed;
+	this.categoriaId = categoria;
 	}
 
 }

@@ -1,7 +1,7 @@
 package com.conecta.conectagraxa.model.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.conecta.conectagraxa.model.Cursos;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -25,10 +25,10 @@ public class CursosDTO implements Serializable {
 	private String instituicao;
 	
 	@JsonFormat(pattern = "yyyy/MM/dd")
-	private Date inicio;
+	private LocalDate inicio;
 
 	@JsonFormat(pattern = "yyyy/MM/dd")
-	private Date fim;
+	private LocalDate fim;
 
 	public CursosDTO (Cursos obj) {
 		this.id = obj.getId();
@@ -40,4 +40,14 @@ public class CursosDTO implements Serializable {
 		this.fim = obj.getFim();
 		
 	}
+
+	public CursosDTO (Integer id,Integer feed, String titulo, String instituicao, LocalDate inicio, LocalDate fim) {
+		this.id= id;
+		this.feedProfissionalId = feed;
+		this.titulo = titulo;
+		this.instituicao = instituicao;
+		this.inicio = inicio;
+		this.fim = fim;
+	}
+	
 }

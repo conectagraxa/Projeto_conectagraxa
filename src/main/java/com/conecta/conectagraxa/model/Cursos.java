@@ -1,7 +1,7 @@
 package com.conecta.conectagraxa.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,11 +38,11 @@ public class Cursos implements Serializable {
 
 	private String instituicao;
 
-	@JsonFormat(pattern = "yyyy/MM/dd")
-	private Date inicio;
+	  @JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate inicio;
 
-	@JsonFormat(pattern = "yyyy/MM/dd")
-	private Date fim;
+	  @JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate fim;
 
 	public Cursos(CursosDTO obj) {
 		this.id = obj.getId();

@@ -23,52 +23,46 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity (name="postagens")
+@Entity(name = "postagens")
 public class Postagens implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	
-	
+
 	private String descricao;
-	
-	@JsonFormat(pattern = "yyyy/MM/dd")
+
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataPostagem = LocalDate.now();
-	
+
 	private String fotoPostagem;
-	
+
 	private Integer curtidas;
-	
+
 	@OneToMany(mappedBy = "postagemId")
-    private List<Comentarios> comentarios;
+	private List<Comentarios> comentarios;
 
 	@JsonBackReference
 	@ManyToOne
-    @JoinColumn(name = "feed_profissional_id")
+	@JoinColumn(name = "feed_profissional_id")
 	private Feed_Profissional feedProfissionalId;
-	
 
 	@JsonBackReference
 	@ManyToOne
-    @JoinColumn(name = "profissional_id")
+	@JoinColumn(name = "profissional_id")
 	private Profissional ProfissionalId;
 
-	public Postagens (PostagensDTO objDTO) {
+	public Postagens(PostagensDTO objDTO) {
 		this.id = objDTO.getId();
 		this.descricao = objDTO.getDescricao();
 		this.dataPostagem = objDTO.getDataPostagem();
 		this.fotoPostagem = objDTO.getFotoPostagem();
 	}
 
+	public Postagens(Integer objDTO) {
 
-	public Postagens (Integer objDTO) {
-	
-	
 	}
-
 
 	public Postagens(Postagens obj) {
 		this.id = obj.getId();
@@ -80,5 +74,4 @@ public class Postagens implements Serializable {
 
 	}
 
-	
 }

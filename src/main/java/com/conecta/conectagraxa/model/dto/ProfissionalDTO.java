@@ -1,12 +1,14 @@
 package com.conecta.conectagraxa.model.dto;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.validation.constraints.Email;
 
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.enums.Perfil;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -47,7 +49,8 @@ public class ProfissionalDTO implements Serializable {
 	
 	private String senha;
 
-	private String dataNascimento;
+	  @JsonFormat(pattern = "dd/MM/yyyy") 
+	private LocalDate dataNascimento;
 
 	private String sexo;
 	

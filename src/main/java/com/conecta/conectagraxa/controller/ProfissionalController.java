@@ -51,7 +51,7 @@ public class ProfissionalController {
 	// BUSCAR PROFISSIONAL POR ID
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<ProfissionalDTO> findById(@PathVariable int id) throws Exception {
-		Profissional obj = service.getProfissionalById(id);
+		Profissional obj = service.findById(id);
 		return ResponseEntity.ok().body(new ProfissionalDTO(obj));
 	}
 
@@ -83,7 +83,7 @@ public class ProfissionalController {
 	// ATUALIZAR SENHA DO PROFISSIONAL
 	@PutMapping("/senha/{id}")
 	public ResponseEntity<ProfissionalDTO> atualizarSenha(
-		@RequestBody Integer id,	@RequestBody ProfissionalDTO objDTO) {
+		@PathVariable Integer id,	@RequestBody ProfissionalDTO objDTO) {
 		
 		Profissional obj = service.atualizaSenha(id, objDTO);
 		return ResponseEntity.ok().body(new ProfissionalDTO(obj));
@@ -117,13 +117,13 @@ public class ProfissionalController {
 	}
 
 	// UNFOLLOW
-	@PutMapping("/unfollow/{seguirId}")
-	public ResponseEntity<ResponseMessage> unfollow(@RequestParam Integer seguidorId, @PathVariable Integer seguirId)
+	@PutMapping("/unfollow/{unfollow}")
+	public ResponseEntity<ResponseMessage> unfollow(@RequestParam Integer seguir, @RequestParam Integer seguidor)
 			throws Exception {
-		service.findById(seguidorId);
-		service.findById(seguirId);
+		service.findById(seguidor);
+		service.findById(seguir);
 
-		String message = seguidoresService.unfollow(seguidorId, seguirId);
+		String message = seguidoresService.unfollow(seguir, seguidor);
 		ResponseMessage res = new ResponseMessage(message);
 		return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
 	}

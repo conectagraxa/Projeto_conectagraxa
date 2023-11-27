@@ -2,6 +2,7 @@ package com.conecta.conectagraxa.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -39,6 +40,13 @@ public class VagasController {
 	Vagas newObj = service.createVaga(objDTO, objDTO.getEmpresaId());
 	URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
 	return ResponseEntity.created(uri).build();
+	}
+	
+	@GetMapping(value = "/findAll")
+	ResponseEntity<List<VagasDTO>> findAll() {
+		List<Vagas> list = service.getAllVagas();
+		List<VagasDTO> listDTO = list.stream().map(obj -> new VagasDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDTO);
 	}
 
 	// EDITAR VAGA

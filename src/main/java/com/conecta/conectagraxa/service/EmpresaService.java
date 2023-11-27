@@ -3,11 +3,13 @@ package com.conecta.conectagraxa.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.controller.EmpresaController;
@@ -27,10 +29,16 @@ public class EmpresaService {
     @Autowired
     private EmpresaRepository empresaRepository;
     
+    @Autowired
+	private PasswordEncoder enconder;
+	
         
     //criar empresa
+    @Transactional
     public Empresa createEmpresa(EmpresaDTO objDTO) throws Exception {
-    	objDTO.setSenha(objDTO.getSenha());
+
+		objDTO.setSenha(enconder.encode(objDTO.getSenha()));
+
     	validaPorCpfCnpjEEmail(objDTO);
 		Empresa newObj = new Empresa(objDTO);
 		Feed_EmpresaDTO feedDTO = new Feed_EmpresaDTO(objDTO);
@@ -58,14 +66,7 @@ public class EmpresaService {
         return empresaRepository.findAll();
     }
 
-    //trazer empresa por id
-    public Empresa getEmpresaById(Integer id) throws Exception {
-        logger.info("Buscando empresa com ID: {}", id);
-        Optional<Empresa> obj = empresaRepository.findById(id);
-		return obj.orElseThrow(() -> new Exception ("objeto não encontrado Id: " + id));
 
-       
-    }
 
     //atualiza senha
 	public Empresa atualizaSenha(Integer id, EmpresaDTO objDTO) {
@@ -76,13 +77,15 @@ public class EmpresaService {
 
 		if (obj.isPresent())
 
-			newObj.setId(obj.get().getId());
-		
-		if ((obj.get().getSenha().equals(objDTO.getAtual()))) {
+			newObj = obj.get();
+		if (enconder.matches(objDTO.getAtual(),obj.get().getSenha())) {
+
 			System.out.print("senha válida");
 			if (objDTO.getNovaSenha().equals(objDTO.getConfirma())) {
 				objDTO.setSenha(objDTO.getNovaSenha());				
-				obj.get().setSenha(objDTO.getSenha());
+
+				
+				newObj.setSenha (enconder.encode(objDTO.getSenha()));
 
 				System.out.print("senha ATUALIZADA");
 
@@ -126,41 +129,10 @@ public class EmpresaService {
 		if (obj.get().getFotoPerfilPath() != null) {
 			newObj.setFotoPerfilPath(obj.get().getFotoPerfilPath());
 		}
-		if (obj.get().getSenha() != null) {
-			newObj.setSenha(obj.get().getSenha());
+		if (obj.get().getToken() != null) {
+			newObj.setToken(obj.get().getToken());
 		}
 		
-
-		// atualiza os campos do objeto com os valores preenchidos no body do objeto DTO
-		if (objDTO.getNomeFantasia() != null) {
-			newObj.setNomeFantasia(objDTO.getNomeFantasia());
-		}
-		if (objDTO.getEmail() != null) {
-			newObj.setEmail(objDTO.getEmail());
-		}
-	
-		if (objDTO.getTelefone() != null) {
-			newObj.setTelefone(objDTO.getTelefone());
-		}
-		if (objDTO.getEndereco() != null) {
-			newObj.setEndereco(objDTO.getEndereco());
-		}
-		if (objDTO.getCep() != null) {
-			newObj.setCep(objDTO.getCep());
-		}
-		if (objDTO.getComplemento() != null) {
-			newObj.setComplemento(objDTO.getComplemento());
-		}
-		if (objDTO.getCidade() != null) {
-			newObj.setCidade(objDTO.getCidade());
-		}
-		if (objDTO.getEstado() != null) {
-			newObj.setEstado(objDTO.getEstado());
-		}
-		if (objDTO.getFotoPerfilPath() != null) {
-			newObj.setFotoPerfilPath(objDTO.getFotoPerfilPath());
-		}
-
 	
 	Empresa old = (newObj);
 	Empresa atualizado = empresaRepository.save(old);

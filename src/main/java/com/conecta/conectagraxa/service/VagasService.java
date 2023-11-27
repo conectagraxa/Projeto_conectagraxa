@@ -57,6 +57,8 @@ public class VagasService {
 	 * @param CRIAR VAGA
 	 * parâmetro : VagasDTO, Integer
 	 */
+	
+	@Transactional
 	public Vagas createVaga(VagasDTO vaga, Integer id) throws Exception {
 		// procurando se o id da empresa e feed se existe
 		Feed_Empresa feedEmpresa = feedService.findById(id);
@@ -89,6 +91,11 @@ public class VagasService {
 		return novaVaga;
 
 	}
+	//todos os profissionais
+	public List<Vagas> getAllVagas() {
+		return repository.findAll();
+	}
+
 
 	/*
 	 * @Param esse método EDITA UMA VAGA no corpo da requisição (vagaDTO)
