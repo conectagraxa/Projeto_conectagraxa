@@ -2,7 +2,7 @@
     background-color: #FFCBAD;
     position: relative;
     width: 320px;
-    height: 700px;
+    height: 94vh;
     left: 70%;
     top: 50px;
     justify-content: center;
@@ -13,6 +13,7 @@
 
 }
 
+
 .topo-notificações {
     position: relative;
     background-color: #ffcbad;
@@ -21,17 +22,24 @@
     top: -53px;
 }
 
+.conteudo-notificacoes::-webkit-scrollbar {
+
+    display: none;
+}
+
+
 .conteudo-notificacoes {
     background-color: rgb(253, 253, 253);
     position: relative;
     width: 270px;
     height: 530px;
     top: -53px;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     overflow-y: auto;
     overflow-x: hidden;
 
 }
+
 
 .usuariox {
     background-color: rgb(255, 255, 255);
@@ -39,7 +47,7 @@
     width: 245px;
     position: relative;
     top: 5px;
-    left: 5px;
+    left: 12px;
     border-radius: 5px;
     margin-top: 10px;
     box-shadow: #717171 0.5px 0px 3px 0.5px;
@@ -96,7 +104,7 @@
 }
 
 .linkpolitica,
-.uu{
+.uu {
     color: rgb(23, 23, 174);
 
 

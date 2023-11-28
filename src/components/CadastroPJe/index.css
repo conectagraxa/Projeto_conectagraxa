@@ -160,9 +160,109 @@
     background-color: #f9782d;
 }
 
-.pp {
-    color: black;
+
+
+.Modal-janela {
+    background-color: #F99760;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    padding: 50px 200px 50px 200px;
+    display: none;
+
+
 }
+
+.Modal-interno-politica {
+
+    background-color: #FFF5EF;
+    position: relative;
+    padding: 20px 300px 20px 20px;
+}
+
+.nome-int {
+    margin: 1px;
+}
+
+.esfera1-politica {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 400px;
+    left: 1300px;
+    border-radius: 100%;
+    z-index: -100;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera2-politica {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 400px;
+    left: 10px;
+
+    border-radius: 100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera3-politica {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    border-radius: 100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera4-politica {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 1300px;
+    border-radius: 100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera5-politica {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 600px;
+    left: 1px;
+    border-radius: 100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.imagem-logo-politica {
+
+    position: absolute;
+    z-index: 1000;
+    width: 150px;
+    left: 900px;
+
+
+}
+
+.button-politica {
+    position: absolute;
+    z-index: 1000;
+    width: 200px;
+    font-size: 25px;
+    left: 900px;
+    transition: .4s;
+    top: 900px;
+
+
+}
+
+
+
+
 
 @media (max-width: 1496px) {
     .mainof_pj {

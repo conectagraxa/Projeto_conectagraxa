@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './responsivopublicarcomuni/index.css'
 
 function Publicarcomunidade({ adicionarPostagem }) {
     const [postText, setPostText] = useState("");

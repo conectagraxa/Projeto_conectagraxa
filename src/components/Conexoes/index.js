@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import './responsivococnecoes/index.css'
 import Foto from './imagem-conexoes/Foto.svg'
 
 function Conexoes() {

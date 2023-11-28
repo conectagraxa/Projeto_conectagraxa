@@ -10,7 +10,10 @@
 
 
 }
+.geralperfil::-webkit-scrollbar {
 
+    display: none;
+}
 .postagem {
   width: 690px;
   /* Defina a largura desejada */
@@ -32,29 +35,38 @@
   margin: 0;
   padding: 0;
 }
-
-.navbarhomecomunit {
-  position: absolute;
-  top: 2px;
+.navbarhomecomunit{
   margin: 0;
-  padding: 0;
+  top: 0;
+  height: 0;
+  width: 0;
+
 }
 
 .navbarcomunit {
   position: relative;
   margin: 0;
   padding: 0;
+  height: 0;
+  width: 0;
 }
 
 .publicarcomuni {
   position: relative;
   top: -40px;
+  margin: 0;
+  top: 0;
+  height: 0;
+  width: 0;
 }
 
 .conecxoes {
   position: absolute;
   left: 990px;
-  top: -11px;
+  margin: 0;
+  height: 0;
+  width: 0;
+  
  
 
 

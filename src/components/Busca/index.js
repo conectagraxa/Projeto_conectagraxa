@@ -1,5 +1,6 @@
 import React from "react";
 import './index.css'
+import './responsivobusca/index.css'
 
 function Buscar() {
     return (

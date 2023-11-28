@@ -1,0 +1,215 @@
+@media (max-width: 1920px) {
+   
+        .containernavbar {
+            justify-content: space-between;
+            height: 99vh;
+            position: relative;
+            width: 400px;
+            background-color: #ffffff;
+            margin-top: 0;
+            z-index: 555;
+            top: -1020px;
+        }
+    
+    
+        .imagem-redonda {
+            position: relative;
+            margin: 0 auto;
+            top: 50px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    
+        .botaonavbar {
+            position: relative;
+            font-size: 25px;
+            color: #2f2f2f;
+            display: block;
+            width: 80%;
+            height: 50px;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            transition: .4s;
+            border-radius: 15px;
+            margin: 0 auto;
+            top: 80px;
+        }
+    
+        .botaonavbar:hover {
+            background: #FFCBAD;
+        }
+    
+        .exit {
+            position: relative;
+            font-size: 25px;
+            text-align: center;
+            justify-content: center;
+            top: 650px;
+            border: 1px solid black;
+            width: 80%;
+            border: none;
+            left: 20px;
+            height: 20px;
+            padding: 10px;
+            border-radius: 15px;
+            transition: .4s;
+        }
+    
+        .sairr {
+            font-family: sans-serif;
+            position: relative;
+        }
+    
+        .exit:hover {
+            background-color: #FFCBAD;
+            transition: .4s;
+            border-radius: 15px;
+            width: 80%;
+        }
+    }
+    
+
+@media (max-width: 1540px) {
+
+    .containernavbar {
+        justify-content: space-between;
+        height: 99vh;
+        position: relative;
+        width: 370px;
+        background-color: #ffffff;
+        margin-top: 0;
+        top: 0;
+    }
+
+
+    .imagem-redonda {
+        margin: 0 auto;
+        top: 30px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .botaonavbar {
+        position: relative;
+        font-size: 20px;
+        color: #2f2f2f;
+        display: block;
+        width: 80%;
+        height: 50px;
+        padding: 10px;
+        border: none;
+        background: transparent;
+        transition: .4s;
+        border-radius: 15px;
+        margin: 0 auto;
+        top: 50px;
+    }
+
+    .botaonavbar:hover {
+        background: #FFCBAD;
+    }
+
+    .exit {
+        position: relative;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        top: 350px;
+        border: 1px solid black;
+        width: 80%;
+        border: none;
+        left: 20px;
+        height: 20px;
+        padding: 10px;
+        border-radius: 15px;
+        transition: .4s;
+    }
+
+    .sairr {
+        font-family: sans-serif;
+        position: relative;
+    }
+
+    .exit:hover {
+        background-color: #FFCBAD;
+        transition: .4s;
+        border-radius: 15px;
+        width: 80%;
+    }
+}
+
+
+
+
+@media (max-width: 1200px) {
+
+    .containernavbar {
+        height: 127vh; 
+    }
+
+    .imagem-redonda {
+        top: 50px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .botaonavbar {
+        font-size: 25px;
+        top: 100px;
+    }
+
+    .exit {
+        font-size: 25px;
+        top: 500px;
+    }
+
+    .sairr {
+        font-family: sans-serif;
+        position: relative;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .containernavbar {
+        height: 170vh; 
+    }
+
+    .imagem-redonda {
+        top: 100px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .botaonavbar {
+        font-size: 30px;
+        top: 160px;
+        margin-top: 20px;
+    }
+
+    .exit {
+        font-size: 30px;
+        top: 750px;
+    }
+
+    .sairr {
+        font-family: sans-serif;
+        position: relative;
+    }
+}
+
+
+@media (max-width: 700px) {}
+
+@media (max-width: 480px) {
+    .containernavbar{
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {}

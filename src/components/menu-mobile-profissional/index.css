@@ -1,0 +1,28 @@
+.geral-menu-profissional {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    align-items: center;
+    
+
+
+}
+
+.imagemlogomobile {
+    width: 150px;
+
+}
+
+
+.imagemlogohamburguer {
+    width: 50px;
+    background-color: black;
+    filter: invert();
+    margin-right: 10px;
+
+}
+
+.logomobille {
+    justify-content: space-between;
+
+}

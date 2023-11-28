@@ -1,0 +1,236 @@
+@media (max-width: 1920px) {
+
+
+    .geralnotificações {
+        background-color: #FFCBAD;
+        position: relative;
+        width: 400px;
+        height: 100vh;
+        left: 530px;
+        top: -70px;
+
+    }
+
+    .conteudo-notificacoes {
+        background-color: rgb(253, 253, 253);
+        position: relative;
+        width: 300px;
+        height: 730px;
+        top: -53px;
+        border-radius: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+    }
+
+
+    .usuariox {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        width: 245px;
+        position: relative;
+        top: 5px;
+        left: 25px;
+        border-radius: 5px;
+        margin-top: 20px;
+        box-shadow: #717171 0.5px 0px 3px 0.5px;
+
+
+    }
+
+
+    .duvidas-conexoes {
+        width: 250px;
+        font-size: 15px;
+        position: relative;
+        top: -20px;
+    }
+
+
+}
+
+
+@media (max-width: 1540px) {
+
+    
+    .geralnotificações {
+        background-color: #FFCBAD;
+        position: relative;
+        width: 320px;
+        height: 100vh;
+        left: 226px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        top: 10px;
+
+    }
+
+
+    .topo-notificações {
+        position: relative;
+        background-color: #ffcbad;
+        width: 320px;
+        height: 100px;
+        top: -50px;
+    }
+
+    .conteudo-notificacoes::-webkit-scrollbar {
+
+        display: none;
+    }
+
+
+    .conteudo-notificacoes {
+        background-color: rgb(253, 253, 253);
+        position: relative;
+        width: 270px;
+        height: 530px;
+        top: -53px;
+        border-radius: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+    }
+
+
+    .usuariox {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        width: 245px;
+        position: relative;
+        top: 5px;
+        left: 12px;
+        border-radius: 5px;
+        margin-top: 10px;
+        box-shadow: #717171 0.5px 0px 3px 0.5px;
+
+
+    }
+
+    .buttonx {
+        width: 100px;
+        height: 25px;
+
+    }
+
+    .perfil-conexoesx img {
+        width: 80px;
+        margin: 5px;
+    }
+
+    .conteudocx {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .nome-conexoesx,
+    .Funcoes-conexoesx,
+    .buttonx {
+        margin: 0;
+        margin-top: 3px;
+    }
+
+    .duvidas-conexoes {
+        width: 250px;
+        font-size: 10px;
+        position: relative;
+        top: -20px;
+    }
+
+    .duvidas-conexoes a {
+        text-decoration: none;
+        color: black;
+        font-family: sans-serif;
+
+    }
+
+    .nome1,
+    .nome2 {
+        margin: 0;
+        position: relative;
+        top: 30px;
+        margin-top: 5px;
+        font-family: sans-serif;
+    }
+
+    .linkpolitica,
+    .uu {
+        color: rgb(23, 23, 174);
+
+
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+    
+    .geralnotificações {
+        height: 127vh;
+    }
+
+
+    .topo-notificações {
+        top: -90px;
+    }
+
+    .conteudo-notificacoes {
+        height: 600px;
+    }
+
+
+    .usuariox {
+        margin-top: 15px;
+        box-shadow: #717171 0.5px 0px 1px 0.5px;
+    }
+
+    .buttonx {
+        width: 100px;
+        height: 25px;
+        border-radius: 20px;
+        border: none;
+        box-shadow: #717171 0px 0px 1px 0.5px;
+
+    }
+    .buttonx:hover{
+        background-color: #FFCBAD;
+    }
+
+    .duvidas-conexoes {
+        font-size: 13px;
+      
+    }
+}
+
+@media (max-width: 900px) {
+
+    
+    .geralnotificações {
+        height: 170vh;
+    }
+
+
+    .topo-notificações {
+        top: -70px;
+    }
+
+    .conteudo-notificacoes {
+        height: 900px;
+    }
+
+
+}
+@media (max-width: 700px) {}
+
+@media (max-width: 480px) {
+    .geralnotificações{
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {}

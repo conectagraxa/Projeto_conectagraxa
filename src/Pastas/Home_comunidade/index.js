@@ -4,6 +4,7 @@ import Exemplo from "./Exemplo";
 import Buscar from '../../components/Busca/index.js'
 import Navbar from "../../components/navbar/index.js";
 import Conexoes from "../../components/Conexoes/index.js"
+import './Responsive-comunidade/index.css'
 
 function Home_comunidade() {
     const [postagens, setPostagens] = useState([]);
@@ -44,10 +45,10 @@ function Home_comunidade() {
                         ))}
                     </div>
                 </div>
-                <span className="navbarhomecomunit">
+                <div className="navbarhomecomunit">
                     <Navbar></Navbar>
 
-                </span>
+                </div>
                 
             </div>
         </body>

@@ -659,3 +659,13 @@ body {
         top: 100px;
     }
 }
+
+
+.ancoragem {
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    color: black;
+    
+
+}

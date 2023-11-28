@@ -23,6 +23,7 @@ import Rectangle02 from './imagem/Rectangle02.svg'
 import Rectangle03 from './imagem/Rectangle03.svg'
 import logo from './imagem/logo.svg'
 
+
 function Home() {
 
 
@@ -163,27 +164,32 @@ function Home() {
                 <div className="quag1">
                     <h1 className="text">Temos o que você procura</h1>
 
-                    <div className="q1">
-                        <span className="namee">
-                            <img src={Profiles} alt="" />
-                            <span className="namen">Quero contratar</span>
-                        </span>
-                        <br />
-                        <span className="namee1">
-                            Quero utilizar a plataforma para contratar serviços.
-                        </span>
-                    </div>
+                    <a className='ancoragem' href="Login">
+                        <div className="q1">
+
+                            <span className="namee">
+                                <img src={Profiles} alt="" />
+                                <span className="namen">Quero contratar</span>
+                            </span>
+                            <br />
+                            <span className="namee1">
+                                Quero utilizar a plataforma para contratar serviços.
+                            </span>
+                        </div></a>
+
+                        <a className='ancoragem' href="Login">
                     <div className="q2">
                         <span className="namee">
                             <img src={MovieProjectores} alt="" />
-                            <span className="namen">Quero trabalhar</span>
+                            <a className='ancoragem' href="Login"> <span className="namen">Quero trabalhar</span></a>
                         </span>
                         <br />
                         <span className="namee1">
                             Quero utilizar a plataforma para divulgar o meu trabalho
                             fazendo com que ele seja visto e alcance as pessoas.
                         </span>
-                    </div>
+                    </div></a>
+                    
                     <div className="q3">
                         <span className="namee3">
                             <img src={Help} alt="" />
@@ -204,10 +210,10 @@ function Home() {
                 </div>
                 <ul className="footv">
                     <li className="ftv">
-                        <img src={InstagramCircle} alt="" />
+                        <a href='https://www.instagram.com/conectagraxa/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=='><img src={InstagramCircle} alt="" /></a>
                     </li>
                     <li className="ftv">
-                        <img src={LinkedinCircled} alt="" />
+                        < a href='https://www.linkedin.com/in/conecta-graxa-506210298/'> <img src={LinkedinCircled} alt="" /></a>
                     </li>
                     <li className="ftv">
                         <img src={GitHub} alt="" />

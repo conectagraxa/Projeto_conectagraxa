@@ -1,7 +1,21 @@
+
+import React, {useState} from "react";
+
 import "./index.css"
 import logo from "./imagens-formpje/logo.jpg"
+import logooo from'./imagens-formpje/logooo.png'
 
 function FormPje() {
+
+    const [modalDisplay, setModalDisplay] = useState('none')
+
+    function AbrirPolitica() {
+        setModalDisplay('block');
+    }
+
+    function FecharPolitica() {
+        setModalDisplay('none');
+    }
     return (
         <main className="mainof_pj">
             <div class="bolax1_pj"></div>
@@ -79,12 +93,106 @@ function FormPje() {
                         <br />
                         <div className="cadastrarbutton_formpj">
                             <button className="insidebutton_formpj">Cadastre-se</button>
-                            <p>Ao criar o seu cadastro, você concorda com a nossa <a class="pp" href="#">política de privacidade</a>.</p>
+                            <p className="politicalink"  onClick={AbrirPolitica} >Ao criar o seu cadastro, você concorda com a nossa <u  className="uu" ><span className="linkpolitica">política de privacidade</span></u></p>
                         </div>
 
                     </section>
                 </form>
             </fieldset>
+
+
+
+
+            <div className="Modal-janela" style={{ display: modalDisplay }} >
+
+                <div className="esfera1-politica"></div>
+                <div className="esfera2-politica"></div>
+                <div className="esfera3-politica"></div>
+                <div className="esfera4-politica"></div>
+                <div className="esfera5-politica"></div>
+
+                <div className="Modal-interno-politica">
+
+
+
+                    <h4 className="nome-politica">
+                        <img className="imagem-logo-politica" src={logooo} alt="imagem-da-logo"></img>
+
+                        <h4 className="nome-int">  Política de Privacidade do Conecta Graxa</h4>
+
+                        <h4 className="nome-int">  Última atualização: 11/12/2023</h4>
+
+                        <h4 className="nome-int">   Bem-vindo ao Conecta Graxa. A sua privacidade é importante para nós.
+                            Esta Política de Privacidade explica como coletamos, usamos, divulgamos e protegemos as suas informações
+                            pessoais quando você utiliza a plataforma Conecta Graxa ("nós" ou "nosso").</h4>
+
+                        <h4 className="nome-int"> 1. Informações Coletadas</h4>
+
+                        <h4 className="nome-int">  Ao utilizar o Conecta Graxa, podemos coletar as seguintes informações:</h4>
+
+                        <h4 className="nome-int">  1.1 Informações Pessoais:</h4>
+                        <h4 className="nome-int">   - Nome</h4>
+                        <h4 className="nome-int">    - Endereço de e-mail</h4>
+                        <h4 className="nome-int">    - Número de telefone</h4>
+
+                        <h4 className="nome-int">  1.2 Informações de Uso:</h4>
+                        <h4 className="nome-int">   - Dados de acesso e atividade na plataforma</h4>
+                        <h4 className="nome-int">   - Informações sobre o dispositivo utilizado</h4>
+                        <h4 className="nome-int">   - Dados de localização (se permitido)</h4>
+
+                        <h4 className="nome-int"> 2. Uso das Informações</h4>
+
+                        <h4 className="nome-int"></h4>  Utilizamos as informações coletadas para:</h4>
+
+                    <h4 className="nome-int"> 2.1 Prestação de Serviços:
+                        - Personalizar sua experiência na plataforma
+                        - Processar transações e fornecer os serviços solicitados</h4>
+
+                    <h4 className="nome-int"> 2.2 Comunicação
+                        - Enviar notificações importantes relacionadas à sua conta
+                        - Enviar informações sobre atualizações e novos recursos</h4>
+
+                    <h4 className="nome-int"> 2.3 Melhoria da Plataforma:
+                        - Analisar o uso da plataforma para melhorar nossos serviços
+                        - Realizar pesquisas e análises para aprimorar a experiência do usuário</h4>
+
+                    <h4 className="nome-int"> 3. Compartilhamento de Informações</h4>
+
+                    <h4 className="nome-int"> Não compartilhamos suas informações pessoais com terceiros, exceto nas seguintes circunstâncias:</h4>
+
+                    <h4 className="nome-int"> 3.1 Parceiros de Negócios:</h4>
+                    <h4 className="nome-int">  - Compartilhamos informações com parceiros de negócios para fornecer serviços específicos a você</h4>
+
+                    <h4 className="nome-int"> 3.2 Consentimento:</h4>
+                    <h4 className="nome-int"> - Compartilhamos informações com sua autorização explícita</h4>
+
+                    <h4 className="nome-int">   3.3 Cumprimento da Lei:</h4>
+                    <h4 className="nome-int">  - Cumprimos solicitações legais e protegemos nossos direitos legais</h4>
+
+                    <h4 className="nome-int">  4. Segurança das Informações</h4>
+
+                    <h4 className="nome-int">  Implementamos medidas de segurança para proteger suas informações contra acesso não autorizado, alteração, divulgação ou destruição.</h4>
+
+                    <h4 className="nome-int"> 5. Seus Direitos</h4>
+
+                    <h4 className="nome-int">Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Entre em contato conosco para exercer esses direitos.</h4>
+
+                    <h4 className="nome-int">  6. Alterações nesta Política</h4>
+
+                    <h4 className="nome-int"> Reservamo-nos o direito de fazer alterações nesta Política de Privacidade. A versão mais recente estará sempre disponível na plataforma.</h4>
+
+                    <h4 className="nome-int">Ao utilizar o Conecta Graxa, você concorda com os termos desta Política de Privacidade.</h4>
+
+                    <h4 className="nome-int"> Para dúvidas ou preocupações sobre esta política, entre em contato conosco em [contato@conectagraxa.com].</h4><br></br>
+
+                    <h4 className="nome-int"> Atenciosamente,</h4><br></br>
+
+                    <h4 className="nome-int"> Equipe Conecta Graxa</h4>
+
+                    <a className="a-voltar" href="" ><button onclick={FecharPolitica} className="button-politica">Voltar</button></a>
+                </div>
+
+            </div>
         </main>
     )
 }

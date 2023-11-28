@@ -10,7 +10,7 @@ import './components/Conexoes/index.css'
 import './components/navbarempresa/styleempresa.css'
 import './components/CadastroPJe/index.css'
 import './components/Perfilempresa/index.css'
-
+import './components/menu-mobile-profissional/index.css'
 
 import './Pastas/Home_comunidade/Exemplo/index.css'//isso é apenas um arquivo para exemplos ou testes //
 import Exemplo from './Pastas/Home_comunidade/Exemplo/index'//////////////////////////////////////////
@@ -26,6 +26,7 @@ import Home_comunidade from './Pastas/Home_comunidade/index'
 import Home from './Pastas/principal/index';
 import Login from './Pastas/Login/index';
 import Publicarcomunidade from './Pastas/Home_comunidade/Publicarcomunidade/index'
+import MenuProfissional from './components/menu-mobile-profissional/index.js'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -46,6 +47,7 @@ function App() {
         <Route path='/Conexoes' element={<Conexoes />} />
         <Route path='/Navbarempresa' element={<Navbarempresa />} />
         <Route path='/PerfilEmpresas' element={<PerfilEmpresas />} />
+        <Route path='/MenuProfissional' element={<MenuProfissional />} />
 
       </Routes>
     </Router>

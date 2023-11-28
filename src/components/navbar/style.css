@@ -1,35 +1,9 @@
 
-.container {
-    display: flex;
+.containernavbar {
     justify-content: space-between;
     align-items: stretch;
-    height: 94vh; /* A altura da tela inteira */
+    height: 100vh; /* A altura da tela inteira */
     width: 400px;
-}
-
-.sidebar {
-    flex: 1;
-    padding: 20px;
-    height: 100px; /* A altura da tela inteira */
-
-}
-
-.sidebar-left {
-    margin-right: 20px; /* Espaço entre a barra lateral esquerda e o conteúdo principal */    
-    height: 100px; /* A altura da tela inteira */
-}
-
-
-.sidebar-left {
-    background-color: rgb(255, 255, 255);
-    width: 373px;
-    height: 100%;
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    overflow: hidden;
-  
-
 }
 
 .imagem-redonda {
