@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "../assets/style-principal.css";
 import Logo from "../assets/img/logo.png"
 import Exit from "../assets/img/exit.png"
@@ -6,13 +6,11 @@ import Conexao from "../assets/img/conexao.png"
 import EditarPerfil from "../components/EditarPerfil"
 
 function Principal() {
-    const [minimizar, setMinimizar] = useState();
+    const [showModal, setShowModal] = useState(false);
 
-    function mover() {
-        if (minimizar=true){
-
-        }
-    }
+      const fechar = () => {
+        setShowModal(false);
+      };
 
     return(
         <section className="principal">
@@ -26,7 +24,7 @@ function Principal() {
                         <li>Candidaturas</li>
                     </ul>
                 </nav>
-                <div>
+                <div onClick={() => {setShowModal(true)}}>
                     <img width="22px" src={Exit} alt="" />
                     <span>Sair</span>
                 </div>
@@ -45,7 +43,9 @@ function Principal() {
                 <section className="feed">
                     <section>
                         {/* Os componentes entram aqui */}
+                        {showModal && (
                         <EditarPerfil/>
+                        )}
                     </section>
                 </section>
             </section>

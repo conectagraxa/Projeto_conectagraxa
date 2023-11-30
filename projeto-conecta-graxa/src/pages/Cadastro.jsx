@@ -1,6 +1,6 @@
 import React from "react";
 import FormPF from "../components/FormPF";
-import "../assets/style.css";
+// import "../assets/style.css";
 
 function Cadastro() {
     return (
