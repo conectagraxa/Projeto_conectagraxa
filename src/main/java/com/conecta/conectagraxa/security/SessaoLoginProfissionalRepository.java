@@ -15,9 +15,7 @@ public interface SessaoLoginProfissionalRepository extends JpaRepository<SessaoL
 //	@Query("select p.token from profissional p where p.id = :id")
 //	Optional<Profissional> findByToken(@Param("id") Long id);
 	
-	Optional<SessaoLoginProfissional> findByToken(String string);
 	
-	Optional<String> findTokenById(@Param("id") Integer id);
 
 	SessaoLoginProfissional findByLogado(boolean b);
 

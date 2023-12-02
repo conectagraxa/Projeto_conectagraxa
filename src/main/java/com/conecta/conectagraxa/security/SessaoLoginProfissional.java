@@ -24,7 +24,6 @@ public class SessaoLoginProfissional {
 	private String senha;
 	private boolean logado;
 	//private String token = UUID.randomUUID().toString();
-	private String token;
 	
 	public SessaoLoginProfissional(SessaoLoginProfissional obj) {
 		BeanUtils.copyProperties(obj, this);

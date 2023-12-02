@@ -19,9 +19,13 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
-
 <dependency>
-    <groupId>javax.servlet</groupId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+    
+<dependency>
+	<groupId>javax.servlet</groupId>
     <artifactId>javax.servlet-api</artifactId>
     <scope>provided</scope>
 </dependency>

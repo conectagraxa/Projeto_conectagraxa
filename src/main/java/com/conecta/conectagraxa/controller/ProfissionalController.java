@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,18 +18,20 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.response.ResponseMessage;
+import com.conecta.conectagraxa.security.GoogleProfissional;
 import com.conecta.conectagraxa.security.SessaoLoginProfissional;
 import com.conecta.conectagraxa.service.ProfissionalService;
 import com.conecta.conectagraxa.service.SeguidoresService;
 import com.conecta.conectagraxa.service.SessaoLoginService;
 
-@RestController
+@CrossOrigin
+@Controller
 @RequestMapping(value = "/profissional")
 public class ProfissionalController {
 
@@ -41,6 +45,8 @@ public class ProfissionalController {
 	@Autowired
 	private SeguidoresService seguidoresService;
 
+
+	
 	// BUSCAR PROFISSIONAL POR NOME
 	@GetMapping(value = "/")
 	public ResponseEntity<ProfissionalDTO> findByNome(@RequestParam(value = "nome") String nome) throws Exception {
@@ -65,12 +71,10 @@ public class ProfissionalController {
 
 	// CRIAR PROFISSIONAL
 	@PostMapping(value = "/create")
-	public ResponseEntity<ProfissionalDTO> create(@Valid @RequestBody ProfissionalDTO objDTO) throws Exception {
+	public ResponseEntity<ProfissionalDTO> create(@RequestBody @Valid ProfissionalDTO objDTO) throws Exception {
 		Profissional newObj = service.createProfissional(objDTO);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
-		return ResponseEntity.created(uri).build();
+		return ResponseEntity.ok(new ProfissionalDTO (newObj));
 	}
-
 	// UPDATE DO PROFISSIONAL
 	@PutMapping("/update/{id}")
 	public ResponseEntity<ProfissionalDTO> update(@PathVariable int id, @RequestBody @Valid ProfissionalDTO objDTO)
@@ -82,9 +86,8 @@ public class ProfissionalController {
 
 	// ATUALIZAR SENHA DO PROFISSIONAL
 	@PutMapping("/senha/{id}")
-	public ResponseEntity<ProfissionalDTO> atualizarSenha(
-		@PathVariable Integer id,	@RequestBody ProfissionalDTO objDTO) {
-		
+	public @ResponseBody ResponseEntity<ProfissionalDTO> atualizarSenha(
+		@PathVariable Integer id, ProfissionalDTO objDTO) {
 		Profissional obj = service.atualizaSenha(id, objDTO);
 		return ResponseEntity.ok().body(new ProfissionalDTO(obj));
 	}
@@ -97,7 +100,16 @@ public class ProfissionalController {
 		return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
 	}
 
-	// LOGIN DO PROFISSIONAL
+	// LOGINgoogle DO PROFISSIONAL
+		@PutMapping("/loginGoogle")
+		public ResponseEntity<ResponseMessage> loginGoogle(@RequestBody GoogleProfissional obj) {
+			String message = loginService.loginGoogleProfisional(obj);
+			ResponseMessage res = new ResponseMessage(message);
+			return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
+		}
+
+	
+	// DESLOGAR DO PROFISSIONAL
 	@PutMapping("/deslogar/{obj}")
 	public ResponseEntity<ResponseMessage> deslogar(@RequestBody SessaoLoginProfissional obj) {
 		String message = loginService.DeslogarProfissional(obj);

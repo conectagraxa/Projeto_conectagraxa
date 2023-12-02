@@ -49,7 +49,7 @@ public class ProfissionalService {
 
 	}
 	
-	
+
 
 
 //busca pelo id profissional
@@ -136,10 +136,7 @@ public class ProfissionalService {
 		if (obj.get().getSexo() != null) {
 			newObj.setSexo(obj.get().getSexo());
 		}
-		if (obj.get().getToken() != null) {
-			newObj.setToken(obj.get().getToken());
-		}
-
+		
 
 
 		Profissional old = (newObj);
@@ -198,9 +195,6 @@ public class ProfissionalService {
 			//}
 			if (obj.get().getSexo() != null) {
 				newObj.setSexo(obj.get().getSexo());
-			}
-			if (obj.get().getToken() != null) {
-				newObj.setToken(obj.get().getToken());
 			}
 
 			
