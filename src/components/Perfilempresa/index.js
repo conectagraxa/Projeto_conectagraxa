@@ -13,21 +13,26 @@ function PerfilEmpresas() {
         <div className="perfilemre">
 
             <div className="Conexoesperfilempre"><Conexoes></Conexoes></div>
-            <span className="Buscaempresaperfill"><Busca></Busca></span>
-            <span className="navbarempressaperfil"><Navbarempresa></Navbarempresa></span>
+            <div className="Buscaempresaperfill"><Busca></Busca></div>
+            <div className="navbarempressaperfil"><Navbarempresa></Navbarempresa></div>
 
 
             <div className="regalperfilempresaa">
                 <div className="painelperfil">
                     <div className="fotocapaempresa"><img src={image7} alt="imagemdeperfil" style={{ width: '100%', height: '100%', objectFit: 'cover' }} ></img></div>
                     <div className="fotoperfilempresa"><img src={image6} alt="imagemdeperfil" style={{ width: '100%', height: '100%', objectFit: 'cover' }}  ></img></div>
-                    <div className="nome-but-empressa">
-                        <h1 className="nomeempress"></h1>
-                        <button>Editar Perfil</button>
+                    <div className="nomebutempressa">
+                        <h2 className="nomeempress">MUSICAL CASA</h2>
+                        <button className="nutperfilempresa" >Editar Perfil</button>
                     </div>
                     <div className="segmento-localidade">
                         <p className="segmentoempresa">Eventos</p>
-                        <p className="localidadeempresa">Recife</p>
+                        <p className="localidadeempresa">Recife-PE</p>
+                    </div>
+
+                    <div className="dobremimempresa">
+                        <h4 className="sobremimempresa2">Sobre mim</h4>
+                        <div className="caixasobremimempresa"></div>
                     </div>
                 </div>
             </div>
