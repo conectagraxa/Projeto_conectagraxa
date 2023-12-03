@@ -14,7 +14,6 @@ import './components/menu-mobile-profissional/index.css'
 
 import './Pastas/Home_comunidade/Exemplo/index.css'//isso é apenas um arquivo para exemplos ou testes //
 import Exemplo from './Pastas/Home_comunidade/Exemplo/index'//////////////////////////////////////////
-
 import PerfilEmpresas from './components/Perfilempresa/index.js'
 import FormPj from './components/CadastroPJe/index.js'
 import Navbarempresa from './components/navbarempresa/index.js'
