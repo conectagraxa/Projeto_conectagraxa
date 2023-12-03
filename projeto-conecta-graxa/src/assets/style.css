@@ -25,7 +25,7 @@ main {
     border-radius: 100%;
     transform: rotate(60deg);
     position: absolute;
-    top: 40px;
+    top: 46px;
     left: 100px;
 }
 
@@ -36,7 +36,7 @@ main {
     border-radius: 100%;
     transform: rotate(60deg);
     position: absolute;
-    bottom: 40px;
+    bottom: 46px;
     right: 100px;
 }
 

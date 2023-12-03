@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState } from "react";
 import "../assets/style-principal.css";
 import Logo from "../assets/img/logo.png"
 import Exit from "../assets/img/exit.png"
@@ -8,9 +8,9 @@ import EditarPerfil from "../components/EditarPerfil"
 function Principal() {
     const [showModal, setShowModal] = useState(false);
 
-      const fechar = () => {
+    const fechar = () => {
         setShowModal(false);
-      };
+    };
 
     return(
         <section className="principal">
@@ -44,7 +44,7 @@ function Principal() {
                     <section>
                         {/* Os componentes entram aqui */}
                         {showModal && (
-                        <EditarPerfil/>
+                        <EditarPerfil onClose={fechar}/>
                         )}
                     </section>
                 </section>

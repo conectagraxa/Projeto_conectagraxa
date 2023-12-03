@@ -5,13 +5,14 @@ import "../assets/style-edit-perfil.css";
 import Close from "../assets/img/close.png"
 import Principal from "../pages/Principal";
 
-function EditarPerfil() {
+function EditarPerfil({ onClose }) {
+
     return(
         <section className="fundo">
             <section className="modal">
                 <section className="header-modal">
                     <h1>Editar Perfil</h1>
-                    <img width="18px" src={Close} alt="" onClick={() => {Principal.fechar()}}/>
+                    <img width="18px" src={Close} alt="" onClick={onClose}/>
                 </section>
                 <section className="main-modal">
                     <figure>
