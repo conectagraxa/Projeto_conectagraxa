@@ -8,6 +8,7 @@ COPY . .
 RUN apt-get install maven -y
 RUN mvn clean install -DskipTests
 
+
 FROM openjdk:17-jdk-slim
 EXPOSE 8090
 COPY --from=build /target/conectagraxa-1.0.0-SNAPSHOT.jar app.jar
