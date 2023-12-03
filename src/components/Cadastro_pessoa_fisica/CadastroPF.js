@@ -1,9 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './style.css'
 import logo from "./img/logo.png";
 import logooo from "./img/logooo.png"
+import { Navigate, useNavigate } from 'react-router-dom'
+import Axios from 'axios';
+
+
 function CadastroPF() {
 
+
+   
     const [modalDisplay, setModalDisplay] = useState('none')
 
     function AbrirPolitica() {
@@ -99,7 +105,7 @@ function CadastroPF() {
                         </section>
                         <div className="box2-div2">
                             <button className="button-cadastro" >Cadastre-se</button>
-                            <p className="politicalink"  onClick={AbrirPolitica} >Ao criar o seu cadastro, você concorda com a nossa <u  className="uu" ><span className="linkpolitica">política de privacidade</span></u></p>
+                            <p className="politicalink" onClick={AbrirPolitica} >Ao criar o seu cadastro, você concorda com a nossa <u className="uu" ><span className="linkpolitica">política de privacidade</span></u></p>
                         </div>
                     </section>
                 </section>
