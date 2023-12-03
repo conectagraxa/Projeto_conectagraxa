@@ -100,7 +100,7 @@ public class ProfissionalController {
 		return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
 	}
 
-	// LOGINgoogle DO PROFISSIONAL
+	// LOGIN GOOGLE DO PROFISSIONAL
 		@PutMapping("/loginGoogle")
 		public ResponseEntity<ResponseMessage> loginGoogle(@RequestBody GoogleProfissional obj) {
 			String message = loginService.loginGoogleProfisional(obj);

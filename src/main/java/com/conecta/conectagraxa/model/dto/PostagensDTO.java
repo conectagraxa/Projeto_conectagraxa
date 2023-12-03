@@ -31,7 +31,6 @@ private Integer id;
 	
 	public PostagensDTO (Postagens obj) {
 		this.id = obj.getId();
-
 		this.curtidas = obj.getCurtidas();
 		this.descricao = obj.getDescricao();
 		this.dataPostagem = obj.getDataPostagem();
@@ -47,3 +46,4 @@ private Integer id;
 	
 }
  
+
