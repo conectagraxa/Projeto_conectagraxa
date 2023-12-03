@@ -12,6 +12,9 @@ import './components/CadastroPJe/index.css'
 import './components/Perfilempresa/index.css'
 import './components/menu-mobile-profissional/index.css'
 
+
+import Api from './services/Api.js'//////////////////////////////////////////
+
 import './Pastas/Home_comunidade/Exemplo/index.css'//isso é apenas um arquivo para exemplos ou testes //
 import Exemplo from './Pastas/Home_comunidade/Exemplo/index'//////////////////////////////////////////
 import PerfilEmpresas from './components/Perfilempresa/index.js'
@@ -34,6 +37,7 @@ function App() {
 
     <Router>
       <Routes>
+
         <Route path='/' element={<Home />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/CadastroPF' element={<CadastroPF />} />

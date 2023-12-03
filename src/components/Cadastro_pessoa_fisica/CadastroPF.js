@@ -1,15 +1,61 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import Axios from 'axios';
+
 import './style.css'
 import logo from "./img/logo.png";
 import logooo from "./img/logooo.png"
-import { Navigate, useNavigate } from 'react-router-dom'
-import Axios from 'axios';
 
+import {Navigate, useNavigate} from 'react-router-dom'
+import Api from "../../services/Api"
 
-function CadastroPF() {
+export default function CadastroPF() {
 
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [estado, setEstado] = useState('');
+    const [cidade, setCidade] = useState('');
+    const [nome, setNome] = useState('');
+    const [dataNascimento, setDataNascimento] = useState('');
+    const [sexo, setSexo] = useState('');
+    const [etnia, setEtnia] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [cep, setCep] = useState('');
+    const [id, setId] = useState('');
 
-   
+    const navigate =  useNavigate();
+    
+    async function createProfissional(e){
+        e.preventDefault();
+    
+        const data = {
+            email,
+            senha,
+            telefone,
+            cep,
+            sexo,
+            dataNascimento,
+            etnia,
+            nome,
+            endereco,
+            estado,
+            cidade,
+            
+        };
+        try{
+            console.log('Senha atualizada:', senha);
+
+            const  response = await Api.post('profissional/create',data);
+            console.log('Senha atualizada:', senha);
+
+            localStorage.getItem('email');
+            localStorage.setItem('id',id);
+    
+            navigate('/Login');
+        }catch(err){
+            alert('Cadastro não realizado');
+        }
+    }
     const [modalDisplay, setModalDisplay] = useState('none')
 
     function AbrirPolitica() {
@@ -21,13 +67,33 @@ function CadastroPF() {
     }
 
 
+    const checkCEP = async () => {
+        cep.replace(/\D/g, ''); 
+        if (cep.length === 8 ) {
+          try {
+            const response = await Axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+            if (response.data.erro) {
+              alert('CEP inválido, tente novamente');
+            } else {
+              setEndereco(response.data.logradouro);
+              setCidade(response.data.localidade);
+              setEstado(response.data.uf);
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        } else {
+          alert('CEP inválido, tente novamente, insira apenas números sem traços');
+        }
+     };
+
     return (
 
 
 
 
         <div>
-            <fieldset className="regal-cadastropf" >
+            <form onSubmit={createProfissional} className="regal-cadastropf" >
                 <section className="title-cadastro">
                     <img id="logo" src={logo} alt="logo"></img>
                     <h1 className="h1-cadastro" >CADASTRO</h1>
@@ -35,81 +101,117 @@ function CadastroPF() {
                 <section className="container-inputs">
                     <section className="box1">
                         <label className="put-for" for="">Nome completo</label>
-                        <input className="put-form" type="text" placeholder="Digite o seu nome" />
+                        <input
+                        value={nome}
+                        onChange={e => setNome(e.target.value)}
+                        className="put-form" type="text" placeholder="Digite o seu nome" />
+
+
                         <label className="put-for" for="">Email</label>
-                        <input className="put-form" type="email" name="" id="" placeholder="Digite o seu email" />
+                        <input
+                         value={email}
+                         onChange={e => setEmail(e.target.value)}
+                        className="put-form" type="email" name="" id="" placeholder="Digite o seu email" />
+
+
                         <label className="put-for" for="">Data de nascimento</label>
-                        <input className="put-form" type="date" name="" id="" />
+                        <input 
+                         value={dataNascimento}
+                         onChange={e => setDataNascimento(e.target.value)}
+                        className="put-form" type="date" name="" id="" />
+
                         <h3 className="h3-cadastro" >Endereço</h3>
                         <section className="endereco">
-                            <section className="endereco-box1">
+                             <section className="endereco-box1">
                                 <div className="endereco-div1">
+
                                     <label for="">CEP</label>
-                                    <input className="put-form" type="number" placeholder="00000-000" />
+                                    <input 
+                                    value={cep}
+                                    onChange={e => setCep(e.target.value)}
+                                    className="put-form" type="number" placeholder="Apenas números , EX: 00000000" onBlur={checkCEP}/>
                                 </div>
+
                                 <div className="endereco-div2">
                                     <label for="">Estado</label>
-                                    <select name="" id="">
-                                        <option value="">Vazio</option>
-                                    </select>
+                                    <input 
+                                    value={estado}
+                                    onChange={e => setEstado(e.target.value)}
+                                    className="put-form" type="text" placeholder="PE" />
                                 </div>
+
                             </section>
                             <section className="endereco-box2">
                                 <div>
+
                                     <label for="">Cidade</label>
-                                    <select name="" id="">
-                                        <option value="">Vazio</option>
-                                    </select>
-                                </div>
+                                    <input 
+                                     value={cidade}
+                                     onChange={e => setCidade(e.target.value)}
+                                    className="put-form" type="text" placeholder="Digite sua Cidade" />
+
+                                 </div>
                                 <div>
-                                    <label for="">Rua</label>
-                                    <input className="put-form" type="text" placeholder="Digite sua rua" />
+                                    <label for="">Endereco</label>
+                                    <input 
+                                     value={endereco}
+                                     onChange={e => setEndereco(e.target.value)}
+                                    className="put-form" type="text" placeholder="Digite seu endereco" />
                                 </div>
                             </section>
                         </section>
                     </section>
+
                     <section className="box2">
                         <section className="box2-div1">
-                            <label for="">Número</label>
-                            <input className="put-form" type="number" name="" id="" placeholder="ex:(00)0 00000-0000" />
+                            <label for="">Whatsapp</label>
+                            <input 
+                             value={telefone}
+                             onChange={e => setTelefone(e.target.value)}
+                            className="put-form" type="number" name="" id="" placeholder="ex:(00)0 00000-0000" />
                             <section className="opcao">
                                 <div>
                                     <label for="">Sexo</label>
-                                    <select name="" id="">
+                                    <select
+                                    onChange={e => setSexo(e.target.value)}
+                                    name="" id="">
                                         <option value="">Vazio</option>
-                                        <option value="">Feminino</option>
-                                        <option value="">Masculino</option>
-                                        <option value="">Outro</option>
+                                        <option value="Feminino">Feminino</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="outro">Outro</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label for="">Etnia</label>
-                                    <select name="" id="">
+                                    <select
+                                    onChange={e => setEtnia(e.target.value)}
+                                    name="" id="">
                                         <option value="">Vazio</option>
-                                        <option value="">Branco</option>
-                                        <option value="">Preto</option>
-                                        <option value="">Pardo</option>
-                                        <option value="">Indígina</option>
-                                        <option value="">Amarelo</option>
+                                        <option value="Branco">Branco</option>
+                                        <option value="Preto">Preto</option>
+                                        <option value="Pardo">Pardo</option>
+                                        <option value="Indígena">Indígina</option>
+                                        <option value="Amarelo">Amarelo</option>
+                                        <option value="Outro">Outro</option>
                                     </select>
                                 </div>
                             </section>
-                            <label for="">Senha</label>
-                            <input className="put-form" type="password" name="" id="" placeholder="********" />
-                            <label className="put-for" for="">Confirmar senha</label>
-                            <input className="put-form" type="password" name="" id="" placeholder="********" />
-                            <div className="box-checkbox" onclick="lembrarSenha()">
-                                <input className="put-form" type="checkbox" name="" id="lembrar" />
-                                <label for="lembrar">Lembrar senha</label>
-                            </div>
+
+                            <label for="senha">Senha</label>
+                            <input
+                             value={senha}
+                             onChange={e => setSenha(e.target.value)}
+                             
+                            className="put-form" type="password" name="senha" id="senha" placeholder="********" />
+
                         </section>
                         <div className="box2-div2">
-                            <button className="button-cadastro" >Cadastre-se</button>
-                            <p className="politicalink" onClick={AbrirPolitica} >Ao criar o seu cadastro, você concorda com a nossa <u className="uu" ><span className="linkpolitica">política de privacidade</span></u></p>
+                            <button className="button-cadastro">Cadastre-se</button>
+                            <p className="politicalink"  onClick={AbrirPolitica} >Ao criar o seu cadastro, você concorda com a nossa <u  className="uu" ><span className="linkpolitica">política de privacidade</span></u></p>
                         </div>
                     </section>
                 </section>
-            </fieldset>
+            </form>
 
             <div className="Modal-janela" style={{ display: modalDisplay }} >
 
@@ -142,7 +244,6 @@ function CadastroPF() {
                         <h4 className="nome-int">   - Nome</h4>
                         <h4 className="nome-int">    - Endereço de e-mail</h4>
                         <h4 className="nome-int">    - Número de telefone</h4>
-
                         <h4 className="nome-int">  1.2 Informações de Uso:</h4>
                         <h4 className="nome-int">   - Dados de acesso e atividade na plataforma</h4>
                         <h4 className="nome-int">   - Informações sobre o dispositivo utilizado</h4>
@@ -206,4 +307,3 @@ function CadastroPF() {
         </div >
     )
 }
-export default CadastroPF;
