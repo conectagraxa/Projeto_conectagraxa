@@ -1,9 +1,11 @@
-package com.conecta.conectagraxa.security;
+package com.conecta.conectagraxa.repositories;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
+
+import com.conecta.conectagraxa.security.SessaoLoginEmpresa;
+import com.conecta.conectagraxa.security.SessaoLoginProfissional;
 
 public interface SessaoLoginEmpresaRepository extends JpaRepository<SessaoLoginEmpresa, Integer>{
 

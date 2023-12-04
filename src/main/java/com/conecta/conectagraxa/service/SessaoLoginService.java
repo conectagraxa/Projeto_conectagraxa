@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.repositories.EmpresaRepository;
+import com.conecta.conectagraxa.repositories.GoogleProfissionalRepository;
 import com.conecta.conectagraxa.repositories.ProfissionalRepository;
+import com.conecta.conectagraxa.repositories.SessaoLoginEmpresaRepository;
+import com.conecta.conectagraxa.repositories.SessaoLoginProfissionalRepository;
 import com.conecta.conectagraxa.security.GoogleProfissional;
-import com.conecta.conectagraxa.security.GoogleProfissionalRepository;
 import com.conecta.conectagraxa.security.SessaoLoginEmpresa;
-import com.conecta.conectagraxa.security.SessaoLoginEmpresaRepository;
 import com.conecta.conectagraxa.security.SessaoLoginProfissional;
-import com.conecta.conectagraxa.security.SessaoLoginProfissionalRepository;
 
 @Service
 public class SessaoLoginService {
