@@ -5,7 +5,7 @@ import Buscar from '../../components/Busca/index.js'
 import Navbar from "../../components/navbar/index.js";
 import Conexoes from "../../components/Conexoes/index.js"
 import './Responsive-comunidade/index.css'
-
+import MenuProfissional from "../../components/menu-mobile-profissional/index.js"
 function Home_comunidade() {
     const [postagens, setPostagens] = useState([]);
 
@@ -17,12 +17,15 @@ function Home_comunidade() {
         <body>
             <div className="ggeral">
 
+                <span className="menumobii">
+                    <MenuProfissional></MenuProfissional>
+                </span>
 
                 <span className="navbarcomunit">
                     <Buscar></Buscar>
                 </span>
                 <span className="conecxoes" >
-                   <Conexoes></Conexoes>
+                    <Conexoes></Conexoes>
                 </span>
                 <span className="publicarcomuni">
                     <Publicarcomunidade adicionarPostagem={adicionarPostagem} />
@@ -49,7 +52,7 @@ function Home_comunidade() {
                     <Navbar></Navbar>
 
                 </div>
-                
+
             </div>
         </body>
     );

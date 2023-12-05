@@ -1,32 +1,37 @@
-.home {
-  width: 100%;
-  }
-  
-  .home .overlap-5 {
-    background-color: #fdfeff;
-    height: 52px;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .home .menu {
-    position: relative;
-    height: 30px;
-    left: 185px;
-    top: 11px;
-    width: 30px;
-    filter: invert();
-  }
-  
-  .home .logo {
-    height: 38px;
-    left: 11px;
-    object-fit: cover;
-    position: absolute;
-    top: 7px;
-    width: 110px;
-  }
+  @media (max-width:480px) {
+
+
+
+    .home {
+      width: 100%;
+      z-index: -5;
+    }
+
+    .home .overlap-5 {
+      background-color: #fdfeff;
+      height: 100px;
+      position: absolute;
+      width: 480px;
+      text-align: center;
+    }
+
+    .home .menu {
+      position: relative;
+      height: 50px;
+      left: 180px;
+      top: 30px;
+      width: 50px;
+      filter: invert();
+    }
+
+    .home .logo {
+      height: 40px;
+      left: 50px;
+      object-fit: cover;
+      position: absolute;
+      top: 40px;
+      width: 130px;
+    }
 
 
 
@@ -36,101 +41,73 @@
 
 
 
-  
-  .menumodalmobi {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 54%;
-    position: absolute;
-    top: 60px;
-    left: 200px;
+    .geralmodalmobi {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      background: rgba(205, 205, 205, 0.7);
+      animation: modalentrada 6s ease;
+    }
+
+    .janelamodalmobi {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      width: 150px;
+      height: 200px;
+      position: relative;
+      left: 300px;
+      top: 50px;
+      text-align: center;
+      background: white;
+      z-index: 10;
+      border-radius: 10px;
+      animation: modalBT 0.4s ease 0s forwards;
+    }
+
+    .menu-item {
+      padding: 5px;
+      cursor: pointer;
+      color: black;
+      border: 1px black solid;
+      margin: 5px;
+      border-radius: 50px;
+      font-size: 15px;
+      border: none;
+      background-color: rgb(214, 145, 17);
+    }
+
+    /* Adicione estilos de hover, ativo, etc., conforme necessário */
+    .menu-item:hover {
+      background-color: #e0e0e0;
+      /* Cor de fundo ao passar o mouse */
+    }
+
+    .menu-item:active {
+      background-color: #c0c0c0;
+      /* Cor de fundo ao clicar no item */
+    }
+
+
+    @keyframes modalentradaB {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes modalBT {
+      from {
+        top: -100%;
+      }
+
+      to {
+        top: 100px;
+      }
+    }
+
   }
-  
-  .menumodalmobi .div {
-    background-color: #ffffff;
-    height: 256px;
-    position: relative;
-    width: 195px;
-  }
-  
-  .menumodalmobi .group {
-    height: 200px;
-    left: 17px;
-    position: absolute;
-    top: 36px;
-    width: 161px;
-  }
-  
-  .menumodalmobi .overlap-group-wrapper {
-    height: 27px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 163px;
-  }
-  
-  .menumodalmobi .overlap-group {
-    background-color: #f99760;
-    border-radius: 10px;
-    height: 27px;
-    position: relative;
-    width: 161px;
-  }
-  
-  .menumodalmobi .text-wrapper {
-    color: #000000;
-    font-family: "Actor-Regular", Helvetica;
-    font-size: 15px;
-    font-weight: 400;
-    height: 27px;
-    left: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 135px;
-  }
-  
-  .menumodalmobi .overlap-wrapper {
-    height: 27px;
-    left: 0;
-    position: absolute;
-    top: 43px;
-    width: 163px;
-  }
-  
-  .menumodalmobi .div-wrapper {
-    height: 27px;
-    left: 0;
-    position: absolute;
-    top: 86px;
-    width: 163px;
-  }
-  
-  .menumodalmobi .group-2 {
-    height: 27px;
-    left: 0;
-    position: absolute;
-    top: 130px;
-    width: 163px;
-  }
-  
-  .menu .group-3 {
-    height: 27px;
-    left: 0;
-    position: absolute;
-    top: 173px;
-    width: 163px;
-  }
-  
-  .menumodalmobi .x-instance {
-    height: 18px !important;
-    left: 131px !important;
-    position: absolute !important;
-    top: 7px !important;
-    width: 18px !important;
-  }
-  

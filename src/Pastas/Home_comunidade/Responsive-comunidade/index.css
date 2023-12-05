@@ -9,7 +9,10 @@
         height: 700px;
         box-shadow: #717171 0px 0px 3px 0px;
 
+    }
 
+    .menumobii {
+        display: none;
     }
 
     .postagem {
@@ -91,9 +94,6 @@
         position: absolute;
         left: 990px;
         top: -11px;
-
-
-
 
     }
 }
@@ -182,6 +182,66 @@
 
 @media (max-width: 700px) {}
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
 
-@media (max-width: 320px) {}
+    .menumobii {
+        display: block;
+    }
+
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .publicarcomuni {
+        left: 0;
+        margin: 0;
+        padding: 0;
+        width: 0;
+        height: 0;
+        top: 40px;
+
+
+    }
+
+    .menumobii {
+        background-color: #717171;
+        width: 0;
+        height: 0;
+        margin: 0;
+    }
+
+    .geralperfil {
+        position: relative;
+        left: 0;
+        width: 480px;
+        height: 330px;
+        top: 140px;
+        margin: 0;
+    }
+
+    .postagem {
+        width: 450px;
+        left: 0;
+        padding: 5px;
+    }
+
+    .imagem-container {
+        width: 80%;
+    }
+
+
+}
+
+@media (max-width: 380px) {
+    .geralperfil {
+        height: 500px;
+    }
+}
+
+@media (max-width: 320px) {
+    .geralperfil {
+        height: 655px;
+    }
+}
