@@ -18,6 +18,7 @@ import javax.validation.constraints.Email;
 import com.conecta.conectagraxa.model.annotations.CpfCnpj;
 import com.conecta.conectagraxa.model.dto.EmpresaDTO;
 import com.conecta.conectagraxa.model.enums.Perfil;
+import com.conecta.conectagraxa.security.GoogleEmpresa;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,7 +45,7 @@ public class Empresa implements Serializable {
 	@Column(name ="telefone")	
 
 	private String telefone;
-
+	
 	@Column(name ="email",unique = true)
 	@Email
 	private String email;
@@ -119,6 +120,13 @@ public class Empresa implements Serializable {
 		this.fotoPerfilPath = objDTO.getFotoPerfilPath();
 		this.perfil = objDTO.getPerfil();
 		
+		
+	}
+
+	public Empresa(GoogleEmpresa obj) {
+		this.id = id;
+		this.email = obj.getEmail();
+		this.nomeFantasia = obj.getName();
 		
 	}
 

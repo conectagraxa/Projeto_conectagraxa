@@ -22,6 +22,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.dto.EmpresaDTO;
 import com.conecta.conectagraxa.response.ResponseMessage;
+import com.conecta.conectagraxa.security.GoogleProfissional;
 import com.conecta.conectagraxa.security.SessaoLoginEmpresa;
 import com.conecta.conectagraxa.service.EmpresaService;
 import com.conecta.conectagraxa.service.SessaoLoginService;
@@ -86,6 +87,13 @@ public class EmpresaController {
         return ResponseEntity.ok().body(new EmpresaDTO(obj));
     }
 	
+	// LOGIN GOOGLE EMPRESA
+			@PutMapping("/loginGoogle")
+			public ResponseEntity<ResponseMessage> loginGoogle(@RequestBody GoogleProfissional obj) {
+				String message = loginService.loginGoogleProfisional(obj);
+				ResponseMessage res = new ResponseMessage(message);
+				return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
+			}
 
 	
 	// LOGIN DA EMPRESA
@@ -96,7 +104,7 @@ public class EmpresaController {
 			return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
 		}
 
-		// LOGIN DA EMPRESA
+		// DESLOGAR DA EMPRESA
 		@PutMapping("/deslogar/{obj}")
 		public ResponseEntity<ResponseMessage> deslogar(@RequestBody SessaoLoginEmpresa obj) {
 			String message = loginService.DeslogarEmpresa(obj);

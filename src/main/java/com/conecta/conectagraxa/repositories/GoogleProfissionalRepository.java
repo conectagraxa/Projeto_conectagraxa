@@ -10,4 +10,5 @@ public interface GoogleProfissionalRepository extends JpaRepository<GoogleProfis
 
 	Optional<GoogleProfissional> findByEmail(String email);
 
+
 }

@@ -30,7 +30,7 @@ import com.conecta.conectagraxa.service.ProfissionalService;
 import com.conecta.conectagraxa.service.SeguidoresService;
 import com.conecta.conectagraxa.service.SessaoLoginService;
 
-@CrossOrigin
+@CrossOrigin("*")
 @Controller
 @RequestMapping(value = "/profissional")
 public class ProfissionalController {
@@ -44,7 +44,6 @@ public class ProfissionalController {
 
 	@Autowired
 	private SeguidoresService seguidoresService;
-
 
 	
 	// BUSCAR PROFISSIONAL POR NOME

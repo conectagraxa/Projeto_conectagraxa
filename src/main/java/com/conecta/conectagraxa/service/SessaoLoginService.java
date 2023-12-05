@@ -9,10 +9,12 @@ import org.springframework.stereotype.Service;
 import com.conecta.conectagraxa.model.Empresa;
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.repositories.EmpresaRepository;
+import com.conecta.conectagraxa.repositories.GoogleEmpresaRepository;
 import com.conecta.conectagraxa.repositories.GoogleProfissionalRepository;
 import com.conecta.conectagraxa.repositories.ProfissionalRepository;
 import com.conecta.conectagraxa.repositories.SessaoLoginEmpresaRepository;
 import com.conecta.conectagraxa.repositories.SessaoLoginProfissionalRepository;
+import com.conecta.conectagraxa.security.GoogleEmpresa;
 import com.conecta.conectagraxa.security.GoogleProfissional;
 import com.conecta.conectagraxa.security.SessaoLoginEmpresa;
 import com.conecta.conectagraxa.security.SessaoLoginProfissional;
@@ -27,7 +29,10 @@ public class SessaoLoginService {
 	@Autowired
 	GoogleProfissionalRepository gRepository; 
 
+	@Autowired
+	GoogleEmpresaRepository geRepository; 
 
+	
 	@Autowired
 	EmpresaService eService; 
 	
@@ -129,6 +134,59 @@ public class SessaoLoginService {
 		
 	}
 
+	
+	
+	public String loginGoogleEmpresa(GoogleEmpresa google) {
+		//loginp.setId(0);
+		Optional <Empresa> empresa = eRepository.findByEmail(google.getEmail());
+		if (empresa.isPresent()) {
+			Optional <GoogleEmpresa> googleLogado = geRepository.findByEmail(google.getEmail());
+			
+			if(googleLogado.isPresent()) {
+				googleLogado.get().setId(googleLogado.get().getId());
+				googleLogado.get().setLogado(true);
+				if (googleLogado.get().getName() != null) {
+					googleLogado.get().setName(googleLogado.get().getName());
+				}
+				if (googleLogado.get().getEmail() != null) {
+					googleLogado.get().setEmail(googleLogado.get().getEmail());
+				}
+				
+				GoogleEmpresa atualizado = googleLogado.get();
+				//atualizado.setId(googleLogado.get().getId());
+				geRepository.save(atualizado);
+			}
+			GoogleEmpresa login = new GoogleEmpresa();
+			//SessaoLoginProfissional login = new SessaoLoginProfissional();
+			login.setId(empresa.get().getId());
+			login.setEmail(google.getEmail());
+			login.setLogado(true);
+			login.setName(google.getName());
+			 login = geRepository.save(login);
+			 return "Usuário logado com sucesso! Bem vindo "+empresa.get().getNomeFantasia();
+		}else {
+		
+		GoogleEmpresa login = new GoogleEmpresa();
+		login.setEmail(google.getEmail());
+		login.setLogado(true);
+		login.setName(google.getName());
+		
+		GoogleEmpresa loginsalvo = login;
+		Empresa criandoConta = new Empresa(loginsalvo);
+		eRepository.save(criandoConta);		
+		login.setId(criandoConta.getId());
+		geRepository.save(loginsalvo);
+
+		return "Empresa logada com sucesso! Bem vindo "+login.getName();
+		}
+		
+	}
+
+	
+	
+	
+	
+	
 	public String LoginEmpresa(SessaoLoginEmpresa loginE) {
 		//loginp.setId(0);
 		Optional <Empresa> empresa = eRepository.findByEmail(loginE.getEmail());

@@ -13,7 +13,6 @@ public interface ProfissionalRepository extends JpaRepository<Profissional, Inte
 
 	Optional<Profissional> findByEmail(String email);
 
-	Optional<Profissional> findById(Integer id);
 
 
 	//@Query("select u.nome from profissional u where u.nome like '%nome%'")

@@ -22,25 +22,22 @@ public class ProfissionalService {
 
 	@Autowired
 	private ProfissionalRepository repository;
-	
 
 	@Autowired
 	private PasswordEncoder enconder;
-	
-	
-	//criar profissional + feed
+
+	// criar profissional + feed
 	public Profissional createProfissional(ProfissionalDTO objDTO) throws Exception {
-		//(encoder.encode(objDTO.getSenha()));
+		// (encoder.encode(objDTO.getSenha()));
 		objDTO.setId(0);
 		objDTO.setSenha(enconder.encode(objDTO.getSenha()));
-		
+
 		validaPorNome(objDTO);
 		validaPorEmail(objDTO);
 		Profissional newObj = new Profissional(objDTO);
-		
-		
+
 		Feed_ProfissionalDTO feedDTO = new Feed_ProfissionalDTO(objDTO);
-		Feed_Profissional feed = new Feed_Profissional/*feedService.createFeed*/(feedDTO);
+		Feed_Profissional feed = new Feed_Profissional/* feedService.createFeed */(feedDTO);
 		feed.setIdProfissional(newObj);
 		newObj.setId(objDTO.getId());
 		newObj.setFeedProfissional(feed);
@@ -48,9 +45,6 @@ public class ProfissionalService {
 		return newObj;
 
 	}
-	
-
-
 
 //busca pelo id profissional
 	public Profissional findById(Integer id) throws ObjectNotFoundException {
@@ -59,47 +53,46 @@ public class ProfissionalService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("objeto não encontrado Id: " + id));
 	}
 
-	//trazer por nome
+	// trazer por nome
 	public Profissional findByNome(String nome) throws Exception {
-	    Optional<Profissional> obj = repository.findByNomeIgnoreCaseContaining(nome); 
-		return obj.orElseThrow(() -> new Exception("objeto nome encontrado Nome: " + nome ));
+		Optional<Profissional> obj = repository.findByNomeIgnoreCaseContaining(nome);
+		return obj.orElseThrow(() -> new Exception("objeto nome encontrado Nome: " + nome));
 	}
 
-	//todos os profissionais
+	// todos os profissionais
 	public List<Profissional> getAllProfissional() {
 		return repository.findAll();
 	}
-	//método atualizar senha
+
+	// método atualizar senha
 	public Profissional atualizaSenha(Integer id, ProfissionalDTO objDTO) {
-		
-		
+
 		objDTO.setId(id);
 		Profissional newObj = new Profissional();
 		Optional<Profissional> obj = repository.findById(objDTO.getId());
-		
+
 		if (obj.isPresent())
 			newObj = obj.get();
-			//newObj.setId(obj.get().getId());
-		
-		if (enconder.matches(objDTO.getAtual(),obj.get().getSenha())) {
+		// newObj.setId(obj.get().getId());
+
+		if (enconder.matches(objDTO.getAtual(), obj.get().getSenha())) {
 
 			System.out.print("senha válida");
 			if (objDTO.getNovaSenha().equals(objDTO.getConfirma())) {
-				objDTO.setSenha(objDTO.getNovaSenha());		
+				objDTO.setSenha(objDTO.getNovaSenha());
 
-				
-				newObj.setSenha (enconder.encode(objDTO.getSenha()));
+				newObj.setSenha(enconder.encode(objDTO.getSenha()));
 
 				System.out.print("senha ATUALIZADA");
 
-			}else {
+			} else {
 				System.out.print("CONFIRMAÇÃO DE SENHA INCORRETA");
 			}
-		}else {
+		} else {
 			System.out.print("senha NÃO VÁLIDA");
-		
+
 		}
-		
+
 		if (obj.get().getNome() != null) {
 			newObj.setNome(obj.get().getNome());
 		}
@@ -136,8 +129,6 @@ public class ProfissionalService {
 		if (obj.get().getSexo() != null) {
 			newObj.setSexo(obj.get().getSexo());
 		}
-		
-
 
 		Profissional old = (newObj);
 		Profissional atualizado = repository.save(old);
@@ -145,15 +136,14 @@ public class ProfissionalService {
 		return repository.save(atualizado);
 	}
 
-	
-	//update profissional
+	// update profissional
 	public Profissional update(Integer id, @Valid ProfissionalDTO objDTO) throws Exception {
-		
+
 		objDTO.setId(id);
 		Optional<Profissional> obj = repository.findById(id);
 		Profissional newObj = new Profissional();
 
-		if (obj.isPresent() || obj.get().getId()!=null) {
+		if (obj.isPresent() || obj.get().getId() != null) {
 			validaPorEmail(objDTO);
 
 			newObj.setId(obj.get().getId());
@@ -190,14 +180,13 @@ public class ProfissionalService {
 			if (obj.get().getSenha() != null) {
 				newObj.setSenha((obj.get().getSenha()));
 			}
-			//if (obj.get().getDataNascimento() != null) {
-				newObj.setDataNascimento(obj.get().getDataNascimento());
-			//}
+			// if (obj.get().getDataNascimento() != null) {
+			newObj.setDataNascimento(obj.get().getDataNascimento());
+			// }
 			if (obj.get().getSexo() != null) {
 				newObj.setSexo(obj.get().getSexo());
 			}
 
-			
 			// atualiza os campos do objeto com os valores preenchidos no body do objeto DTO
 			if (objDTO.getNome() != null) {
 				newObj.setNome(objDTO.getNome());
@@ -231,13 +220,14 @@ public class ProfissionalService {
 			}
 
 		}
+
 		Profissional old = (newObj);
 		Profissional atualizado = repository.save(old);
 		return atualizado;
 
 	}
 
-	//validação de email
+	// validação de email
 	private void validaPorEmail(ProfissionalDTO objDTO) throws Exception {
 		Optional<Profissional> obj = repository.findById(objDTO.getId());
 		obj = repository.findByEmail(objDTO.getEmail());
@@ -247,7 +237,7 @@ public class ProfissionalService {
 
 	}
 
-	//validação de email
+	// validação de email
 	private void validaPorNome(ProfissionalDTO objDTO) throws Exception {
 		Optional<Profissional> obj = repository.findById(objDTO.getId());
 		obj = repository.findByNomeIgnoreCaseContaining(objDTO.getNome());
@@ -257,5 +247,5 @@ public class ProfissionalService {
 
 	}
 
-
+	
 }
