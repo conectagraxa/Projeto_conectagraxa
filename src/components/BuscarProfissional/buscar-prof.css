@@ -1,0 +1,124 @@
+
+
+.bp-fundo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100vh;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    padding: 2vh 1.6vw;
+}
+
+.bp-fundo h2 {
+    font-size: 1.2rem;
+    border-bottom: #6C6A6A 1px solid;
+    line-height: 40px;
+    margin-bottom: 16px;
+}
+
+.bp-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: aquamarine; */
+    height: 100%;
+    margin-bottom: 6px;
+}
+
+.bp-filtros ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+/* .bp-filtros li {
+    display: flex;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: #6C6A6A 1px solid;
+    width: 12vw;
+    justify-content: center;
+} */
+
+
+.bp-filtros a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: #6C6A6A 1px solid;
+    width: 12vw;
+    justify-content: center;
+}
+
+.bp-filtros a:hover, .bp-filtros a:focus {
+    border: #F99760 1px solid;
+    background-color: #F99760;
+
+    .bp-filtros a {
+        color: white;
+    }
+}
+
+.bp-box1, .bp-box2 {
+    display: flex;
+    gap: 20px;
+}
+
+.bp-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFF9F5;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+    width: 13vw;
+    padding: 10px;
+    gap: 1.2vh;
+    position: relative;
+}
+
+.scroll {
+    overflow-x: scroll;
+}
+
+.bp-card:hover {
+    transform: scale(1.02);
+}
+
+.bp-compartilhar {
+    position: absolute;
+    right: 10px;
+}
+
+.bp-card h3 {
+    text-align: center;
+    font-size: 15px;
+}
+
+.bp-card h4 {
+    text-align: center;
+    font-size: 12px;
+}
+
+.bp-card input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #FCD6C0;
+    width: 100%;
+}
+
+.bp-card input:hover {
+    background-color: #F99760;
+}
+
+.bp-card-div {
+    display: flex;
+    width: 100%;
+}
+

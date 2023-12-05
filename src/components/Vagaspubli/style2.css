@@ -1,0 +1,70 @@
+
+
+.container_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 87vh;
+    background-color: white;
+    border-radius: 5px;
+    margin: 0 1.4vw 3vh 1.4vw;
+    padding: 2vh 1.6vw;
+}
+
+.textmid1_side {
+    font-size: 1.2rem;
+    border-bottom: #6C6A6A 1px solid;
+    line-height: 40px;
+}
+
+.profil88 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profil88 input, .profil88 select {
+    padding: 0 10px;
+}
+
+.vaga_campo {
+    display: flex;
+    height: 40px;
+    align-items: center;
+}
+
+.profil_dentro{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 14vw;
+}
+
+.input_mid{
+    height: 40px;
+    width: 55%;
+    border-radius: 5px;
+    border: #6C6A6A 1px solid;
+}
+
+.input_mid2{
+    height: 120px;
+    width: 55%;
+    border-radius: 5px;
+    border: #6C6A6A 1px solid;
+}
+
+.profil_dentro2{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 14vw;
+    margin-bottom: 2vh;
+}
+
+#profilutton{
+    width: 24%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #F99760;
+    color: white;
+    border: none;
+}

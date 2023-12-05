@@ -29,6 +29,9 @@ import Home from './Pastas/principal/index';
 import Login from './Pastas/Login/index';
 import Publicarcomunidade from './Pastas/Home_comunidade/Publicarcomunidade/index'
 import MenuProfissional from './components/menu-mobile-profissional/index.js'
+import EditarPerfil from './components/EditarPerfilUsuario/EditarPerfil.js'
+import VagasPubli from './components/Vagaspubli/VagasPubli.js'
+import BuscarProf from './components/BuscarProfissional/BuscarProf.js'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -51,6 +54,9 @@ function App() {
         <Route path='/Navbarempresa' element={<Navbarempresa />} />
         <Route path='/PerfilEmpresas' element={<PerfilEmpresas />} />
         <Route path='/MenuProfissional' element={<MenuProfissional />} />
+        <Route path='/EditarPerfil' element={<EditarPerfil />} />
+        <Route path='/VagasPubli' element={<VagasPubli />} />
+        <Route path='/BuscarProf' element={<BuscarProf />} />
 
       </Routes>
     </Router>
