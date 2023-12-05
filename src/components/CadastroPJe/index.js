@@ -1,11 +1,59 @@
 
 import React, {useState} from "react";
+import Axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom'
+import Api from '../../services/Api';
 
 import "./index.css"
 import logo from "./imagens-formpje/logo.jpg"
 import logooo from'./imagens-formpje/logooo.png'
 
 function FormPje() {
+
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [estado, setEstado] = useState('');
+    const [cidade, setCidade] = useState('');
+    const [nomeFantasia, setNomeFantasia] = useState('');
+  
+    const [cpfCnpj, setCpfCnpj] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [cep, setCep] = useState('');
+    const [id, setId] = useState('');
+
+    const navigate =  useNavigate();
+    
+
+    async function createProfissional(e){
+        e.preventDefault();
+    
+        const data = {
+            email,
+            senha,
+            telefone,
+            cep,
+            cpfCnpj,
+            nomeFantasia,
+            endereco,
+            estado,
+            cidade,
+            
+        };
+        try{
+            console.log('Senha atualizada:', senha);
+
+            const  response = await Api.post('profissional/create',data);
+            console.log('Senha atualizada:', senha);
+
+            localStorage.getItem('email');
+            localStorage.setItem('id',id);
+    
+            navigate('/Login');
+        }catch(err){
+            alert('Cadastro não realizado');
+        }
+    }
 
     const [modalDisplay, setModalDisplay] = useState('none')
 
@@ -16,6 +64,27 @@ function FormPje() {
     function FecharPolitica() {
         setModalDisplay('none');
     }
+
+    const checkCEP = async () => {
+        cep.replace(/\D/g, ''); 
+        if (cep.length === 8 ) {
+          try {
+            const response = await Axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+            if (response.data.erro) {
+              alert('CEP inválido, tente novamente');
+            } else {
+              setEndereco(response.data.logradouro);
+              setCidade(response.data.localidade);
+              setEstado(response.data.uf);
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        } else {
+          alert('CEP inválido, tente novamente, insira apenas números sem traços');
+        }
+     };
+     
     return (
         <main className="mainof_pj">
             <div class="bolax1_pj"></div>
