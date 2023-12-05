@@ -1,5 +1,8 @@
 
 import React, {useState} from "react";
+import Axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom'
+import Api from '../../services/Api';
 
 import "./index.css"
 import logo from "./imagens-formpje/logo.jpg"
@@ -30,7 +33,7 @@ function FormPje() {
             senha,
             telefone,
             cep,
-            cnpjCpf,
+            cpfCnpj,
             nomeFantasia,
             endereco,
             estado,
