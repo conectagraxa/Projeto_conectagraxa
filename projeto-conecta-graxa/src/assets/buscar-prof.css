@@ -68,8 +68,6 @@ Link {
 .bp-box1, .bp-box2 {
     display: flex;
     gap: 20px;
-    width: 64vw;
-    /* background-color: aquamarine; */
 }
 
 .bp-card {
