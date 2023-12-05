@@ -40,6 +40,7 @@ export default function CadastroPF() {
             endereco,
             estado,
             cidade,
+            id,
             
         };
         try{
@@ -49,7 +50,7 @@ export default function CadastroPF() {
             console.log('Senha atualizada:', senha);
 
             localStorage.getItem('email');
-            localStorage.setItem('id',id);
+            localStorage.setItem('id',Api.getUri);
     
             navigate('/Login');
         }catch(err){

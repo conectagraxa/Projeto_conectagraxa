@@ -103,7 +103,6 @@ export default function LoginForm() {
 
 
                 <GoogleOAuthProvider clientId="758578177861-0ckcl4g5las642anqov57e49tp0mbitr.apps.googleusercontent.com">
-
                 <GoogleLogin
                     onSuccess={credentialResponse => {
                         console.log(credentialResponse)
@@ -112,7 +111,7 @@ export default function LoginForm() {
                         const response =  Api.put('profissional/loginGoogle', details);
                         localStorage.setItem('email', details.email);
                         setLogado(true);
-                         navigate('/Home_comunidade');
+                      //   navigate('/Home_comunidade');
                     }}
                     onError={() => {
                         console.log('Login Failed')

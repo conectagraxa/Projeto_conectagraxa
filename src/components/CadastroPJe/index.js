@@ -7,6 +7,51 @@ import logooo from'./imagens-formpje/logooo.png'
 
 function FormPje() {
 
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [estado, setEstado] = useState('');
+    const [cidade, setCidade] = useState('');
+    const [nomeFantasia, setNomeFantasia] = useState('');
+  
+    const [cpfCnpj, setCpfCnpj] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [cep, setCep] = useState('');
+    const [id, setId] = useState('');
+
+    const navigate =  useNavigate();
+    
+
+    async function createProfissional(e){
+        e.preventDefault();
+    
+        const data = {
+            email,
+            senha,
+            telefone,
+            cep,
+            cnpjCpf,
+            nomeFantasia,
+            endereco,
+            estado,
+            cidade,
+            
+        };
+        try{
+            console.log('Senha atualizada:', senha);
+
+            const  response = await Api.post('profissional/create',data);
+            console.log('Senha atualizada:', senha);
+
+            localStorage.getItem('email');
+            localStorage.setItem('id',id);
+    
+            navigate('/Login');
+        }catch(err){
+            alert('Cadastro não realizado');
+        }
+    }
+
     const [modalDisplay, setModalDisplay] = useState('none')
 
     function AbrirPolitica() {
