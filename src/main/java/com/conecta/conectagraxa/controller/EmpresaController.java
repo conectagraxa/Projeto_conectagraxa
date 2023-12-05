@@ -62,7 +62,7 @@ public class EmpresaController {
 		return ResponseEntity.ok().body(listDTO);	}
 		
 	//criar empresa
-	@PostMapping
+	@PostMapping(value = "/create")
 	public ResponseEntity<EmpresaDTO> create(@Valid @RequestBody EmpresaDTO objDTO) throws Exception {
 		Empresa empresa = service.createEmpresa(objDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(empresa.getId())
