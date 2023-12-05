@@ -47,12 +47,14 @@ public class DBService {
 
 	//encriptografar senha profissional - ok - usado o Serviço Bcrypt 
 	
-	//encriptografar senha empresa 
+	//encriptografar senha empresa - ok
 
 	//faltam 5 endpoints - candidaturas service: 5
 	
 	
-	@Autowired
+	
+	
+/* @Autowired
 	ProfissionalService pService;
 	Perfil perfil;
 
@@ -77,13 +79,17 @@ public class DBService {
 	@Autowired
 	CandidaturasService cdService;
 
-
+*/
 	@Autowired
 	CategoriaService catService;
 	
+	
+	
+	
+	
 	public void instanciaDB() throws Exception {
-		catService.insertCat();
-
+			catService.insertCat();
+/*
 		
 		Profissional p1 = new Profissional(0, "Marcos Oliveira Jr.", "pardo", "PE", "cabrobó", "rua malafaia",
 				29906460, "(81) 2876-4327", "ap 10", "marcosoliveirajr@mail.com", "123", LocalDate.of(2001,8,21), "Masculino",
@@ -109,7 +115,9 @@ public class DBService {
 		Profissional p6 = new Profissional(0, "Leandro", "preto", "PE", "Paulista",
 				"Rua Heleno Noberto Costa", 59155230, "(84) 99616-1472", "ap 12", "leandro@mail.com", "123",
 				LocalDate.of(2000,01,01), "Masculino", "www.com.br", perfil.PROFISSIONAL);
+	*/
 	
+	/*
 		
 		ProfissionalDTO pd1 = new ProfissionalDTO(p1);
 		ProfissionalDTO pd2 = new ProfissionalDTO(p2);
@@ -142,6 +150,9 @@ public class DBService {
 		CursosDTO c5 = new CursosDTO(0,5,"Curso de publicidade","AMP",  LocalDate.of(2004,12,03) , LocalDate.of (2005,01,01));
 		cService.createCurso(c5);
 	
+	*/
+	
+	
 	/*	  1	Todos
 		  *  2	Áudio e Som
 		  *  3	Iluminação
@@ -149,7 +160,7 @@ public class DBService {
 		  *  5	Equipamentos
 		  */
 		
-	
+	/*
 		EmpresaDTO e4 = new EmpresaDTO(0, "Bento e Felipe Shows Ltda","11981914484","financeiro@bentoefelipeshowsltda.com.br","13422762000128","São Paulo","SP","Travessa Ibiquera","462","03755095","123","www.fotoperfil.com");
 		eService.createEmpresa(e4);
 		
@@ -175,6 +186,13 @@ public class DBService {
 		VagasDTO vagasDTO4 = new VagasDTO(0,"Tecnico de Equipamentos", "São Paulo","www.descricaofoto.com","Precisamos de alguém que tenha vontade de ser técnico de Equipamentos","SP",1,1,5);
 		vService.createVaga(vagasDTO4, 3);
 		
+		
+		*/
+	
+	
+	
+	
+		/*
 		
 		PostagensDTO ptd1 = new PostagensDTO(0, 1,"um dia muito lindo", LocalDate.now(), "www.fotomassa.com",0);				
 		ptService.createPost(ptd1.getFeedProfissionalId(),ptd1);
@@ -202,7 +220,7 @@ public class DBService {
 		ComentariosDTO com1 = new ComentariosDTO(0, 2, LocalDate.now(), 1, "foto linda amiga");		
 		comService.createComentario(com1, 1, 2);
 		
-		
+		*/
 		//proRepository.saveAll(Arrays.asList(p1, p2,p3,p4));
 
 	}
