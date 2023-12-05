@@ -1,9 +1,8 @@
 import React from "react";
 import Capa from "../assets/img/capa.png"
 import Perfil from "../assets/img/perfil.png"
-import "../assets/style-edit-perfil.css";
+// import "../assets/style-edit-perfil.css";
 import Close from "../assets/img/close.png"
-import Principal from "../pages/Principal";
 
 function EditarPerfil({ onClose }) {
 
@@ -25,7 +24,7 @@ function EditarPerfil({ onClose }) {
                             <section className="container-info">
                                 <section className="box1-modal">
                                     <label for="">Nome completo <span>*</span></label>
-                                    <input type="text" placeholder="Company Name"/>
+                                    <input type="text" name="" id="" placeholder="Company Name"/>
                                     <label for="">Email <span>*</span></label>
                                     <input type="email" name="" id="" placeholder="company@gmail.com"/>
                                     <label for="">Número <span>*</span></label>
