@@ -64,6 +64,27 @@ function FormPje() {
     function FecharPolitica() {
         setModalDisplay('none');
     }
+
+    const checkCEP = async () => {
+        cep.replace(/\D/g, ''); 
+        if (cep.length === 8 ) {
+          try {
+            const response = await Axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+            if (response.data.erro) {
+              alert('CEP inválido, tente novamente');
+            } else {
+              setEndereco(response.data.logradouro);
+              setCidade(response.data.localidade);
+              setEstado(response.data.uf);
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        } else {
+          alert('CEP inválido, tente novamente, insira apenas números sem traços');
+        }
+     };
+     
     return (
         <main className="mainof_pj">
             <div class="bolax1_pj"></div>
