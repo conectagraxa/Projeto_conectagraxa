@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "google_profissional")
+@Entity(name = "google_empresa")
 @Data
 @NoArgsConstructor
 
