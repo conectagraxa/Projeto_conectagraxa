@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ import com.conecta.conectagraxa.security.SessaoLoginEmpresa;
 import com.conecta.conectagraxa.service.EmpresaService;
 import com.conecta.conectagraxa.service.SessaoLoginService;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/empresa")
 public class EmpresaController {
@@ -86,7 +88,7 @@ public class EmpresaController {
 	
 
 	
-	// LOGIN DO PROFISSIONAL
+	// LOGIN DA EMPRESA
 		@PutMapping("/login")
 		public ResponseEntity<ResponseMessage> login(@RequestBody SessaoLoginEmpresa obj) {
 			String message = loginService.LoginEmpresa(obj);
@@ -94,7 +96,7 @@ public class EmpresaController {
 			return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
 		}
 
-		// LOGIN DO PROFISSIONAL
+		// LOGIN DA EMPRESA
 		@PutMapping("/deslogar/{obj}")
 		public ResponseEntity<ResponseMessage> deslogar(@RequestBody SessaoLoginEmpresa obj) {
 			String message = loginService.DeslogarEmpresa(obj);

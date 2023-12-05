@@ -3,6 +3,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,9 +14,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /*
  * Essa é a classe executável do projeto
  */
+//@ComponentScan("com.conecta.conectagraxa.services")
+@EnableJpaRepositories("com.conecta.conectagraxa.repositories")
 @EnableSwagger2 //habilitando a api do swagger
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class) //desativando configurações de segurança do spring security
-@EnableJpaRepositories //habilitando repositórios que extendem o jpa
+ //habilitando repositórios que extendem o jpa
 public class ConectagraxaApplication {
 
 	/*

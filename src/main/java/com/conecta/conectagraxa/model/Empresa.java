@@ -76,7 +76,6 @@ public class Empresa implements Serializable {
 	@Column(name ="fotoperfil")	
 	private String fotoPerfilPath;
 	
-	private String token = UUID.randomUUID().toString(); 
 
 	@Column(name ="perfil")	
 	/*

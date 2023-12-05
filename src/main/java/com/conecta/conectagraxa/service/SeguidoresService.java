@@ -55,7 +55,6 @@ public class SeguidoresService {
 		userSeguir.setSenha(seguir.get().getSenha());
 		userSeguir.setDataNascimento(seguir.get().getDataNascimento());
 		userSeguir.setSexo(seguir.get().getSexo());
-		userSeguir.setToken(seguir.get().getToken());
 		seguindo.setSeguindoId(userSeguir);
 		
 	
@@ -78,7 +77,6 @@ public class SeguidoresService {
 		userSeguidor.setSenha(seguidor.get().getSenha());
 		userSeguidor.setDataNascimento(seguidor.get().getDataNascimento());
 		userSeguidor.setSexo(seguidor.get().getSexo());
-		userSeguidor.setToken(seguidor.get().getToken());
 
 		seguido.setSeguidoresId(userSeguidor);
 
@@ -129,7 +127,6 @@ public class SeguidoresService {
 		userSeguir.setSenha(seguir.get().getSenha());
 		userSeguir.setDataNascimento(seguir.get().getDataNascimento());
 		userSeguir.setSexo(seguir.get().getSexo());
-		userSeguir.setToken(seguir.get().getToken());
 		seguindo.setSeguindoId(userSeguir);
 
 	
@@ -152,7 +149,6 @@ public class SeguidoresService {
 		userSeguidor.setSenha(seguidor.get().getSenha());
 		userSeguidor.setDataNascimento(seguidor.get().getDataNascimento());
 		userSeguidor.setSexo(seguidor.get().getSexo());
-		userSeguidor.setToken(seguidor.get().getToken());
 
 		seguido.setSeguidoresId(userSeguidor);
 		

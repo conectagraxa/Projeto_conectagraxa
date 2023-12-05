@@ -21,8 +21,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.conecta.conectagraxa.model.Comentarios;
 import com.conecta.conectagraxa.model.Postagens;
+import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.dto.ComentariosDTO;
 import com.conecta.conectagraxa.model.dto.PostagensDTO;
+import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.service.ComentariosService;
 import com.conecta.conectagraxa.service.PostagensService;
 
@@ -42,10 +44,9 @@ public class PostagensController {
 	// CRIAR POSTAGEM
 	@PostMapping(value = "/create")
 	public ResponseEntity<PostagensDTO> create(@Valid @RequestBody PostagensDTO objDTO) throws Exception {
-
 		Postagens newObj = service.createPost(objDTO.getFeedProfissionalId(),objDTO);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
-		return ResponseEntity.created(uri).build();
+		return ResponseEntity.ok(new PostagensDTO(newObj));
+
 	}
 
 	// EDITAR POSTAGEM

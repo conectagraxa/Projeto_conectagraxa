@@ -49,7 +49,7 @@ public class ProfissionalDTO implements Serializable {
 	
 	private String senha;
 
-	  @JsonFormat(pattern = "dd/MM/yyyy") 
+	 // @JsonFormat(pattern = "dd/MM/yyyy") 
 	private LocalDate dataNascimento;
 
 	private String sexo;

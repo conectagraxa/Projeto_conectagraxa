@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
@@ -24,6 +24,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.model.enums.Perfil;
+import com.conecta.conectagraxa.security.GoogleProfissional;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
@@ -47,6 +48,7 @@ public class Profissional implements Serializable {
 	
 	private String nome;
 	
+	
 	private String etnia;
 	
 	@Column(columnDefinition = "VARCHAR(2)")
@@ -69,13 +71,14 @@ public class Profissional implements Serializable {
 	private String senha;
 
 	@DateTimeFormat
-	  @JsonFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
-
-	private String sexo;
-	private String fotoPerfil;
 	
-	private String token = UUID.randomUUID().toString(); 
+	private String sexo;
+	
+	private String fotoPerfil;
+
+	
 	Perfil perfil = Perfil.PROFISSIONAL;
 
 	
@@ -172,7 +175,12 @@ public class Profissional implements Serializable {
 	}
 
 
-
+public Profissional (GoogleProfissional obj) {
+	this.id = id;
+	this.email = obj.getEmail();
+	this.nome = obj.getName();
+	
+}
 	
 	}
     

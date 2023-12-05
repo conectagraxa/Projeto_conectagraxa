@@ -104,6 +104,11 @@ public class DBService {
 		Profissional p5 = new Profissional(0, "Suelen", "branca", "RN", "Parnamirim",
 				"Rua Heleno Noberto Costa", 59155230, "(84) 99616-1472", "ap 12", "suelen@mail.com", "123",
 				LocalDate.of(2000,01,01), "Feminino", "www.com.br", perfil.PROFISSIONAL);
+		
+		
+		Profissional p6 = new Profissional(0, "Leandro", "preto", "PE", "Paulista",
+				"Rua Heleno Noberto Costa", 59155230, "(84) 99616-1472", "ap 12", "leandro@mail.com", "123",
+				LocalDate.of(2000,01,01), "Masculino", "www.com.br", perfil.PROFISSIONAL);
 	
 		
 		ProfissionalDTO pd1 = new ProfissionalDTO(p1);
@@ -112,12 +117,15 @@ public class DBService {
 		ProfissionalDTO pd4 = new ProfissionalDTO(p4);
 		
 		ProfissionalDTO pd5 = new ProfissionalDTO(p5);
+
+		ProfissionalDTO pd6 = new ProfissionalDTO(p6);
 		
 		pService.createProfissional(pd1);
 		pService.createProfissional(pd2);
 		pService.createProfissional(pd3);
 		pService.createProfissional(pd4);
 		pService.createProfissional(pd5);
+		pService.createProfissional(pd6);
 		
 		CursosDTO c1 = new CursosDTO(0,1,"Curso de tecnico de palco","AMP",  LocalDate.of(2003,12,03) , LocalDate.of (2004,01,01));
 		cService.createCurso(c1);

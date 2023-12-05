@@ -129,9 +129,6 @@ public class EmpresaService {
 		if (obj.get().getFotoPerfilPath() != null) {
 			newObj.setFotoPerfilPath(obj.get().getFotoPerfilPath());
 		}
-		if (obj.get().getToken() != null) {
-			newObj.setToken(obj.get().getToken());
-		}
 		
 	
 	Empresa old = (newObj);
