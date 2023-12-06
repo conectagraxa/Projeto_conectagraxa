@@ -1,9 +1,7 @@
 package com.conecta.conectagraxa.model;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -98,7 +96,6 @@ public class Feed_Profissional implements Serializable {
 		    }
 		    return this.postagens;
 		}
-
 
 		public void setPostagens(List<Postagens> postagens) {
 			this.postagens = postagens;

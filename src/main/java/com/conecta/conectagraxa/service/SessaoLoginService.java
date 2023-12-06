@@ -32,7 +32,6 @@ public class SessaoLoginService {
 	ProfissionalRepository pRepository; 
 	@Autowired
 	GoogleProfissionalRepository gRepository; 
-
 	@Autowired
 	GoogleEmpresaRepository geRepository; 
 
