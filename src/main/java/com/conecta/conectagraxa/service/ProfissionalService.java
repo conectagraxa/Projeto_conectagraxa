@@ -36,9 +36,10 @@ public class ProfissionalService {
 		validaPorEmail(objDTO);
 		Profissional newObj = new Profissional(objDTO);
 
-		Feed_ProfissionalDTO feedDTO = new Feed_ProfissionalDTO(objDTO);
+		Feed_ProfissionalDTO feedDTO = new Feed_ProfissionalDTO(objDTO.getId());
 		Feed_Profissional feed = new Feed_Profissional/* feedService.createFeed */(feedDTO);
 		feed.setIdProfissional(newObj);
+		feed.setId(newObj.getId());
 		newObj.setId(objDTO.getId());
 		newObj.setFeedProfissional(feed);
 		repository.save(newObj);

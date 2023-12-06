@@ -28,7 +28,7 @@ import com.conecta.conectagraxa.security.SessaoLoginEmpresa;
 import com.conecta.conectagraxa.service.EmpresaService;
 import com.conecta.conectagraxa.service.SessaoLoginService;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/empresa")
 public class EmpresaController {
@@ -89,28 +89,28 @@ public class EmpresaController {
     }
 	
 	// LOGIN GOOGLE EMPRESA
-			@PutMapping("/loginGoogle")
-			public ResponseEntity<ResponseMessage> loginGoogle(@RequestBody GoogleEmpresa obj) {
-				String message = loginService.loginGoogleEmpresa(obj);
-				ResponseMessage res = new ResponseMessage(message);
-				return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
+			@PutMapping("/loginGoogleEmpresa")
+			public ResponseEntity<GoogleEmpresa> loginGoogle(@RequestBody GoogleEmpresa objDTO) {
+				GoogleEmpresa obj = loginService.loginGoogleEmpresa(objDTO);
+		        return ResponseEntity.ok().body(new GoogleEmpresa(obj));
+
 			}
 
 	
 	// LOGIN DA EMPRESA
 		@PutMapping("/login")
-		public ResponseEntity<ResponseMessage> login(@RequestBody SessaoLoginEmpresa obj) {
-			String message = loginService.LoginEmpresa(obj);
-			ResponseMessage res = new ResponseMessage(message);
-			return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
+		public ResponseEntity<SessaoLoginEmpresa> login(@RequestBody SessaoLoginEmpresa obj) {
+			SessaoLoginEmpresa login = loginService.LoginEmpresa(obj);
+	        return ResponseEntity.ok().body(new SessaoLoginEmpresa(login));
+
 		}
 
 		// DESLOGAR DA EMPRESA
 		@PutMapping("/deslogar/{obj}")
-		public ResponseEntity<ResponseMessage> deslogar(@RequestBody SessaoLoginEmpresa obj) {
-			String message = loginService.DeslogarEmpresa(obj);
-			ResponseMessage res = new ResponseMessage(message);
-			return new ResponseEntity<ResponseMessage>(res, HttpStatus.OK);
+		public ResponseEntity<SessaoLoginEmpresa> deslogar(@RequestBody SessaoLoginEmpresa obj) {
+			SessaoLoginEmpresa login = loginService.DeslogarEmpresa(obj);
+	        return ResponseEntity.ok().body(new SessaoLoginEmpresa(login));
+
 		}
 
 

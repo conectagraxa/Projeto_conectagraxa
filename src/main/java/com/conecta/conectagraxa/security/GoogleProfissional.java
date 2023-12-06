@@ -1,9 +1,9 @@
 package com.conecta.conectagraxa.security;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.beans.BeanUtils;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +14,10 @@ import lombok.NoArgsConstructor;
 
 public class GoogleProfissional {
 
+	public GoogleProfissional(GoogleProfissional google) {
+	BeanUtils.copyProperties(google, this);
+
+	}
 	@Id
 	private Integer id;
 	private String email;

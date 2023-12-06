@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.model.Profissional;
 import com.conecta.conectagraxa.model.Seguidores;
+import com.conecta.conectagraxa.model.dto.SeguidoresDTO;
 import com.conecta.conectagraxa.repositories.ProfissionalRepository;
 import com.conecta.conectagraxa.repositories.SeguidoresRepository;
 
@@ -23,7 +24,7 @@ public class SeguidoresService {
 	ProfissionalRepository profissionalRepository;
 	
 
-	public String seguir(Integer idSeguir, Integer idSeguidor) throws Exception {
+	public Seguidores seguir(Integer idSeguir, Integer idSeguidor) throws Exception {
 		Optional<Profissional> seguir= profissionalRepository.findById(idSeguir);
 		Optional<Profissional> seguidor= profissionalRepository.findById(idSeguidor);
 
@@ -34,7 +35,7 @@ public class SeguidoresService {
 		
 		if (seguir.isPresent() && seguidor.isPresent()) {
 		if (repository.existsBySeguidoresIdAndSeguindoId(seguidor.get(), seguir.get())) {
-			return "";
+			return null;
 		}
 		Profissional userSeguir =new Profissional();
 		userSeguir.setId(seguir.get().getId());
@@ -89,15 +90,15 @@ public class SeguidoresService {
 		seguidores.setSeguindoId(userSeguir);
 		
 		repository.save(seguidores);
-				
+		
 	}
-		return "você está seguindo: "+seguir.get().getNome();
+		return seguidores;
 		
 	}
 	
 
 	
-	public String unfollow(Integer idSeguir, Integer idSeguidor) throws Exception {
+	public Seguidores unfollow(Integer idSeguir, Integer idSeguidor) throws Exception {
 		Optional<Profissional> seguir= profissionalRepository.findById(idSeguir);
 		Optional<Profissional> seguidor= profissionalRepository.findById(idSeguidor);
 
@@ -160,7 +161,7 @@ public class SeguidoresService {
 		repository.save(seguidores);
 	
 	}
-		return "você deixou de seguir: "+seguir.get().getNome();
+		return seguidores;
 		
 	}
 	}

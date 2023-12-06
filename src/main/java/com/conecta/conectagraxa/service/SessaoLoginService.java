@@ -7,8 +7,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.conecta.conectagraxa.model.Empresa;
+import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.Profissional;
+import com.conecta.conectagraxa.model.dto.Feed_ProfissionalDTO;
+import com.conecta.conectagraxa.model.dto.ProfissionalDTO;
 import com.conecta.conectagraxa.repositories.EmpresaRepository;
+import com.conecta.conectagraxa.repositories.Feed_ProfissionalRepository;
 import com.conecta.conectagraxa.repositories.GoogleEmpresaRepository;
 import com.conecta.conectagraxa.repositories.GoogleProfissionalRepository;
 import com.conecta.conectagraxa.repositories.ProfissionalRepository;
@@ -40,6 +44,9 @@ public class SessaoLoginService {
 	EmpresaRepository eRepository; 
 
 	@Autowired
+	Feed_ProfissionalRepository fRepository;
+	
+	@Autowired
 	private SessaoLoginProfissionalRepository SPRepository;
 	
 	
@@ -50,7 +57,7 @@ public class SessaoLoginService {
 	private PasswordEncoder enconder;
 	
 	
-	public String LoginProfissional(SessaoLoginProfissional loginP) {
+	public SessaoLoginProfissional LoginProfissional(SessaoLoginProfissional loginP) {
 		//loginp.setId(0);
 		Optional <Profissional> profissional = pRepository.findByEmail(loginP.getEmail());
 		if (profissional.isPresent() || profissional.get() != null) {
@@ -67,13 +74,13 @@ public class SessaoLoginService {
 			login.setLogado(true);
 			SessaoLoginProfissional loginsalvo = login;
 			 login = SPRepository.save(loginsalvo);
-			 return "Usuário logado com sucesso! Bem vindo "+profissional.get().getNome();
+			 return login;
 		}
-		return "Email ou senha inválidos!";
+		return null;
 		
 	}
 
-	public String DeslogarProfissional(SessaoLoginProfissional loginP) {
+	public SessaoLoginProfissional DeslogarProfissional(SessaoLoginProfissional loginP) {
 		//loginp.setId(0);
 		Optional <SessaoLoginProfissional> login = SPRepository.findByEmail(loginP.getEmail());			
 		if(login.isPresent() && login.get().isLogado() == true) {	
@@ -81,14 +88,14 @@ public class SessaoLoginService {
 		login.get().setLogado(false);
 		
 		SPRepository.save(login.get());
-			return "Fim de sessão";
+			return login.get();
 	}
 		return null;
 		
 	}
 	
 
-	public String loginGoogleProfisional(GoogleProfissional google) {
+	public GoogleProfissional loginGoogleProfisional(GoogleProfissional google) {
 		//loginp.setId(0);
 		Optional <Profissional> profissional = pRepository.findByEmail(google.getEmail());
 		if (profissional.isPresent()) {
@@ -115,7 +122,7 @@ public class SessaoLoginService {
 			login.setLogado(true);
 			login.setName(google.getName());
 			 login = gRepository.save(login);
-			 return "Usuário logado com sucesso! Bem vindo "+profissional.get().getNome();
+			 return login;
 		}else {
 		
 		GoogleProfissional login = new GoogleProfissional();
@@ -125,18 +132,29 @@ public class SessaoLoginService {
 		
 		GoogleProfissional loginsalvo = login;
 		Profissional criandoConta = new Profissional(loginsalvo);
+		
 		pRepository.save(criandoConta);		
 		login.setId(criandoConta.getId());
 		gRepository.save(loginsalvo);
-
-		return "Usuário logado com sucesso! Bem vindo "+login.getName();
+		
+		Feed_ProfissionalDTO feedDTO = new Feed_ProfissionalDTO(criandoConta.getId());
+		Feed_Profissional feed = new Feed_Profissional/* feedService.createFeed */(feedDTO);
+		feed.setIdProfissional(criandoConta);
+		criandoConta.setFeedProfissional(feed);
+		criandoConta.setId(criandoConta.getId());
+		feed.setId(criandoConta.getId());
+		pRepository.save(criandoConta);
+		fRepository.save(feed);
+		
+		
+		return login;
 		}
 		
 	}
 
 	
 	
-	public String loginGoogleEmpresa(GoogleEmpresa google) {
+	public GoogleEmpresa loginGoogleEmpresa(GoogleEmpresa google) {
 		//loginp.setId(0);
 		Optional <Empresa> empresa = eRepository.findByEmail(google.getEmail());
 		if (empresa.isPresent()) {
@@ -163,7 +181,7 @@ public class SessaoLoginService {
 			login.setLogado(true);
 			login.setName(google.getName());
 			 login = geRepository.save(login);
-			 return "Usuário logado com sucesso! Bem vindo "+empresa.get().getNomeFantasia();
+			 return login;
 		}else {
 		
 		GoogleEmpresa login = new GoogleEmpresa();
@@ -177,7 +195,7 @@ public class SessaoLoginService {
 		login.setId(criandoConta.getId());
 		geRepository.save(loginsalvo);
 
-		return "Empresa logada com sucesso! Bem vindo "+login.getName();
+		return login;
 		}
 		
 	}
@@ -187,7 +205,7 @@ public class SessaoLoginService {
 	
 	
 	
-	public String LoginEmpresa(SessaoLoginEmpresa loginE) {
+	public SessaoLoginEmpresa LoginEmpresa(SessaoLoginEmpresa loginE) {
 		//loginp.setId(0);
 		Optional <Empresa> empresa = eRepository.findByEmail(loginE.getEmail());
 		if (empresa.isPresent()) {
@@ -205,16 +223,16 @@ public class SessaoLoginService {
 			login.setLogado(true);
 			SessaoLoginEmpresa loginsalvo = login;
 			 login = SERepository.save(loginsalvo);
-			 return "Usuário logado com sucesso! Bem vindo "+empresa.get().getNomeFantasia();
+			 return login;
 		}
-		return "Email ou senha inválidos!";
+		return null;
 		
 	}
 
 
 
 
-	public String DeslogarEmpresa(SessaoLoginEmpresa loginp) {
+	public SessaoLoginEmpresa DeslogarEmpresa(SessaoLoginEmpresa loginp) {
 		//loginp.setId(0);
 		Optional <SessaoLoginEmpresa> login = SERepository.findByEmail(loginp.getEmail());			
 		if(login.isPresent() && login.get().isLogado() == true) {	
@@ -222,7 +240,7 @@ public class SessaoLoginService {
 		login.get().setLogado(false);
 		
 		SERepository.save(login.get());
-			return "Fim de sessão";
+			return login.get();
 	}
 		return null;
 }

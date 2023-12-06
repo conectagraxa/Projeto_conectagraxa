@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.conecta.conectagraxa.model.Feed_Profissional;
 import com.conecta.conectagraxa.model.Postagens;
 import com.conecta.conectagraxa.model.Profissional;
+import com.conecta.conectagraxa.model.dto.Feed_ProfissionalDTO;
 import com.conecta.conectagraxa.model.dto.PostagensDTO;
 import com.conecta.conectagraxa.repositories.PostagensRepository;
 import com.conecta.conectagraxa.repositories.ProfissionalRepository;
@@ -49,7 +50,12 @@ public class PostagensService {
 		post.setDataPostagem(postDTO.getDataPostagem());
 		
 		profissional.getPostagens().add(post);
-		feed.getPostagens().add(post);
+		
+		if(feed.getPostagens()==null) {
+			feed.getPostagens().add(post);
+		}else {
+			feed.getPostagens().add(post);
+		}
 
 		post.setProfissionalId(profissional);
 		post.setFeedProfissionalId(feed);
