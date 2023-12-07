@@ -18,6 +18,7 @@ import Api from './services/Api.js'//////////////////////////////////////////
 import './Pastas/Home_comunidade/Exemplo/index.css'//isso é apenas um arquivo para exemplos ou testes //
 import Exemplo from './Pastas/Home_comunidade/Exemplo/index'//////////////////////////////////////////
 import PerfilEmpresas from './components/Perfilempresa/index.js'
+import PerfilUsuario from './components/PerfilUsuario/index.js'
 import FormPj from './components/CadastroPJe/index.js'
 import Navbarempresa from './components/navbarempresa/index.js'
 import Conexoes from './components/Conexoes/index.js'
@@ -53,6 +54,7 @@ function App() {
         <Route path='/Conexoes' element={<Conexoes />} />
         <Route path='/Navbarempresa' element={<Navbarempresa />} />
         <Route path='/PerfilEmpresas' element={<PerfilEmpresas />} />
+        <Route path='/PerfilUsuario' element={<PerfilUsuario />} />
         <Route path='/MenuProfissional' element={<MenuProfissional />} />
         <Route path='/EditarPerfil' element={<EditarPerfil />} />
         <Route path='/VagasPubli' element={<VagasPubli />} />
