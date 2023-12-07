@@ -1,0 +1,142 @@
+
+/*Side bar*/
+.container_user {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh; /* A altura da tela inteira */
+    width: 20vw; /* O side bar vai ocupar 1/4 (um quarto) da tela*/
+}
+/*Espaçamento dos elementos dentro do sidebar*/
+.sidebar_user {
+    flex: 1;
+    height: 100px; /* A altura da tela inteira */
+   
+}
+
+.sidebar-left {
+    height: 100px; /* A altura da tela inteira */
+    
+}
+
+
+.sidebar-left_user {
+    background-color: rgb(255, 255, 255);
+    width: 373px;
+    height: 100%;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    overflow: hidden;
+}
+
+/*Container dos elementos dentro do side bar*/ 
+.container-elements-sidebar
+{
+    margin-top: 30px;
+}
+
+/*Imagem de perfil*/
+.imagem-redonda_user {
+    margin: 0 auto;
+    display: flex;
+    width: 125px; 
+    border-radius: 50%; 
+    overflow: hidden;
+}
+
+
+/*Nav Container e seus Botões*/
+.navContainer
+{
+    margin-top: 35px;
+}
+
+.navContainer button
+{
+    margin-bottom: 15px;
+}
+
+
+.botao_user, 
+.botao_selected
+{
+    color: #2f2f2f;
+    display: block;
+    width: 85%; 
+    height: 50px; 
+    padding: 10px;
+    border: none; 
+    transition: .4s;
+    border-radius: 10px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.botao_user {
+    background: transparent; 
+}
+
+
+.botao_user:hover {
+    
+    background: #FFCBAD;
+}
+
+.botao_selected
+{
+    background-color: #FFCBAD;
+}
+
+.botao_selected:hover
+{
+    background-color: #efbea2;
+}
+
+
+/*Botão de sair*/
+.exit_user{
+    transform: translate(-60%, 0); /*retorna 60% no eixo x*/
+    position: relative;
+    left: 50%; 
+    top: 37vh;
+
+    display: flex;
+    align-items: center; /*Centralizando verticalmente icone e palavra*/
+    gap: 25px;
+
+    border: 1px solid black;
+    border: none ;
+    width: 30%;
+    height: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    transition: .4s;
+}
+
+.sairr_user {
+    font-family: sans-serif;
+    position: relative;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.exit_user:hover{
+    background-color: #FFCBAD;
+    transition: .4s;
+    border-radius: 15px;
+}
+
+
+/*Mudando o tamanho do icone*/
+
+.bi-box-arrow-right
+{
+    font-size: 35px;
+} 
+
+
+.iccon_user{
+    margin-left: 5px;
+    width: 20px;
+}

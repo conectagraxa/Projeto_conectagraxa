@@ -1,0 +1,337 @@
+
+.perfilUser
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.navbarUserperfil {
+    position: relative;
+    width: 0;
+    height: 0;
+    z-index: 1;
+}
+
+
+.ConexoesPerfilUser {
+    z-index: 1;
+    position: relative;
+    left: 990px;
+    top: -10px;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+
+}
+
+.BuscaUserPerfill {
+    position: relative;
+    top: -20px;
+    z-index: 1;
+    width: 1530px;
+    height: 0;
+}
+
+.containerPerfilUser::-webkit-scrollbar {
+
+    display: none;
+}
+
+.containerPerfilUser {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 860px;
+    height: 640px;
+    top: 70px;
+    left: 322.5px;
+    z-index: 1;
+    margin: 0;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.fotoContainer
+{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+}
+
+ .baseInfo
+{
+    transform: translate(-75%, -30%);
+}
+
+.fotoPerfilUser{
+    display: flex;
+    align-items: center;
+}
+
+.baseInfo h3
+{
+    margin: 0; 
+}
+/*Nome e pronome*/
+.baseInfo .caixaNomePronome
+{
+    display: flex;
+    align-items: end;
+    gap: 10px;
+   
+}
+
+.baseInfo span
+{
+    transform: translate(0, -15%);
+}
+
+.baseInfo .caixaNomePronome span, .localidade
+{
+    font-size: 12px;
+    color: #5C5757;
+}
+
+.caixaNomePronome
+{
+    transform: translate(0, -20%); /*Subindo um pouco a caixa do texto*/
+}
+
+
+
+/*Profissão e localidade*/
+.baseInfo p
+{
+    margin: 0;
+
+}
+
+.caixaProfLocal
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: left;
+    gap:5px;
+}
+
+.profissao
+{
+    color: #403C3C;
+}
+
+
+.editPerfil
+{
+    color: #4B4B4B;
+    background-color: #dcdbda56;
+    border-radius: 25px;
+    padding: 7px 21px;
+    font-size: 15px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.editPerfil:hover
+{
+    background-color: #FFCBAD;
+}
+
+
+/*Section BIO*/
+
+.sectionBio
+{
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    margin-bottom: 8vh;
+}
+
+.sectionBio h3
+{
+    text-indent: 10px;
+}
+
+
+
+/*Sobre mim*/
+.sobreMimUser
+{
+    width: 20vw;
+    text-align: justify;
+}
+
+.sobreMimTitle
+{
+    text-indent: 10px;
+}
+
+/*Habilidades*/
+
+.habContent
+{
+    transform: translate(-15%);
+}
+
+/*Cursos*/
+
+.cursosUser h3,
+.cursosUser div h4,
+.cursosUser div p
+{
+    margin: 0;
+    padding: 0;
+}
+
+.cursosUser div
+{
+    margin-top: 13px;
+}
+
+.bi-mortarboard-fill
+{
+    font-size: 22px;
+}
+
+.painelPerfil {
+    width: 100%;
+    height: 150px;
+    background-color: aqua;
+
+}
+
+
+
+.fotoPerfilUser {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0;
+    border-radius: 100%;
+    top: -60px;
+    left: 40px;
+    background-color: tomato;
+    overflow: hidden;
+}
+
+.nomeButUser {
+    position: relative;
+    left: 200px;
+    top: -130px;
+    display: flex;
+    justify-content: space-between;
+    width: 540px;
+}
+
+.nutPerfilUser {
+    height: 30px;
+    position: relative;
+    top: 24px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    width: 110px
+}
+
+/*Publicações*/
+
+
+.bi-card-heading
+{
+    font-size: 22px;
+}
+
+
+/*Ajustando o nome e o icone na mesma linha*/
+.userNameIcon h3
+{
+    margin: 0;
+}
+
+.userNameIcon
+{
+    display: flex;
+    gap: 10px;
+}
+
+
+
+/*Ajustando nome, icone, data*/
+
+.pubData
+{
+    margin: 0;
+    color: #B4AEAE;
+    text-indent: 10px;
+}
+
+.bi-globe-americas
+{
+    font-size: 20px;
+}
+
+/*Ajustando foto com os outros elementos*/
+
+.pubPhoto
+{
+    width: 17.5%;
+}
+
+
+.userInfo
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/*Adicionando os 3 pontos*/
+
+.bi-three-dots-vertical
+{
+    
+    font-size: 22px;
+}
+
+.postEdit
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.editPerfil
+{
+
+}
+
+.threeDots
+{
+    padding: 0.2rem;
+    transform: translate(-50%, 15%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+/* Deixando as informações do usuário alinha com o comentário*/
+
+
+.postContainer
+{
+    margin-top: 20px;
+    width: 70%;
+}
+
+.centraliza
+{   
+    display: flex;
+    justify-content: center;
+}
