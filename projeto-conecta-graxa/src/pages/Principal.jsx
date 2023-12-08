@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BuscarProf from "../components/BuscarProf";
 import Perfil from "../components/Perfil";
 import VagasPubli from "../components/VagasPubli";
+import Candidaturas from "../components/Candidaturas";
 
 function Principal() {
     const [showModal, setShowModal] = useState(false);
@@ -27,7 +28,7 @@ function Principal() {
                                 <li><Link to="">Comunidade</Link></li>
                                 <li><Link to="/publicarvagas">Publicar Vagas</Link></li>
                                 <li><Link to="/busca">Buscar Profissionais</Link></li>
-                                <li><Link to="">Candidaturas</Link></li>
+                                <li><Link to="/candidaturas">Candidaturas</Link></li>
                             </ul>
                         </nav>
                         
@@ -57,6 +58,7 @@ function Principal() {
                                 <Route path="/perfil" element={<Perfil/>} />
                                 <Route path="/busca" element={<BuscarProf/>} />
                                 <Route path="/publicarvagas" element={<VagasPubli/>} />
+                                <Route path="/candidaturas" element={<Candidaturas/>} />
                             </Routes>
                         </section>
                     </section>
