@@ -33,6 +33,7 @@ import MenuProfissional from './components/menu-mobile-profissional/index.js'
 import EditarPerfil from './components/EditarPerfilUsuario/EditarPerfil.js'
 import VagasPubli from './components/Vagaspubli/VagasPubli.js'
 import BuscarProf from './components/BuscarProfissional/BuscarProf.js'
+import SobreMimPopup from './components/Perfilempresa/popap/index.js'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -59,6 +60,7 @@ function App() {
         <Route path='/EditarPerfil' element={<EditarPerfil />} />
         <Route path='/VagasPubli' element={<VagasPubli />} />
         <Route path='/BuscarProf' element={<BuscarProf />} />
+        <Route patch='/SobreMimPopup' element={<SobreMimPopup />} />
 
       </Routes>
     </Router>

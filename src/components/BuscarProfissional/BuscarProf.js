@@ -66,7 +66,7 @@ function BuscarProf(){
                                 {/* <div> */}
                                     <img className="bp-compartilhar" width="24px" src={Compartilhar} alt="" />
                                 {/* </div> */}
-                                <img width="100px" src={elemento.imagem} alt="" />
+                                <img width="70px" src={elemento.imagem} alt="" />
                                 <h3>{elemento.title_card}</h3>
                                 <h4>Visualizar Perfil</h4>
                                 <div className="bp-card-div">
@@ -82,7 +82,7 @@ function BuscarProf(){
                                 {/* <div> */}
                                     <img className="bp-compartilhar" width="24px" src={Compartilhar} alt="" />
                                 {/* </div> */}
-                                <img width="100px" src={elemento.imagem} alt="" />
+                                <img width="70px" src={elemento.imagem} alt="" />
                                 <h3>{elemento.title_card}</h3>
                                 <h4>Visualizar Perfil</h4>
                                 <div className="bp-card-div">

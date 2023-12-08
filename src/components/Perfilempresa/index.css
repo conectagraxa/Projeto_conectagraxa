@@ -111,3 +111,16 @@
     overflow: auto;
     padding: 5px;
 }
+
+.Editarsobremimperfil{
+    position: absolute;
+    top: -0px;
+    left: 100px;
+    padding: 2px;
+    width: 70px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(252, 163, 100);
+    cursor: pointer;
+    
+}
