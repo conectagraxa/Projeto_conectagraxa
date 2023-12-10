@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+.perfil-fundo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #00000067;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+
+.perfil-modal {
+    background-color: white;
+    width: 60vw;
+    height: 92vh;
+    padding: 18px 18px 18px 18px;
+    border-radius: 10px;
+    /* overflow-y: scroll; */
+}
+
+.perfil-header-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    /* padding-right: 4px; */
+}
+
+.perfil-header-modal h1 {
+    font-size: 1.2rem;
+}
+
+.perfil-container-modal h2 {
+    font-size: 1.2rem;
+    margin: 8px 0;
+    border-bottom: #6C6A6A 1px solid;
+    line-height: 40px;
+}
+
+.perfil-main-modal {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 82vh;
+    padding-right: 10px;
+    /* border: 2px solid green; */
+}
+
+.perfil-main-modal input, .perfil-main-modal select {
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid #6C6A6A;
+    padding: 0 10px;
+}
+
+.perfil-main-modal span {
+    color: red;
+}
+
+#capa {
+    width: 100%;
+    /* background-size: cover; */
+}
+
+.perfil-container-modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    bottom: 10vh;
+    padding: 0 8px;
+}
+
+#perfil {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 100%;
+    margin-left: 2vw;
+    padding: 4px;
+    border: 4px solid #F99760;
+}
+
+.perfil-main-modal fieldset {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border: none;
+}
+
+.perfil-container-info {
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+}
+
+.box1-modal {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid orange; */
+    width: 47%;
+    gap: 6px;
+}
+
+.perfil-container-info h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    border-bottom: #6C6A6A 1px solid;
+    padding-bottom: 8px;
+}
+
+.endereco {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.endereco-box1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.endereco-box1 .endereco-div1 {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-bottom: 6px;
+}
+
+.endereco-box1 .endereco-div2 {
+    display: flex;
+    flex-direction: column;
+    width: 36%;
+    margin-bottom: 6px;
+}
+
+.endereco-box1 div label{
+    margin-bottom: 6px;
+}
+
+.endereco-box2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.endereco-box2 div {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.endereco-box2 div label{
+    margin-bottom: 6px;
+}
+
+.box2-modal {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid orange; */
+    width: 47%;
+    gap: 6px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.opcao div {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+    width: 48%;
+}
+
+.opcao div label{
+    margin-bottom: 6px;
+}
+
+.container-senha {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box1-senha {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 47%;
+}
+
+.box2-senha {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 47%;
+    /* border: 2px solid red; */
+}
+
+.box2-senha button, .modal-cursos button {
+    width: 24%;
+    height: 34px;
+    border-radius: 8px;
+    background-color: #0170de;
+    color: white;
+    padding: 0 10px;
+    border: none;
+    margin-top: 8px;
+}
+
+.modal-cursos {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+@media (max-width: 900px) {
+
+    .perfil-modal {
+        background-color: white;
+        width: 96vw;
+        height: 94vh;
+        padding: 18px 18px 18px 18px;
+        border-radius: 10px;
+        /* overflow-y: scroll; */
+        padding: 14px;
+    }
+
+    .perfil-container-info {
+        flex-direction: column;
+    }
+
+    #perfil {
+        width: 14vh;
+        height: 14vh;
+        border: 2px solid #F99760;
+    }
+
+    .perfil-container-modal {
+        padding: 0;
+    }
+
+    .box1-modal {
+        width: 100%;
+    }
+    
+    .endereco {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    
+    .endereco-box1 .endereco-div1 {
+        display: flex;
+        flex-direction: column;
+        width: 52%;
+        margin-bottom: 6px;
+    }
+    
+    .endereco-box1 .endereco-div2 {
+        display: flex;
+        flex-direction: column;
+        width: 44%;
+        margin-bottom: 6px;
+    }
+    
+    .endereco-box2 div {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+    }
+    
+    .box2 {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 44%;
+        /* border: 2px solid green; */
+    }
+
+    .opcao div {
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid blue; */
+        width: 48%;
+    }
+
+    .perfil-main-modal {
+        padding-right: 0;
+        /* border: 2px solid green; */
+    }
+
+    .box2-modal {
+        margin-top: 6px;
+        width: 100%;
+    }
+
+    .container-senha {
+        flex-direction: column;
+    }
+
+    .box1-senha {
+        width: 100%;
+    }
+
+    .box2-senha {
+        margin-top: 6px;
+        width: 100%;
+    }
+}
