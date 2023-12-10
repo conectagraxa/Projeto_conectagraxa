@@ -6,13 +6,13 @@ import Conexao from "../assets/img/conexao.png";
 import EditarPerfil from "../components/EditarPerfil";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BuscarProf from "../components/BuscarProf";
-import Perfil from "../components/Perfil";
+import Teste from "../components/Teste";
 import VagasPubli from "../components/VagasPubli";
 import Candidaturas from "../components/Candidaturas";
 import FotoPerfil from "../assets/img/foto-conexoes.png"
 import Oportunidades from "../components/Oportunidades";
 
-function PrincipalPJ() {
+function PrincipalPF() {
     const [showModal, setShowModal] = useState(false);
 
     const fechar = () => {
@@ -74,14 +74,23 @@ function PrincipalPJ() {
 
     return(
         <section className="principal">
-            <BrowserRouter>
+
                 <section className="section-left">
                     <img width="126px" src={Logo} alt="" />
                         <nav>
                             <ul>
-                                <li><Link to="/perfil">Perfil</Link></li>
-                                <li><Link to="">Comunidade</Link></li>
-                                <li><Link to="/oportunidades">Oportunidades</Link></li>
+                                <li>
+                                    <Link to="/principalPJ/perfil">Perfil</Link>
+                                </li>
+                                <li>
+                                    <Link to="/principalPJ/publicarVagas">Publicar vagas</Link>
+                                </li>
+                                <li>
+                                    <Link to="/principalPJ/buscarProfissionais">Buscar profissionais</Link>
+                                </li>
+                                <li>
+                                    <Link to="/principalPJ/candidaturas">Candidaturas</Link>
+                                </li>
                             </ul>
                         </nav>
                         
@@ -108,11 +117,10 @@ function PrincipalPJ() {
                             <EditarPerfil onClose={fechar}/>
                             )}
                             <Routes>
-                                <Route path="/perfil" element={<Perfil/>} />
-                                <Route path="/busca" element={<BuscarProf/>} />
-                                <Route path="/publicarvagas" element={<VagasPubli/>} />
-                                <Route path="/candidaturas" element={<Candidaturas/>} />
-                                <Route path="/oportunidades" element={<Oportunidades/>} />
+                                <Route path="perfil" element={<Teste />} />
+                                <Route path="publicarVagas" element={<VagasPubli />} />
+                                <Route path="buscarProfissionais" element={<BuscarProf />} />
+                                <Route path="candidaturas" element={<Teste />} />
                             </Routes>
                         </section>
                     </section>
@@ -133,8 +141,8 @@ function PrincipalPJ() {
                     </section>
                     <p>Dúvidas? Veja as perguntas frequentes aqui.</p>
                 </section>
-            </BrowserRouter>
+ 
         </section>
     )
 }
-export default PrincipalPJ;
+export default PrincipalPF;

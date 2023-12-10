@@ -1,12 +1,12 @@
 import React from "react";
 import Logo from "../assets/img/logo.png";
 
-function Perfil() {
+function Teste() {
     return (
         <section>
-            <h1>Teste Perfil</h1>
+            <h1>Teste</h1>
         </section>
     );
 }
 
-export default Perfil;
+export default Teste;

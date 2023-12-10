@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+.mainof_pj {
+    background-color: #FFF5EF;
+    background-position: center;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -5;
+    font-family: "Inter";
+}
+
+.bolax1_pj {
+    width: 245px;
+    height: 245px;
+    background: linear-gradient(to left, #EE4622, #FF9B04);
+    border-radius: 100%;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    z-index: 1;
+    margin: 0;
+}
+
+.bolax2_pj {
+    width: 245px;
+    height: 245px;
+    background: linear-gradient(to left, #FF9B04, #EE4622);
+    border-radius: 100%;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 420px;
+    bottom: 5px;
+    right: 100px;
+    margin: 0;
+}
+
+.fieldset_pj {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 70vh;
+    top: 60px;
+    width: 70%;
+    background-color: white;
+    border: none;
+    padding: 60px;
+    box-shadow: #f1ded4 0.5px 0.5px 3.5px 0.5px;
+    border-radius: 20px;
+    z-index: 10;
+    margin: 0;
+}
+
+#logo_pj {
+    width: 80px;
+}
+
+.title_pj {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.superior_pj {
+    display: flex;
+}
+
+.title_pj {
+    margin-left: 5px;
+    position: relative;
+    top: px;
+}
+
+.formulario_pj {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+}
+
+.boxform1_pj {
+    width: 44%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.boxform2_pj {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+.inputbox_formpj,
+.cadastrarbutton_formpj {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.only_formpj {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box3_formpj {
+    display: flex;
+    gap: 41%;
+}
+
+.box4_formpj {
+    display: flex;
+    gap: 41%;
+}
+
+.littlebox_formpj {
+    width: 50px;
+    height: 50px;
+}
+
+.inputbb_formpj {
+    height: 40px;
+    border-radius: 8px;
+    border: #6C6A6A 1px solid;
+    padding: 0 10px;
+}
+
+.inputbb2_formpj {
+    height: 40px;
+    border-radius: 8px;
+    border: #6C6A6A 1px solid;
+    padding: 0 10px;
+}
+
+.lembrar_formpj {
+    align-items: center;
+    gap: 5px;
+    display: flex;
+}
+
+.insidebutton_formpj {
+    height: 40px;
+    background-color: #F99760;
+    border: none;
+    border-radius: 50px;
+    color: aliceblue;
+}
+
+.insidebutton_formpj:hover {
+    background-color: #f9782d;
+}
+
+
+
+.Modal-janela {
+    background-color: #F99760;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    padding: 50px 200px 50px 200px;
+    display: none;
+
+
+}
+
+.Modal-interno-politica {
+
+    background-color: #FFF5EF;
+    position: relative;
+    padding: 20px 300px 20px 20px;
+}
+
+.nome-int {
+    margin: 1px;
+}
+
+.esfera1-politica {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 400px;
+    left: 1300px;
+    border-radius: 100%;
+    z-index: -100;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera2-politica {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 400px;
+    left: 10px;
+
+    border-radius: 100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera3-politica {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    border-radius: 100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera4-politica {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 1300px;
+    border-radius: 100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera5-politica {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 600px;
+    left: 1px;
+    border-radius: 100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.imagem-logo-politica {
+
+    position: absolute;
+    z-index: 1000;
+    width: 150px;
+    left: 900px;
+
+
+}
+
+.button-politica {
+    position: absolute;
+    z-index: 1000;
+    width: 200px;
+    font-size: 25px;
+    left: 900px;
+    transition: .4s;
+    top: 900px;
+
+
+}
+
+
+
+
+
+@media (max-width: 1496px) {
+    .mainof_pj {
+        height: 110vh;
+    }
+
+    .fieldset_pj {
+        height: 105vh;
+    }
+
+    .bolax1_pj {
+        top: -30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .mainof_pj {
+        height: 155vh;
+    }
+
+    .fieldset_pj {
+        height: 120vh;
+    }
+
+    .box3_formpj {
+        flex-direction: column;
+        gap: 10px;
+        width: auto;
+    }
+
+    .box4_formpj {
+        flex-direction: column;
+        margin-top: -20px;
+        gap: 10px;
+    }
+
+    .inputbb2_formpj {
+        width: 220px auto;
+    }
+
+    .cadastrarbutton_formpj {
+        margin-top: -50px;
+    }
+
+    .bolax1_pj {
+        left: 75px;
+        top: 30px;
+    }
+
+    .bolax2_pj {
+        bottom: -270px;
+        right: 80px;
+    }
+}
+
+@media (max-width: 400px) {
+    .mainof_pj {
+        height: 190vh;
+    }
+
+    .fieldset_pj {
+        display: flex;
+        padding-bottom: 900px;
+    }
+
+    .bolax1_pj {
+        display: none;
+    }
+
+    .bolax2_pj {
+        display: none;
+    }
+
+    .formulario_pj {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .boxform1_pj {
+        gap: 5px;
+        width: 100%;
+    }
+
+    .boxform2_pj {
+        width: 100%;
+    }
+
+    .inputbb2_formpj {
+        width: 240px;
+    }
+}
