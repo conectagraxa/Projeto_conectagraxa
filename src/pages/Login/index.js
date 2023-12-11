@@ -112,10 +112,10 @@ export default function LoginForm() {
                                 console.log(credentialResponse)
                                 const details = jwtDecode(credentialResponse.credential);
                                 console.log(details);
-                                const response = Api.put('profissional/loginGoogle', details);
+                                const response = Api.put('profissional/loginGoogleProfissionalService', details);
                                 localStorage.setItem('email', details.email);
                                 setLogado(true);
-                                //   navigate('/Home_comunidade');
+                                 navigate('/principalPF/comunidade');
                             }}
                             onError={() => {
                                 console.log('Login Failed')

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import './index.css'
 import IconPerfil from "../img/icon-perfil.png"
 
-function Publicarcomunidade({ adicionarPostagem }) {
+export default function Publicarcomunidade({ adicionarPostagem }) {
     const [postText, setPostText] = useState("");
     const [posterImage, setPosterImage] = useState(null);
 
@@ -55,4 +55,3 @@ function Publicarcomunidade({ adicionarPostagem }) {
     );
 }
 
-export default Publicarcomunidade;

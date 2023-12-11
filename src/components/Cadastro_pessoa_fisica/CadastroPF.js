@@ -131,7 +131,9 @@ export default function CadastroPF() {
                                             <input 
                                             value={cep}
                                             onChange={e => setCep(e.target.value)}
-                                            className="put-form" type="number" placeholder="Apenas números , EX: 00000000" onBlur={checkCEP}/>
+                                            className="put-form" type="number" 
+                                            required
+                                            placeholder="Apenas números , EX: 00000000" onBlur={checkCEP}/>
                                         </div>
 
                                         <div className="endereco-div2">
@@ -139,6 +141,7 @@ export default function CadastroPF() {
                                             <input 
                                             value={estado}
                                             onChange={e => setEstado(e.target.value)}
+                                            required
                                             className="put-form" type="text" placeholder="PE" />
                                         </div>
 
@@ -150,6 +153,7 @@ export default function CadastroPF() {
                                             <input 
                                             value={cidade}
                                             onChange={e => setCidade(e.target.value)}
+                                            required
                                             className="put-form" type="text" placeholder="Digite sua Cidade" />
 
                                         </div>
@@ -158,6 +162,7 @@ export default function CadastroPF() {
                                             <input 
                                             value={endereco}
                                             onChange={e => setEndereco(e.target.value)}
+                                            required
                                             className="put-form" type="text" placeholder="Digite seu endereco" />
                                         </div>
                                     </section>
@@ -170,12 +175,14 @@ export default function CadastroPF() {
                                     <input 
                                     value={telefone}
                                     onChange={e => setTelefone(e.target.value)}
+                                    required
                                     className="put-form" type="number" name="" id="" placeholder="ex:(00)0 00000-0000" />
                                     <section className="opcao">
                                         <div>
                                             <label for="">Sexo</label>
                                             <select
                                             onChange={e => setSexo(e.target.value)}
+                                            required
                                             name="" id="">
                                                 <option value="">Vazio</option>
                                                 <option value="Feminino">Feminino</option>
@@ -187,6 +194,7 @@ export default function CadastroPF() {
                                             <label for="">Etnia</label>
                                             <select
                                             onChange={e => setEtnia(e.target.value)}
+                                            required
                                             name="" id="">
                                                 <option value="">Vazio</option>
                                                 <option value="Branco">Branco</option>
@@ -203,7 +211,7 @@ export default function CadastroPF() {
                                     <input
                                     value={senha}
                                     onChange={e => setSenha(e.target.value)}
-                                    
+                                    required
                                     className="put-form" type="password" name="senha" id="senha" placeholder="********" />
 
                                 </section>

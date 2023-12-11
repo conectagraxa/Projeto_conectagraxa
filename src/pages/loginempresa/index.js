@@ -112,7 +112,7 @@ export default function LoginFormEmpresa() {
                                 console.log(credentialResponse)
                                 const details = jwtDecode(credentialResponse.credential);
                                 console.log(details);
-                                const response = Api.put('empresa/loginGoogle', details);
+                                const response = Api.put('empresa/loginGoogleEmpresa', details);
                                 localStorage.setItem('email', details.email);
                                 setLogado(true);
                                 //   navigate('/Home_comunidade');

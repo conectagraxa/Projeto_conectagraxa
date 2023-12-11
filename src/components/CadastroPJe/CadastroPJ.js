@@ -101,26 +101,43 @@ export default function FormPje() {
                     <section className="boxform1_pj">
                         <div className="inputbox_formpj">
                             <label for="pfnf">Pessoa física ou nome fantasia</label>
-                            <input className="inputbb_formpj" type="text" name="pfnf" placeholder="Digite seu nome ou nome da empresa" required />
+                            <input className="inputbb_formpj" type="text" name="pfnf" 
+                            value={nomeFantasia}
+                            onChange={e => setNomeFantasia(e.target.value)}
+
+                            placeholder="Digite seu nome ou nome da empresa" required />
                         </div>
 
                         <div className="inputbox_formpj">
                             <label for="fone">Telefone/Celular corporativo</label>
-                            <input className="inputbb_formpj" type="text" name="celular" placeholder="Ex.: (00) 0 0000-0000" required />
+                            <input className="inputbb_formpj" type="text" name="celular"
+                              value={telefone}
+                              onChange={e => setTelefone(e.target.value)}
+  
+                             placeholder="Ex.: (00) 0 0000-0000" required />
                         </div>
 
                         <div className="inputbox_formpj">
                             <label for="Email">Email</label>
-                            <input className="inputbb_formpj" type="email" name="Email" placeholder="Digite o seu email" />
+                            <input className="inputbb_formpj" type="email" name="Email"
+                              value={email}
+                              onChange={e => setEmail(e.target.value)}
+                             placeholder="Digite o seu email" required />
                         </div>
 
                         <div className="inputbox_formpj">
                             <label for="Senha">Senha</label>
-                            <input className="inputbb_formpj" type="password" name="Senha" placeholder="************" required />
+                            <input className="inputbb_formpj" type="password" name="Senha"
+                              value={senha}
+                              onChange={e => setSenha(e.target.value)}
+                            placeholder="************" required />
                         </div>
 
                         <div className="lembrar_formpj" onclick="lembrarSenha()">
-                            <input type="checkbox" name="remember-me" id="lembrar" className="relembra" />
+                            <input type="checkbox" name="remember-me" required
+                              value={senha}
+                              onChange={e => setSenha(e.target.value)}
+                            id="lembrar" className="relembra" />
                             <label for="lembrar" className="lembrar_formpj">Lembrar de mim</label>
                         </div>
                     </section>
@@ -129,7 +146,10 @@ export default function FormPje() {
                         <section className="only_formpj">
                             <div className="inputbox_formpj">
                                 <label for="cnpj">CNPJ ou CPF</label>
-                                <input className="inputbb_formpj" type="number" name="cpf" placeholder="Digite o CPF ou CNPJ" required />
+                                <input className="inputbb_formpj" type="number" name="cpf"
+                                  value={cpfCnpj}
+                                  onChange={e => setCpfCnpj(e.target.value)}      
+                                 placeholder="Digite o CPF ou CNPJ" required />
                             </div>
                             <br />
                             <div className="inputbox_formpj">
@@ -139,25 +159,41 @@ export default function FormPje() {
                             <div className="box3_formpj">
                                 <div className="littlebox_formpj">
                                     <label for="CEP">CEP:</label>
-                                    <input className="inputbb2_formpj" type="text" name="CEP" placeholder="00.000-000" />
+                                    <input className="inputbb2_formpj" type="text"
+                                    required
+                                    value={cep}
+                                    onChange={e => setCep(e.target.value)}
+                                    name="CEP" placeholder="00.000-000" />
                                 </div>
 
 
                                 <div className="littlebox_formpj">
                                     <label for="Estado">Estado:</label>
-                                    <input className="inputbb2_formpj" type="text" name="Estado" placeholder="UF" />
+                                    <input className="inputbb2_formpj" type="text" 
+                                      value={estado}
+                                      onChange={e => setEstado(e.target.value)}          
+                                    required
+                                    name="Estado" placeholder="UF" />
                                 </div>
                             </div>
                             <br />
                             <div class="box4_formpj">
                                 <div class="littlebox_formpj">
                                     <label for="Cidade">Cidade</label>
-                                    <input className="inputbb2_formpj" type="text" name="Cidade" placeholder="Cidade" />
+                                    <input className="inputbb2_formpj" type="text" 
+                                      value={cidade}
+                                      onChange={e => setCidade(e.target.value)}          
+                                    required
+                                    name="Cidade" placeholder="Cidade" />
                                 </div>
 
                                 <div className="littlebox_formpj">
                                     <label for="Rua">Rua</label>
-                                    <input className="inputbb2_formpj" type="text" name="Rua" placeholder="Rua" />
+                                    <input className="inputbb2_formpj"
+                                      value={endereco}
+                                      onChange={e => setEndereco(e.target.value)}          
+                                    required
+                                    type="text" name="Rua" placeholder="Rua" />
                                 </div>
                             </div>
                         </section>

@@ -8,6 +8,7 @@ import LoginForm from './pages/Login/index.js'
 import LoginFormEmpresa from './pages/loginempresa/index.js';
 import FormPje from "./components/CadastroPJe/CadastroPJ.js";
 import CadastroPJ from "./components/CadastroPJe/CadastroPJ.js";
+import Publicarcomunidade from "./components/Home_comunidade/Publicarcomunidade/Publicar.js";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path='/LoginFormEmpresa' element={<LoginFormEmpresa />} />
         <Route path='/FormPje' element={<FormPje />} />
         <Route path='/CadastroPJ' element={<CadastroPJ />} />
+        <Route path='/Publicarcoumunidade' element={<Publicarcomunidade />} />
+
 
 
       </Routes>
