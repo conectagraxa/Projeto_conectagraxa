@@ -1,0 +1,247 @@
+@media (max-width: 1920px) {
+    .geralperfil {
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        overflow: auto;
+        left: 460px;
+        top: 60px;
+        width: 1000px;
+        height: 700px;
+        box-shadow: #717171 0px 0px 3px 0px;
+
+    }
+
+    .menumobii {
+        display: none;
+    }
+
+    .postagem {
+        width: 900px;
+        /* Defina a largura desejada */
+        margin-top: 30px;
+        /* Adicione margens para espaçamento entre as postagens */
+        padding: 20px;
+        /* Adicione preenchimento interno para afastar o conteúdo das bordas */
+        text-align: center;
+        position: relative;
+        left: 20px;
+        top: 30px;
+    }
+
+
+}
+
+@media (max-width: 1550px) {
+    .geralperfil {
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        overflow: auto;
+        left: 400px;
+        top: 60px;
+        width: 800px;
+        height: 453px;
+        box-shadow: #717171 0px 0px 4px 0px;
+
+
+    }
+
+    .geralperfil::-webkit-scrollbar {
+
+        display: none;
+    }
+
+    .postagem {
+        width: 690px;
+        /* Defina a largura desejada */
+        margin: 10px;
+        /* Adicione margens para espaçamento entre as postagens */
+        padding: 10px;
+        /* Adicione preenchimento interno para afastar o conteúdo das bordas */
+        text-align: center;
+        position: relative;
+        left: 30px;
+        top: 30px;
+        box-shadow: #717171 1px 1px 2px 1px;
+    }
+
+    .ggeral {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbarhomecomunit {
+        position: absolute;
+        top: 2px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbarcomunit {
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    .publicarcomuni {
+        position: relative;
+        top: -40px;
+    }
+
+    .conecxoes {
+        position: absolute;
+        left: 990px;
+        top: -11px;
+
+    }
+}
+
+@media (max-width: 1540px) {
+    .geralperfil {
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        overflow: auto;
+        left: 400px;
+        top: 60px;
+        width: 800px;
+        height: 453px;
+        box-shadow: #717171 0px 0px 4px 0px;
+
+
+    }
+
+    .geralperfil::-webkit-scrollbar {
+
+        display: none;
+    }
+
+    .postagem {
+        width: 690px;
+        /* Defina a largura desejada */
+        margin: 10px;
+        /* Adicione margens para espaçamento entre as postagens */
+        padding: 10px;
+        /* Adicione preenchimento interno para afastar o conteúdo das bordas */
+        text-align: center;
+        position: relative;
+        left: 30px;
+        top: 30px;
+        box-shadow: #717171 1px 1px 2px 1px;
+    }
+
+    .ggeral {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbarhomecomunit {
+        position: absolute;
+        top: 2px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbarcomunit {
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    .publicarcomuni {
+        position: relative;
+        top: -40px;
+    }
+
+    .conecxoes {
+        position: absolute;
+        left: 990px;
+        top: -11px;
+
+
+
+
+    }
+}
+
+@media (max-width: 1200px) {
+    .geralperfil {
+        height: 670px;
+    }
+}
+
+@media (max-width: 900px) {
+    .geralperfil {
+        height: 990px;
+    }
+}
+
+@media (max-width: 700px) {}
+
+@media (max-width: 480px) {
+
+    .menumobii {
+        display: block;
+    }
+
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .publicarcomuni {
+        left: 0;
+        margin: 0;
+        padding: 0;
+        width: 0;
+        height: 0;
+        top: 40px;
+
+
+    }
+
+    .menumobii {
+        background-color: #717171;
+        width: 0;
+        height: 0;
+        margin: 0;
+    }
+
+    .geralperfil {
+        position: relative;
+        left: 0;
+        width: 480px;
+        height: 330px;
+        top: 140px;
+        margin: 0;
+    }
+
+    .postagem {
+        width: 450px;
+        left: 0;
+        padding: 5px;
+    }
+
+    .imagem-container {
+        width: 80%;
+    }
+
+
+}
+
+@media (max-width: 380px) {
+    .geralperfil {
+        height: 500px;
+    }
+}
+
+@media (max-width: 320px) {
+    .geralperfil {
+        height: 655px;
+    }
+}

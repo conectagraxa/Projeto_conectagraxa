@@ -11,6 +11,7 @@ import VagasPubli from "../components/VagasPubli";
 import Candidaturas from "../components/Candidaturas";
 import FotoPerfil from "../assets/img/foto-conexoes.png"
 import Oportunidades from "../components/Oportunidades";
+import Candidaturas2 from "../components/pasta-candidaturas/Candidaturas";
 
 function PrincipalPF() {
     const [showModal, setShowModal] = useState(false);
@@ -120,7 +121,7 @@ function PrincipalPF() {
                                 <Route path="perfil" element={<Teste />} />
                                 <Route path="publicarVagas" element={<VagasPubli />} />
                                 <Route path="buscarProfissionais" element={<BuscarProf />} />
-                                <Route path="candidaturas" element={<Teste />} />
+                                <Route path="candidaturas" element={<Candidaturas2 />} />
                             </Routes>
                         </section>
                     </section>

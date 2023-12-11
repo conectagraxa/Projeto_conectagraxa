@@ -8,9 +8,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BuscarProf from "../components/BuscarProf";
 import Teste from "../components/Teste";
 import VagasPubli from "../components/VagasPubli";
-import Candidaturas from "../components/Candidaturas";
-import FotoPerfil from "../assets/img/foto-conexoes.png"
+import FotoPerfil from "../assets/img/foto-conexoes.png";
 import Oportunidades from "../components/Oportunidades";
+import Comunidade from "../components/Home_comunidade/Comunidade";
 
 function PrincipalPJ() {
     const [showModal, setShowModal] = useState(false);
@@ -99,7 +99,7 @@ function PrincipalPJ() {
                 <section className="section-center">
                     <section className="top">
                         <header>
-                            <input type="search" name="" id="" placeholder="Buscar" />
+                            <input className="buscar" type="search" name="" id="" placeholder="Buscar" />
                         </header>
                         {/* <section className="icon">
                             <div>
@@ -115,7 +115,7 @@ function PrincipalPJ() {
                             )}
                             <Routes>
                                 <Route path="perfil" element={<Teste/>} />
-                                <Route path="comunidade" element={<Teste/>} />
+                                <Route path="comunidade" element={<Comunidade/>} />
                                 <Route path="oportunidades" element={<Oportunidades/>} />
                             </Routes>
                         </section>

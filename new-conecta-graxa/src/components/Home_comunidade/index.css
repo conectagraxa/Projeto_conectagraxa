@@ -1,0 +1,32 @@
+.geralperfil {
+  background-color: rgb(255, 255, 255);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #bebebe 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+}
+.geralperfil::-webkit-scrollbar {
+
+    display: none;
+}
+.postagem {
+  width: 400px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #bebebe;
+  padding-bottom: 10px;
+}
+
+.ggeral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 90vh;
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+  margin: 0 1.4vw;
+  padding: 2vh 1.6vw;
+}

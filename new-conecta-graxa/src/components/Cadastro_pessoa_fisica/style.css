@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+.main-cadastro-pf {
+    display: flex;
+    background-color: #FFF5EF;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.circulo1 {
+    width: 245px;
+    height: 245px;
+    background: linear-gradient(to left, #FF9B04, #EE4622);
+    border-radius: 100%;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 46px;
+    left: 100px;
+}
+
+.circulo2 {
+    width: 245px;
+    height: 245px;
+    background: linear-gradient(to left, #EE4622, #FF9B04);
+    border-radius: 100%;
+    transform: rotate(60deg);
+    position: absolute;
+    bottom: 46px;
+    right: 100px;
+}
+
+.regal-cadastropf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    width: 68vw;
+    position: relative;
+    padding: 50px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    z-index: 1;
+}
+
+.title-cadastro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 25px;
+}
+
+#logo {
+    width: 80px;
+}
+
+.h1-cadastro {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.container-inputs {
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+    width: 100%;
+    /* border: 2px red solid; */
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    /* border: 2px solid green; */
+    gap: 8px;
+}
+
+.h3-cadastro {
+    font-size: 1rem;
+    font-weight: 400;
+    border-bottom: #6C6A6A 1px solid;
+    padding-bottom: 8px;
+}
+
+.endereco {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.endereco-box1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.endereco-box1 .endereco-div1 {
+    display: flex;
+    flex-direction: column;
+    width: 72%;
+    margin-bottom: 8px;
+}
+
+.endereco-box1 .endereco-div2 {
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    margin-bottom: 8px;
+}
+
+.endereco-box1 div label {
+    margin-bottom: 8px;
+}
+
+.endereco-box2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.endereco-box2 div {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.endereco-box2 div label {
+    margin-bottom: 8px;
+}
+
+.box2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 44%;
+    /* border: 2px solid green; */
+}
+
+.box-checkbox {
+    display: flex;
+    /* border: 1px solid purple; */
+    align-items: center;
+    gap: 6px;
+}
+
+.put-form,
+select {
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #6C6A6A;
+    padding: 0 10px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.opcao div {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+    width: 48%;
+}
+
+.opcao div label {
+    margin-bottom: 8px;
+}
+
+.box2-div1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.button-cadastro {
+    background-color: #F99760;
+    height: 44px;
+    border: none;
+    border-radius: 40px;
+    width: 100%;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.button-cadastro:hover {
+    background-color: #f9782d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Modal-janela {
+    background-color: #F99760;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 50px 200px 50px 200px;
+    /* display: none; */
+    width: 100vw;
+}
+
+.Modal-interno-politica {
+    background-color: #FFF5EF;
+    position: relative;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.nome-int {
+    margin-bottom: 4px;
+}
+
+.esfera1-politica {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 400px;
+    left: 1300px;
+    border-radius:100%;
+    /* z-index: -100; */
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera2-politica {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 400px;
+    left: 10px;
+
+    border-radius:100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera3-politica {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    border-radius:100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera4-politica {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 1300px;
+    border-radius:100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.esfera5-politica {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 600px;
+    left: 1px;
+    border-radius:100%;
+    z-index: -10;
+    background-image: linear-gradient(45deg, #fff5ef, #F99760);
+}
+
+.nome-politica-box1 {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+.button-politica{
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    background-color: #F99760;
+    height: 44px;
+    border: none;
+    border-radius: 40px;
+    width: 100px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.linkpolitica{
+    cursor: pointer;
+}
+
+.imagem-logo-politica {
+    /* width: auto; */
+    height: 16vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    @media (max-width:900px) {
+
+        .main-cadastro-pf {
+            height: auto;
+            padding: 40px;
+        }
+    
+        .circulo1,
+        .circulo2 {
+            display: none;
+        }
+    
+        .regal-form {
+            padding: 25px 20px;
+        }
+    
+        #logo {
+            width: 60px;
+        }
+    
+        .h1-cadastro {
+            font-size: 1.5rem;
+        }
+    
+        .container-inputs {
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+    
+        .box1 {
+            width: 100%;
+        }
+    
+        .box2 {
+            width: 100%;
+        }
+
+        .esfera1-politica, .esfera2-politica, .esfera3-politica, .esfera4-politica, .esfera5-politica {
+            display: none;
+        }
+
+        .Modal-janela {
+            padding: 10px;
+        }
+
+        .Modal-interno-politica {
+            padding: 20px;
+        }
+
+        .nome-politica-box1 {
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .button-politica{
+            right: 20px;
+            bottom: 12px;
+        }
+    }

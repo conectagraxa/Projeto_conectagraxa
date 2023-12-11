@@ -1,0 +1,78 @@
+.geralpublicarc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+    border: #bebebe 1px solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+.Novap {
+    font-size: 1.2rem;
+    border-bottom: #6C6A6A 1px solid;
+    line-height: 40px;
+    margin-bottom: 16px;
+    padding-left: 16px;
+}
+
+.imgp {
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #f58b49;
+}
+
+
+
+.perfilpublic-box1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;;
+}
+
+.perfilpublic-box1 input {
+    border: #bebebe 1px solid;
+    width: 92%;
+    height: auto;
+    border-radius: 5px;
+    padding: 0 12px;
+    background-color: #f4f4f4;
+}
+
+.perfilpublic-box2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin: 16px 0 10px 8%;
+}
+
+.butonp{
+    background-color: #FFCBAD;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.butonp:hover {
+    background-color: #f58b49;
+}
+
+.putpp[type="file"]::file-selector-button {
+    background-color: #c8c8c8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.putpp[type="file"]::file-selector-button:hover {
+    background-color: #6d6d6d;
+}
+  

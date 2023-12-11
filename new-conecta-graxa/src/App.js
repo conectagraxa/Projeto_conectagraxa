@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cadastro from "./pages/Cadastro";
 import PrincipalPF from "./pages/PrincipalPF";
 import PrincipalPJ from "./pages/PrincipalPJ";
+import CadastroPF from './components/Cadastro_pessoa_fisica/CadastroPF.js'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/principalPF/*" element={<PrincipalPF />} />
         <Route path="/principalPJ/*" element={<PrincipalPJ />} />
+        <Route path='/CadastroPF' element={<CadastroPF />} />
       </Routes>
     </BrowserRouter>
   );
