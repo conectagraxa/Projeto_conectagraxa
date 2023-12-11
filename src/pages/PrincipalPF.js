@@ -14,6 +14,12 @@ import PerfilProfissional from "../components/Perfilprofissional/PerfilProfissio
 
 function PrincipalPJ() {
 
+    
+    function deslogar(){
+        localStorage.removeItem('id');
+    
+    }
+
     const conexaoCard = [
         {
             imagem: FotoPerfil,
@@ -96,7 +102,8 @@ function PrincipalPJ() {
                             </ul>
                         </nav>
                         
-                    <Link to="/">
+                        <Link onClick={deslogar} to="/">
+
                         <div>
                             <img width="22px" src={Exit} alt="" />
                             <span>Sair</span>

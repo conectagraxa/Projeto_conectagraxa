@@ -30,9 +30,11 @@ export default function LoginForm() {
             const response = await Api.put('profissional/login', data);
             localStorage.setItem('email', email);
             setLogado(true);
+            localStorage.setItem('id', response.data.id);
+            console.log(response);
 
+            navigate('/principalPF/comunidade');
 
-            navigate('/PrincipalPF');
         } catch (err) {
             alert('Email ou senha inválidos, caso não tenha uma conta, cadastra-se');
         }
@@ -108,14 +110,28 @@ export default function LoginForm() {
                 <span className='apigoogle' >
                     <GoogleOAuthProvider clientId="758578177861-0ckcl4g5las642anqov57e49tp0mbitr.apps.googleusercontent.com">
                         <GoogleLogin
-                            onSuccess={credentialResponse => {
+                            onSuccess ={async credentialResponse => {
                                 console.log(credentialResponse)
                                 const details = jwtDecode(credentialResponse.credential);
                                 console.log(details);
-                                const response = Api.put('profissional/loginGoogleProfissionalService', details);
+
+
+
+                                const response = await Api.put('profissional/loginGoogleProfissionalService', details);
                                 localStorage.setItem('email', details.email);
+
+                                localStorage.setItem('id', response.data.id);
+                                navigate('/principalPF/comunidade');
+
+                                console.log(response);
+ 
                                 setLogado(true);
-                                 navigate('/principalPF/comunidade');
+
+                                
+                           
+                                //       console.log(response);
+                            
+                                
                             }}
                             onError={() => {
                                 console.log('Login Failed')

@@ -45,6 +45,7 @@ export default function FormPje() {
 
             const  response = await Api.post('empresa/create',data);
             console.log('Senha atualizada:', senha);
+            console.log(response);
 
             localStorage.getItem('email');
             localStorage.setItem('id',id);
@@ -71,7 +72,8 @@ export default function FormPje() {
           try {
             const response = await Axios.get(`https://viacep.com.br/ws/${cep}/json/`);
             if (response.data.erro) {
-              alert('CEP inválido, tente novamente');
+              console.log('CEP inválido, tente novamente');
+              return null;
             } else {
               setEndereco(response.data.logradouro);
               setCidade(response.data.localidade);
@@ -81,10 +83,10 @@ export default function FormPje() {
             console.error(error);
           }
         } else {
-            
-            console.log("algo deu mal");
-            return null;
+          console.log('CEP inválido, tente novamente, insira apenas números sem traços');
+          return null;  
         }
+     
      };
      
     return (
@@ -134,7 +136,7 @@ export default function FormPje() {
                         </div>
 
                         <div className="lembrar_formpj" onclick="lembrarSenha()">
-                            <input type="checkbox" name="remember-me" required
+                            <input type="checkbox" name="remember-me" 
                               value={senha}
                               onChange={e => setSenha(e.target.value)}
                             id="lembrar" className="relembra" />
@@ -163,7 +165,7 @@ export default function FormPje() {
                                     required
                                     value={cep}
                                     onChange={e => setCep(e.target.value)}
-                                    name="CEP" placeholder="00.000-000" />
+                                    name="CEP" placeholder="00.000-000" onBlur={checkCEP} />
                                 </div>
 
 

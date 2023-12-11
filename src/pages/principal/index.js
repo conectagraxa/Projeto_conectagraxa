@@ -23,10 +23,11 @@ import Profiles from './imagem/Profiles.svg'
 import Rectangle02 from './imagem/Rectangle02.svg'
 import Rectangle03 from './imagem/Rectangle03.svg'
 import logo from './imagem/logo.svg'
-
+import LoginForm from '../Login';
 
 function Home() {
 
+    
 
     // Função para abrir o modal
     const abrirModal = () => {

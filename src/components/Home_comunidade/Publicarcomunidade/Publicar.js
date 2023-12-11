@@ -3,30 +3,43 @@ import React, { useState } from "react";
 import './index.css'
 import IconPerfil from "../img/icon-perfil.png"
 
-export default function Publicarcomunidade({ adicionarPostagem }) {
-    const [postText, setPostText] = useState("");
-    const [posterImage, setPosterImage] = useState(null);
+function Publicarcomunidade({ adicionarPostagem }) {
+    const [descricao, setDescricao] = useState("");
+    const [image, setImage] = useState(null);
 
-    const handleTextChange = (e) => {
-        setPostText(e.target.value);
+    const handleTextChange =  (e) => {
+        setDescricao(e.target.value);
+
     };
 
-    const handleImageChange = (e) => {
+    const handleImageChange = async (e) => {
         const imageFile = e.target.files[0];
-        setPosterImage(URL.createObjectURL(imageFile));
+        setImage(URL.createObjectURL(imageFile));
+
+        const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "conectaGraxa");
+    data.append("cloud_name", "ds6idfbqg");
+
+    const response = await fetch("https://api.cloudinary.com/v1_1/ds6idfbqg/image/upload", {
+      method: "POST",
+      body: data,
+    });
+
+   
     };
 
     const handlePublicarClick = () => {
         // Crie um objeto com o texto e a imagem e adicione ao estado do Peerfil
         const novaPostagem = {
-            texto: postText,
-            imagem: posterImage,
+            texto: descricao,
+            imagem: image,
         };
         adicionarPostagem(novaPostagem);
 
         // Limpe os campos após a postagem
-        setPostText("");
-        setPosterImage(null);
+        setDescricao("");
+        setImage(null);
     };
 
     return (
@@ -40,7 +53,7 @@ export default function Publicarcomunidade({ adicionarPostagem }) {
                     className="putp"
                     type="text"
                     placeholder="Digite aqui suas ideias"
-                    value={postText}
+                    value={descricao}
                     onChange={handleTextChange}
                 ></input>
             </div>
@@ -55,3 +68,4 @@ export default function Publicarcomunidade({ adicionarPostagem }) {
     );
 }
 
+export default Publicarcomunidade;

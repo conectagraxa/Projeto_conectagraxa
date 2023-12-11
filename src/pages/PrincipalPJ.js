@@ -14,6 +14,10 @@ import Candidaturas2 from "../components/pasta-candidaturas/Candidaturas";
 import PerfilEmpresa from "../components/Perfilempresa/PerfilEmpresa";
 
 function PrincipalPF() {
+function deslogar(){
+    localStorage.removeItem('id');
+
+}
 
     const conexaoCard = [
         {
@@ -89,8 +93,9 @@ function PrincipalPF() {
                                 </li>
                             </ul>
                         </nav>
-                        
-                        <Link to="/">
+
+                        <Link onClick={deslogar} to="/">
+                            
                             <div>
                                 <img width="22px" src={Exit} alt="" />
                                 <span>Sair</span>

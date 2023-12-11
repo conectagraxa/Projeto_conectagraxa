@@ -30,7 +30,12 @@ export default function LoginFormEmpresa() {
             const response = await Api.put('empresa/login', data);
             localStorage.setItem('email', email);
             setLogado(true);
+            localStorage.setItem('id',response.data.id);
+            console.log(data.id);
 
+            console.log(response.id);
+            navigate('/principalPJ/publicarVagas');
+            
 
             navigate('/PrincipalPJ');
         } catch (err) {
@@ -108,14 +113,18 @@ export default function LoginFormEmpresa() {
                 <span className='apigoogle' >
                     <GoogleOAuthProvider clientId="758578177861-0ckcl4g5las642anqov57e49tp0mbitr.apps.googleusercontent.com">
                         <GoogleLogin
-                            onSuccess={credentialResponse => {
+                            onSuccess={async credentialResponse => {
                                 console.log(credentialResponse)
                                 const details = jwtDecode(credentialResponse.credential);
                                 console.log(details);
-                                const response = Api.put('empresa/loginGoogleEmpresa', details);
+                                const response = await Api.put('empresa/loginGoogleEmpresa', details);
                                 localStorage.setItem('email', details.email);
                                 setLogado(true);
-                                //   navigate('/Home_comunidade');
+                                 navigate('/principalPJ/publicarVagas');
+                                 // console.log(response);
+                               localStorage.setItem('id', response.data.id);
+                               console.log(response);
+                                 
                             }}
                             onError={() => {
                                 console.log('Login Failed')
@@ -146,3 +155,4 @@ export default function LoginFormEmpresa() {
     )
 
 }
+ 
