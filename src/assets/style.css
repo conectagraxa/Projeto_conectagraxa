@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+.main-cadastro-pf {
+    display: flex;
+    background-color: #FFF5EF;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.circulo1 {
+    width: 245px;
+    height: 245px;
+    background: linear-gradient(to left, #FF9B04, #EE4622);
+    border-radius: 100%;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 46px;
+    left: 100px;
+}
+
+.circulo2 {
+    width: 245px;
+    height: 245px;
+    background: linear-gradient(to left, #EE4622, #FF9B04);
+    border-radius: 100%;
+    transform: rotate(60deg);
+    position: absolute;
+    bottom: 46px;
+    right: 100px;
+}
+
+.fieldset-cadastro-pf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    width: 68vw;
+    /* height: 76vh; */
+    padding: 50px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    z-index: 1;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 25px;
+}
+
+#logo {
+    width: 80px;
+}
+
+.title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.container-inputs {
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+    width: 100%;
+    /* border: 2px red solid; */
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    /* border: 2px solid green; */
+    gap: 8px;
+}
+
+.container-inputs h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    border-bottom: #6C6A6A 1px solid;
+    padding-bottom: 8px;
+}
+
+.endereco {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.endereco-box1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.endereco-box1 .endereco-div1 {
+    display: flex;
+    flex-direction: column;
+    width: 72%;
+    margin-bottom: 8px;
+}
+
+.endereco-box1 .endereco-div2 {
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    margin-bottom: 8px;
+}
+
+.endereco-box1 div label{
+    margin-bottom: 8px;
+}
+
+.endereco-box2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.endereco-box2 div {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.endereco-box2 div label{
+    margin-bottom: 8px;
+}
+
+.box2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 44%;
+    /* border: 2px solid green; */
+}
+
+.box-checkbox {
+    display: flex;
+    /* border: 1px solid purple; */
+    align-items: center;
+    gap: 6px;
+}
+
+.container-inputs input, .container-inputs select {
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #6C6A6A;
+    padding: 0 10px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.opcao div {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+    width: 48%;
+}
+
+.opcao div label{
+    margin-bottom: 8px;
+}
+
+.box2-div1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fieldset-cadastro-pf button {
+    background-color: #F99760;
+    height: 44px;
+    border: none;
+    border-radius: 40px;
+    width: 100%;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.fieldset-cadastro-pf button:hover {
+    background-color: #f9782d;
+}
+
+@media (max-width:900px) {
+
+    .main-cadastro-pf {
+        height: auto;
+        padding: 40px;
+    }
+
+    .circulo1, .circulo2 {
+        display: none;
+    }
+
+    .fieldset-cadastro-pf {
+        padding: 25px 20px;
+    }
+
+    #logo {
+        width: 60px;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+    } 
+
+    .container-inputs{
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .box1 {
+        width: 100%;
+    }
+
+    .box2 {
+        width: 100%;
+    }
+}

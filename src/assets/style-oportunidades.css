@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.op-fundo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 90vh;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    margin: 0 1.4vw;
+    padding: 2vh 1.6vw;
+}
+
+.op-fundo h2 {
+    font-size: 1.2rem;
+    border-bottom: #6C6A6A 1px solid;
+    line-height: 40px;
+    margin-bottom: 16px;
+}
+
+.op-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: aquamarine; */
+    height: 100%;
+    margin-bottom: 6px;
+}
+
+.op-filtros ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.op-filtros li {
+    list-style: none;
+}
+
+.op-filtros a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: #6C6A6A 1px solid;
+    width: 12vw;
+    justify-content: center;
+}
+
+.op-filtros a:hover, .op-filtros a:focus {
+    border: #F99760 1px solid;
+    background-color: #F99760;
+
+    .bp-filtros a {
+        color: white;
+    }
+}
+
+.op-cards {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    overflow-y: scroll;
+    gap: 20px;
+}
+
+/* .op-box {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+} */
+
+/* .op-cards {
+    height: 70vh;
+    overflow-y: scroll;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+} */
+
+
+
+.op-box1, .op-box2, .op-box3 {
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    /* background-color: #FCD6C0; */
+    border: #6C6A6A 1px solid;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-right: 10px;
+    /* background-color: #F99760; */
+    /* overflow-x: scroll; */
+}
+
+.op-sub-box1, .op-sub-box2, .op-sub-box3 {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    width: 57vw;
+    padding: 0 0 14px 0;
+}
+
+/* .op-scroll-box1, .op-scroll-box2, .op-scroll-box3 {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+} */
+
+.op-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFF9F5;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+    width: 14vw;
+    padding: 10px;
+    gap: 1.4vh;
+    position: relative;
+    height: 30vh;
+}
+
+/* .scroll {
+    overflow-x: scroll;
+} */
+
+.op-card:hover {
+    transform: scale(1.02);
+}
+
+.op-compartilhar {
+    position: absolute;
+    right: 10px;
+}
+
+.op-card h3 {
+    text-align: center;
+    font-size: 15px;
+}
+
+.op-card h4 {
+    text-align: center;
+    font-size: 12px;
+}
+
+.op-card input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #FCD6C0;
+    width: 100%;
+}
+
+.op-card input:hover {
+    background-color: #F99760;
+}
+
+.op-card-div {
+    display: flex;
+    width: 100%;
+}

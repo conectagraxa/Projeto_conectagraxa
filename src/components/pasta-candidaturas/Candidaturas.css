@@ -1,0 +1,157 @@
+.geralcandidaturas {
+    position: absolute;
+    left: 260px;
+    top: 170px;
+    width: 1000px;
+    overflow: hidden;
+    height: 560px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.titlecanndidaturas {
+    /* position: relative;
+    left: 70px;
+    color: #f97f3d; */
+    padding: 20px 0 0 80px;
+    font-size: 1.2rem;
+    /* border-bottom: #6C6A6A 1px solid; */
+    /* line-height: 40px; */
+    /* margin-bottom: 16px; */
+}
+
+.caixacandidaturas {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    border: 1px solid #717171;
+    border-radius: 10px;
+    left: 80px;
+    top: 20px;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 800px;
+    /* Set your desired maximum width */
+
+}
+
+.caixacandidaturas::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+.box {
+    height: 106px;
+    width: 300px;
+    flex: 1 1 calc(33.33% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.box .group {
+    height: 106px;
+    left: 0;
+    top: 0;
+    width: 384px;
+}
+
+.box .group-wrapper {
+    height: 106px;
+}
+
+.box .overlap-group {
+    height: 106px;
+    position: relative;
+    width: 388px;
+}
+
+.box .div {
+    height: 106px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 388px;
+}
+
+.box .profiss-o {
+    color: #000000b5;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 36px;
+    left: 80px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 26px;
+    width: 236px;
+}
+
+.box .nome {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    height: 17px;
+    left: 80px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    white-space: nowrap;
+    width: 227px;
+}
+
+.box .foto {
+    height: 100px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.box .button {
+    all: unset;
+    background-color: #ffcaad;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 30px;
+    left: 120px;
+    overflow: hidden;
+    position: absolute;
+    top: 71px;
+    width: 150px;
+    text-align: center;
+    transition: .4s;
+
+}
+
+.box .button:hover {
+    background-color: #f97f3d;
+    transition: .4s;
+}
+
+.box .text-wrapper {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 13px;
+    font-weight: 400;
+    height: 20px;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 5px;
+    width: 115px;
+}

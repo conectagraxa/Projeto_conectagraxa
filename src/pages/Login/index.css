@@ -1,0 +1,472 @@
+#geral {
+    position: justify;
+
+    display: flex;
+    flex-direction: row;
+    font-family: sans-serif;
+}
+
+.fiel {
+    background-color: rgb(252, 252, 252);
+    border: none;
+    border-radius: 60px;
+    text-align: center;
+    width: 40%;
+    box-shadow: #f1ded4 0.5px 0.5px 3.5px 0.5px;
+
+}
+
+
+
+.apigoogle{
+    position: relative;
+    left: 130px;
+}
+
+.logo1 {
+    position: relative;
+    width: 40%;
+    margin-bottom: -85px;
+
+}
+
+.lembrar_senhaa {
+    cursor: pointer;
+}
+
+.tema {
+    text-transform: uppercase;
+    margin-top: 90px;
+}
+
+.imp {
+    border-color: #d57842;
+    margin-top: 5px;
+    height: 40px;
+    width: 70%;
+    border-radius: 8px;
+
+
+}
+
+.esqueceu1 {
+    margin-left: 100px;
+}
+
+#olho {
+    cursor: pointer;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 20px;
+}
+
+.nome {
+    position: relative;
+    left: -34%;
+
+}
+
+
+.login {
+    cursor: pointer;
+    width: 78%;
+    background-color: #F99760;
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+    padding: 9px;
+    border-radius: 8px;
+    border: none;
+    transition: .4s;
+}
+
+.login:hover {
+    color: aliceblue;
+}
+
+.google-login {
+    cursor: pointer;
+    margin-top: 10px;
+    width: 78%;
+    font-size: 17px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.esqueceu1 {
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+}
+
+.cadastro-login a {
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+}
+
+.cadastro-login {
+    font-size: 13px;
+    margin-bottom: 70px;
+}
+
+.g {
+    position: relative;
+    top: -4px;
+}
+
+.phone1,
+.phone2 {
+    display: none;
+}
+
+.bola1 {
+    background-image: linear-gradient(#EE4622, #FF9B04);
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    position: absolute;
+    left: 420px;
+    top: 150px;
+    z-index: -10;
+}
+
+.bola2 {
+    background-image: linear-gradient(#e1e1e1, #EE4622, #EE4622);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    position: absolute;
+    left: 205px;
+    top: 550px;
+    z-index: -5;
+}
+
+.bola3 {
+    background-image: linear-gradient(#EE4622, #FF9B04, #FF9B04);
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    position: absolute;
+    left: 900px;
+    top: 430px;
+    z-index: -20;
+}
+
+.bola4 {
+    background-image: linear-gradient(#e1e1e1, #EE4622, #EE4622);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    position: absolute;
+    left: 1120px;
+    top: 70px;
+    z-index: -30;
+}
+
+@media (max-width: 1980px) {
+    #geral {
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 9%;
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .login,
+    .google-login {
+        width: 75%;
+    }
+
+    .imp {
+        font-size: 14px;
+        padding-left: 15px;
+    }
+
+    .esqueceu1 {
+        margin-left: 18%;
+    }
+
+    .fiel {
+        margin: 0 auto;
+    }
+
+}
+
+
+
+@media (max-width: 1200px) {
+    #geral {
+        margin-top: 5%;
+        margin-left: 8%;
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .login,
+    .google {
+        width: 76%;
+    }
+
+    .imp {
+        font-size: 20px;
+    }
+
+    .esqueceu1 {
+        margin-left: 20%;
+    }
+
+    .fiel {
+        margin: 0 auto;
+        width: 550px;
+    }
+
+
+}
+
+@media (max-width: 900px) {
+    #geral {
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .fiel {
+        position: relative;
+        width: 100vh;
+        height: 98vh;
+        top: 200px;
+
+    }
+
+    #lembrar_senha,
+    .lembrar_senha {
+        font-size: 14px;
+    }
+
+    .esqueceu1 {
+        margin-left: 35px;
+    }
+
+
+    .nome {
+        display: none;
+    }
+
+
+
+    .login,
+    .google {
+        width: 80%;
+        height: 45px;
+        font-size: 15px;
+        margin-bottom: 5px;
+
+    }
+
+    .gg {
+        width: 10%;
+    }
+
+    .g {
+        position: relative;
+        top: -7px;
+        padding: 5px;
+    }
+
+
+
+
+}
+
+@media (max-width: 768px) {
+
+    #geral {
+        width: 70%;
+        margin-top: 10%;
+        margin-left: 15%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo1 {
+        width: 20%;
+        margin-left: -15%;
+    }
+
+    .fiel {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+
+    .login,
+    .google {
+        left: 15%;
+        width: 76%;
+        font-size: 15px;
+
+    }
+
+    .imp {
+        font-size: 15px;
+    }
+
+    .esqueceu1 {
+        margin-left: 10%;
+    }
+
+    .fiel {
+        margin: 0 auto;
+    }
+
+    .cadastro-login {
+        margin-bottom: 5%;
+    }
+
+    .tema {
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #geral {
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .fiel {
+        width: 100%;
+        height: 290vh;
+        margin-top: -200px;
+
+        border-radius: 0;
+
+    }
+
+    .imp {
+        height: 120px;
+        font-size: 40px;
+        margin-bottom: 70px;
+    }
+
+    #lembrar_senha,
+    .lembrar_senha {
+        font-size: 14px;
+    }
+
+    .esqueceu1 {
+        margin-left: 340px;
+        font-size: 39px;
+    }
+
+    .lembrar_senhaa {
+        font-size: 40px;
+    }
+
+    .input-login {
+        width: 40px;
+        height: 30px;
+        margin-right: 5px;
+    }
+
+
+
+    .logo1 {
+        position: relative;
+        width: 250px;
+        width: 530px;
+        left: 80px;
+    }
+
+    .tema {
+        font-size: 70px;
+        margin-top: 200px;
+    }
+
+    .login,
+    .google {
+        width: 72%;
+        height: 120px;
+        font-size: 50px;
+        margin-bottom: 20px;
+
+    }
+
+    .google-login {
+        height: 120px;
+        width: 72%;
+        font-size: 50px;
+        margin-top: 30px;
+    }
+
+    .img-loginn {
+        width: 50px;
+    }
+
+    .cadastro-login {
+        font-size: 40px;
+        margin-top: 70px;
+    }
+
+    .gg {
+        width: 10%;
+    }
+
+    .g {
+        position: relative;
+        top: -7px;
+        padding: 5px;
+    }
+
+    .bola1,
+    .bola2,
+    .bola3,
+    .bola4 {
+        display: none;
+    }
+
+
+
+}
+
+@media (max-width: 320px) {
+
+
+
+    .esqueceu,
+    .lembrar_senha {
+        font-size: 15px;
+        flex-direction: column;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .imp {
+        font-size: 60%;
+    }
+
+    .tema {
+        font-size: 80%;
+        margin-top: 10%;
+    }
+
+    .logo1 {
+        width: 60%;
+        position: relative;
+        left: 10%;
+        margin-top: 10%;
+    }
+
+    .cadastro-login {
+        flex-direction: column;
+        font-size: 14px;
+    }
+
+    .bola1,
+    .bola2,
+    .bola3,
+    .bola4 {
+        display: none;
+    }
+
+}
