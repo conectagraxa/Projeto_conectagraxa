@@ -11,7 +11,7 @@ function Candidaturas() {
                 <Teste1/>
             </div>
             <div className="geralcandidaturas">
-                <h4 className="titlecanndidaturas">Candidaturas da vaga</h4>
+                <h2 className="titlecanndidaturas">Candidaturas da vaga</h2>
 
                 <div className="caixacandidaturas">
                     <div className="box">

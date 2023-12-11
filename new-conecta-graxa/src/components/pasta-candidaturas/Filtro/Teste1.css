@@ -2,7 +2,8 @@
     background-color: #ffffff;
     border-radius: 20px;
     height: 60px;
-    width: 900px;
+    width: 97%;
+    margin: 0 10px;
 }
 
 .rectangle .filtros {
@@ -88,7 +89,7 @@
     line-height: normal;
     position: absolute;
     text-align: center;
-    top: 1px;
+    top: 6px;
     width: 147px;
 }
 

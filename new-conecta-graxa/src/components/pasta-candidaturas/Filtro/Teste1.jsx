@@ -26,7 +26,7 @@ function Teste1() {
             <div className="filtros">
                 <div className="overlap-group">
                     <div className="equipamentos-wrapper" onClick={handleEtniaClick}>
-                        <div className="equipamentos">Etnia</div>
+                        <div className="text-wrapper">Etnia</div>
                     </div>
                     <div className="palco-wrapper" onClick={handleFuncaoClick}>
                         <div className="text-wrapper">Função</div>
