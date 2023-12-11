@@ -553,7 +553,7 @@ body {
 .modal {
     position: absolute;
     top: 100px;
-    width: 200px;
+    width: 240px;
     left: 1400px;
     transform: translate(-50%, -50%);
     background: white;
@@ -617,7 +617,7 @@ body {
 .modal2 {
     position: absolute;
     top: 100px;
-    width: 200px;
+    width: 240px;
     left: 1250px;
     transform: translate(-50%, -50%);
     background: white;
