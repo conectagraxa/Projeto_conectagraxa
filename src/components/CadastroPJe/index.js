@@ -8,7 +8,7 @@ import "./index.css"
 import logo from "./imagens-formpje/logo.jpg"
 import logooo from'./imagens-formpje/logooo.png'
 
-function FormPje() {
+export default function FormPje() {
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -266,4 +266,3 @@ function FormPje() {
     )
 }
 
-export default FormPje;
