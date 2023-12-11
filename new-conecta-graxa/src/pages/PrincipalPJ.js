@@ -90,10 +90,13 @@ function PrincipalPF() {
                             </ul>
                         </nav>
                         
-                    <div>
-                        <img width="22px" src={Exit} alt="" />
-                        <span>Sair</span>
-                    </div>
+                        <Link to="/">
+                            <div>
+                                <img width="22px" src={Exit} alt="" />
+                                <span>Sair</span>
+                            </div>
+                        </Link>
+                    
                 </section>
                 <section className="section-center">
                     <section className="top">
