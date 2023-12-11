@@ -27,12 +27,12 @@ export default function LoginFormEmpresa() {
         };
 
         try {
-            const response = await Api.put('profissional/login', data);
+            const response = await Api.put('empresa/login', data);
             localStorage.setItem('email', email);
             setLogado(true);
 
 
-            navigate('/PrincipalPF');
+            navigate('/PrincipalPJ');
         } catch (err) {
             alert('Email ou senha inválidos, caso não tenha uma conta, cadastra-se');
         }
@@ -112,7 +112,7 @@ export default function LoginFormEmpresa() {
                                 console.log(credentialResponse)
                                 const details = jwtDecode(credentialResponse.credential);
                                 console.log(details);
-                                const response = Api.put('profissional/loginGoogle', details);
+                                const response = Api.put('empresa/loginGoogle', details);
                                 localStorage.setItem('email', details.email);
                                 setLogado(true);
                                 //   navigate('/Home_comunidade');
@@ -129,7 +129,7 @@ export default function LoginFormEmpresa() {
                     <p className="cadastro-login">
                         Ainda não tem conta?
                         <strong>
-                            <a href="/CadastroPF" className="cadastro-login a">
+                            <a href="/CadastroPJ" className="cadastro-login a">
                                 Criar uma
                             </a>
                         </strong>

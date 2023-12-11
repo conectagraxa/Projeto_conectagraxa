@@ -25,7 +25,7 @@ export default function FormPje() {
     const navigate =  useNavigate();
     
 
-    async function createProfissional(e){
+    async function createEmpresa(e){
         e.preventDefault();
     
         const data = {
@@ -43,13 +43,13 @@ export default function FormPje() {
         try{
             console.log('Senha atualizada:', senha);
 
-            const  response = await Api.post('profissional/create',data);
+            const  response = await Api.post('empresa/create',data);
             console.log('Senha atualizada:', senha);
 
             localStorage.getItem('email');
             localStorage.setItem('id',id);
     
-            navigate('/Login');
+            navigate('/LoginFormEmpresa');
         }catch(err){
             alert('Cadastro não realizado');
         }
@@ -81,7 +81,9 @@ export default function FormPje() {
             console.error(error);
           }
         } else {
-          alert('CEP inválido, tente novamente, insira apenas números sem traços');
+            
+            console.log("algo deu mal");
+            return null;
         }
      };
      
@@ -95,7 +97,7 @@ export default function FormPje() {
                     <img id="logo_pj" src={logo} alt="" />
                     <h1 className="title_pj">CADASTRO</h1>
                 </span>
-                <form className="formulario_pj">
+                <form onSubmit={createEmpresa} className="formulario_pj">
                     <section className="boxform1_pj">
                         <div className="inputbox_formpj">
                             <label for="pfnf">Pessoa física ou nome fantasia</label>

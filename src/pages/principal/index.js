@@ -79,10 +79,10 @@ function Home() {
                         </h1>
 
                         <span className="otoes">
-                            <a href="">
+                            <a href="/CadastroPF">
                                 <button className="bb1">Comece já</button>
                             </a>
-                            <a href="">
+                            <a href="/FormPje">
                                 <button className="bb2">Contratar</button>
                             </a>
                         </span>
@@ -165,12 +165,12 @@ function Home() {
                 <div className="quag1">
                     <h1 className="text">Temos o que você procura</h1>
 
-                    <a className='ancoragem' href="Login">
+                    <a className='ancoragem' href="FormPje">
                         <div className="q1">
 
                             <span className="namee">
                                 <img src={Profiles} alt="" />
-                                <span className="namen">Quero contratar</span>
+                                <span className="namen" >Quero contratar</span>
                             </span>
                             <br />
                             <span className="namee1">
@@ -178,11 +178,11 @@ function Home() {
                             </span>
                         </div></a>
 
-                        <a className='ancoragem' href="Login">
+                        <a className='ancoragem' href="CadastroPF">
                     <div className="q2">
                         <span className="namee">
                             <img src={MovieProjectores} alt="" />
-                            <a className='ancoragem' href="Login"> <span className="namen">Quero trabalhar</span></a>
+                            <a className='ancoragem' href="CadastroPF"> <span className="namen">Quero trabalhar</span></a>
                         </span>
                         <br />
                         <span className="namee1">

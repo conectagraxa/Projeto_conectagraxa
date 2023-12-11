@@ -52,7 +52,7 @@ export default function CadastroPF() {
             localStorage.getItem('email');
             localStorage.setItem('id',Api.getUri);
     
-            navigate('/Login');
+            navigate('/LoginForm');
         }catch(err){
             alert('Cadastro não realizado');
         }
@@ -74,7 +74,8 @@ export default function CadastroPF() {
           try {
             const response = await Axios.get(`https://viacep.com.br/ws/${cep}/json/`);
             if (response.data.erro) {
-              alert('CEP inválido, tente novamente');
+              console.log('CEP inválido, tente novamente');
+              return null;
             } else {
               setEndereco(response.data.logradouro);
               setCidade(response.data.localidade);
@@ -84,7 +85,8 @@ export default function CadastroPF() {
             console.error(error);
           }
         } else {
-          alert('CEP inválido, tente novamente, insira apenas números sem traços');
+          console.log('CEP inválido, tente novamente, insira apenas números sem traços');
+          return null;  
         }
      };
 
