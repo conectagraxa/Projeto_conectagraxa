@@ -32,17 +32,27 @@ function PrincipalPJ() {
         },
         {
             imagem: FotoPerfil,
-            title_card: "Lívia Gomes",
+            title_card: "Suelen Feijo",
             desc_card: "Técnica de som",
         },
         {
             imagem: FotoPerfil,
-            title_card: "Matheus Gomes",
+            title_card: "Naiury Dutra",
             desc_card: "Técnico de luz",
         },
         {
             imagem: FotoPerfil,
-            title_card: "Leandro Marques",
+            title_card: "Alexia Evelyn",
+            desc_card: "Técnico de eletricidade",
+        },
+        {
+            imagem: FotoPerfil,
+            title_card: "Reginaldo Alves",
+            desc_card: "Técnico de eletricidade",
+        },
+        {
+            imagem: FotoPerfil,
+            title_card: "Maria Clara Mendoça",
             desc_card: "Técnico de eletricidade",
         },
         // {
