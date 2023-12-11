@@ -1,0 +1,27 @@
+.sobre-mim-popup {
+    /* padding: 10px 0; */
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellowgreen; */
+    /* width: 1%; */
+    /* position: relative;
+    top: -230px; */
+    /* justify-content: space-between;
+     */
+     height: 100%;
+     gap: 10px;
+     padding-top: 10px;
+}
+
+.sobre-mim-popup div {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.sobre-mim-popup button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

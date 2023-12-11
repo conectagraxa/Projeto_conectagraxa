@@ -4,7 +4,7 @@ import Perfil from "../assets/img/perfil.png"
 import "../assets/style-edit-perfil.css";
 import Close from "../assets/img/close.png"
 
-function EditarPerfil({ onClose }) {
+function EditarPerfilPJ({ onClose }) {
 
     return(
         <section className="perfil-fundo">
@@ -57,34 +57,6 @@ function EditarPerfil({ onClose }) {
                                         </section>
                                     </section>
                                 </section>
-                                <section className="box2-modal">
-                                    <label for="">Nome social</label>
-                                    <input type="text" placeholder="Company Name"/>
-                                    <label for="">Data de nascimento <span>*</span></label>
-                                    <input type="date" name="" id="" disabled/>
-                                    <section className="opcao">
-                                        <div>
-                                            <label for="">Sexo</label>
-                                            <select name="" id="">
-                                                <option value="">Vazio</option>
-                                                <option value="">Feminino</option>
-                                                <option value="">Masculino</option>
-                                                <option value="">Outro</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label for="">Etnia</label>
-                                            <select name="" id="">
-                                                <option value="">Vazio</option>
-                                                <option value="">Branco</option>
-                                                <option value="">Preto</option>
-                                                <option value="">Pardo</option>
-                                                <option value="">Indígina</option>
-                                                <option value="">Amarelo</option>
-                                            </select>
-                                        </div>
-                                    </section>
-                                </section>
                             </section>
                             <h2>Configurações de senha</h2>
                             <section className="container-senha">
@@ -122,4 +94,4 @@ function EditarPerfil({ onClose }) {
         </section>
     )
 }
-export default EditarPerfil;
+export default EditarPerfilPJ;

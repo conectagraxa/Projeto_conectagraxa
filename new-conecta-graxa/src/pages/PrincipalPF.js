@@ -3,7 +3,6 @@ import "../assets/style-principal.css";
 import Logo from "../assets/img/logo.png";
 import Exit from "../assets/img/exit.png";
 import Conexao from "../assets/img/conexao.png";
-import EditarPerfil from "../components/EditarPerfil";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BuscarProf from "../components/BuscarProf";
 import Teste from "../components/Teste";
@@ -11,13 +10,9 @@ import VagasPubli from "../components/VagasPubli";
 import FotoPerfil from "../assets/img/foto-conexoes.png";
 import Oportunidades from "../components/Oportunidades";
 import Comunidade from "../components/Home_comunidade/Comunidade";
+import PerfilProfissional from "../components/Perfilprofissional/PerfilProfissional";
 
 function PrincipalPJ() {
-    const [showModal, setShowModal] = useState(false);
-
-    const fechar = () => {
-        setShowModal(false);
-    };
 
     const conexaoCard = [
         {
@@ -91,7 +86,7 @@ function PrincipalPJ() {
                             </ul>
                         </nav>
                         
-                    <div onClick={() => {setShowModal(true)}}>
+                    <div>
                         <img width="22px" src={Exit} alt="" />
                         <span>Sair</span>
                     </div>
@@ -110,11 +105,8 @@ function PrincipalPJ() {
                     <section className="feed">
                         <section>
                             {/* Os componentes entram aqui */}
-                            {showModal && (
-                            <EditarPerfil onClose={fechar}/>
-                            )}
                             <Routes>
-                                <Route path="perfil" element={<Teste/>} />
+                                <Route path="perfil" element={<PerfilProfissional/>} />
                                 <Route path="comunidade" element={<Comunidade/>} />
                                 <Route path="oportunidades" element={<Oportunidades/>} />
                             </Routes>

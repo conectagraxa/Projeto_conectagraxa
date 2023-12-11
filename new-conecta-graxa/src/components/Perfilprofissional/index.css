@@ -1,0 +1,202 @@
+/* .navbarempressaperfil {
+    position: relative;
+    width: 0;
+    height: 0;
+    z-index: 1;
+} */
+
+/* .perfilemre {
+    margin: 0;
+    padding: 0;
+} */
+
+/* .Conexoesperfilempre {
+    z-index: 1;
+    position: relative;
+    left: 990px;
+    top: -10px;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+
+} */
+
+/* .Buscaempresaperfill {
+    position: relative;
+    top: -20px;
+    z-index: 1;
+    width: 1530px;
+    height: 0;
+} */
+
+.perfil-js-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 34px;
+}
+
+.regalperfilempresaa {
+    /* position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 770px;
+    height: 640px;
+    top: 70px;
+    left: 400px;
+    z-index: 1;
+    margin: 0;
+    padding: 10px;
+    position: absolute; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 90vh;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    margin: 0 1.4vw;
+    padding: 2vh 1.6vw;
+}
+
+.perfil-pj-box2 {
+    display: flex;
+    /* background-color: blueviolet; */
+    justify-content: space-between;
+
+    /* font-size: 1.2rem; */
+    border-bottom: #6C6A6A 1px solid;
+    /* line-height: 40px; */
+    padding-bottom: 16px;
+    padding: 0 24px;
+}
+
+/* .painelperfil {
+    width: 100%;
+    height: 150px;
+    background-color: aqua;
+} */
+
+.fotoperfilempresa {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    /* margin: 0; */
+    border-radius: 100%;
+    /* top: -60px;
+    left: 40px; */
+    /* background-color: tomato; */
+    overflow: hidden;
+    bottom: 14px;
+}
+
+.nomebutempressa {
+    /* position: relative;
+    left: 200px;
+    top: -130px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 540px; */
+    width:85%;
+    /* background-color: chocolate; */
+}
+
+.nomeempress {
+    font-size: 1.2rem; 
+}
+
+.nutperfilempresa {
+    /* height: 30px; */
+    /* position: relative;
+    top: 24px; */
+    /* border-radius: 20px;
+    border: none;
+    padding: 5px;
+    width: 110px; */
+
+    /* background-color: #c8c8c8; */
+    /* color: #000000; */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* .segmento-localidade {
+    position: relative;
+    left: 196px;
+    top: -150px;
+} */
+
+.segmento-localidade {
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+   position: relative;
+   top: 14px;
+}
+
+.segmento-localidade p {
+    font-size: 14px;
+}
+
+.dobremimempresa {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    height: 240px;
+    /* position: relative; */
+    border-bottom: 1px #6C6A6A solid;
+    /* top: -120px; */
+    gap: 10px;
+}
+
+.dobremimempresa p {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    /* background-color: aqua; */
+}
+
+.perfil-pj-sub-box3 {
+    display: flex;
+    /* background-color: aquamarine; */
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.dobremimempresa h4 {
+    padding: 3px 0;
+    font-size: 16px;
+}
+
+
+.caixasobremimempresa {
+    /* width: 100%; */
+    /* height: 70%; */
+    overflow: auto;
+    /* padding: 5px; */
+    /* background-color: crimson; */
+}
+
+.Editarsobremimperfil{
+    /* position: absolute;
+    top: -0px;
+    left: 100px; */
+    /* padding: 2px;
+    width: 70px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(252, 163, 100);
+    cursor: pointer; */
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+
+
+

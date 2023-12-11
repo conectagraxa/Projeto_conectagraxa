@@ -3,7 +3,6 @@ import "../assets/style-principal.css";
 import Logo from "../assets/img/logo.png";
 import Exit from "../assets/img/exit.png";
 import Conexao from "../assets/img/conexao.png";
-import EditarPerfil from "../components/EditarPerfil";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BuscarProf from "../components/BuscarProf";
 import Teste from "../components/Teste";
@@ -12,13 +11,9 @@ import Candidaturas from "../components/Candidaturas";
 import FotoPerfil from "../assets/img/foto-conexoes.png"
 import Oportunidades from "../components/Oportunidades";
 import Candidaturas2 from "../components/pasta-candidaturas/Candidaturas";
+import PerfilEmpresa from "../components/Perfilempresa/PerfilEmpresa";
 
 function PrincipalPF() {
-    const [showModal, setShowModal] = useState(false);
-
-    const fechar = () => {
-        setShowModal(false);
-    };
 
     const conexaoCard = [
         {
@@ -95,7 +90,7 @@ function PrincipalPF() {
                             </ul>
                         </nav>
                         
-                    <div onClick={() => {setShowModal(true)}}>
+                    <div>
                         <img width="22px" src={Exit} alt="" />
                         <span>Sair</span>
                     </div>
@@ -103,7 +98,7 @@ function PrincipalPF() {
                 <section className="section-center">
                     <section className="top">
                         <header>
-                            <input type="search" name="" id="" placeholder="Buscar" />
+                            <input className="buscar" type="search" name="" id="" placeholder="Buscar" />
                         </header>
                         {/* <section className="icon">
                             <div>
@@ -113,12 +108,8 @@ function PrincipalPF() {
                     </section> 
                     <section className="feed">
                         <section>
-                            {/* Os componentes entram aqui */}
-                            {showModal && (
-                            <EditarPerfil onClose={fechar}/>
-                            )}
                             <Routes>
-                                <Route path="perfil" element={<Teste />} />
+                                <Route path="perfil" element={<PerfilEmpresa />} />
                                 <Route path="publicarVagas" element={<VagasPubli />} />
                                 <Route path="buscarProfissionais" element={<BuscarProf />} />
                                 <Route path="candidaturas" element={<Candidaturas2 />} />
